@@ -3,12 +3,12 @@ import { ArrowRight, Play, TrendingUp, Users, Zap, Shield } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const integrations = [
-    { name: "CATI & CAPI", logo: "/images/ic-cati.png" },
-    { name: "Panel Surveys", logo: "/images/ic-panel.png" },
-    { name: "Focus Groups", logo: "/images/ic-focus.png" },
-    { name: "IDI Interviews", logo: "/images/ic-idi.png" },
-    { name: "Mystery Shopping", logo: "/images/ic-mystery.png" },
-    { name: "Consulting & Training", logo: "/images/ic-training.png" }
+    { name: "CATI & CAPI", logo: "/assets/img/services/CC.png" },
+    { name: "Panel Surveys", logo: "/assets/img/services/PS.png" },
+    { name: "Focus Groups", logo: "/assets/img/services/FG.png" },
+    { name: "IDI Interviews", logo: "/assets/img/services/IDI.png" },
+    { name: "Mystery Shopping", logo: "/assets/img/services/MS.png" },
+    { name: "Consulting & Training", logo: "/assets/img/services/CT.png" }
   ];
 
   const stats = [
