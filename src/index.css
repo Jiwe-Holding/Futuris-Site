@@ -196,3 +196,24 @@ button:focus {
     display: none !important;
   }
 }
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee {
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-content {
+  display: flex;
+  width: max-content;            /* allow content to extend */
+  animation: marquee 60s linear infinite;
+}
+
+.marquee-item {
+  flex: 0 0 auto;
+  width: 200px;                  /* same as your logo width */
+  margin-right: 2rem;
+}

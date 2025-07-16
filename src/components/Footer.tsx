@@ -1,7 +1,7 @@
 import React from 'react';
 import { Facebook, Twitter, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <footer className="bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white relative overflow-hidden">
       {/* Background Elements */}
@@ -18,129 +18,80 @@ const Footer = () => {
               <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center mr-3">
                 <span className="text-white font-bold text-lg">F</span>
               </div>
-              <span className="text-2xl font-bold text-white">Futuris Group</span>
+              <span className="text-2xl font-bold">FUTURIS Group</span>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Votre partenaire de confiance pour la transformation digitale et 
-              stratégique. Nous accompagnons les entreprises vers le succès depuis 2009.
+              FUTURIS is a market-research specialist on a mission to revolutionize industry practices by delivering best‑in‑class data quality and insights across 30 African markets.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-500 transition-all duration-300">
+              <a href="https://facebook.com/futuris-group" className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-500 transition-all duration-300">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-400 transition-all duration-300">
+              <a href="https://twitter.com/futuris_group" className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-400 transition-all duration-300">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-600 transition-all duration-300">
+              <a href="https://linkedin.com/company/futuris-group" className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-600 transition-all duration-300">
                 <Linkedin className="h-5 w-5" />
               </a>
             </div>
           </div>
 
-          {/* Services */}
+          {/* Our Services */}
           <div>
             <h3 className="text-xl font-semibold mb-6">Services</h3>
             <ul className="space-y-3">
-              <li>
-                <a href="#services" className="text-gray-300 hover:text-white transition-colors">
-                  Conseil Stratégique
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="text-gray-300 hover:text-white transition-colors">
-                  Transformation Digitale
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="text-gray-300 hover:text-white transition-colors">
-                  Data & Analytics
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="text-gray-300 hover:text-white transition-colors">
-                  Cybersécurité
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="text-gray-300 hover:text-white transition-colors">
-                  Change Management
-                </a>
-              </li>
+              <li><a href="#services" className="text-gray-300 hover:text-white">Fieldwork & Verification</a></li>
+              <li><a href="#services" className="text-gray-300 hover:text-white">Quality Control</a></li>
+              <li><a href="#services" className="text-gray-300 hover:text-white">Intelligence & Training</a></li>
+              <li><a href="#services" className="text-gray-300 hover:text-white">Mystery Shopping</a></li>
+              <li><a href="#services" className="text-gray-300 hover:text-white">Usage & Attitude Research</a></li>
+              <li><a href="#services" className="text-gray-300 hover:text-white">Brand & Pricing Studies</a></li>
             </ul>
           </div>
 
           {/* Company */}
           <div>
-            <h3 className="text-xl font-semibold mb-6">Entreprise</h3>
+            <h3 className="text-xl font-semibold mb-6">Company</h3>
             <ul className="space-y-3">
-              <li>
-                <a href="#a-propos" className="text-gray-300 hover:text-white transition-colors">
-                  À propos
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                  Notre équipe
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                  Carrières
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                  Actualités
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="text-gray-300 hover:text-white transition-colors">
-                  Contact
-                </a>
-              </li>
+              <li><a href="#about" className="text-gray-300 hover:text-white">About Us</a></li>
+              <li><a href="#team" className="text-gray-300 hover:text-white">Our Team</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-white">Careers</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-white">News</a></li>
+              <li><a href="#contact" className="text-gray-300 hover:text-white">Contact</a></li>
             </ul>
           </div>
 
           {/* Contact */}
           <div>
             <h3 className="text-xl font-semibold mb-6">Contact</h3>
-            <ul className="space-y-4">
+            <ul className="space-y-4 text-gray-300">
               <li className="flex items-start">
-                <MapPin className="h-5 w-5 text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-300 text-sm">
-                  123 Avenue des Champs-Élysées<br />
-                  75008 Paris, France
+                <MapPin className="h-5 w-5 text-blue-400 mr-3 flex-shrink-0" />
+                <span className="text-sm">
+                  57th Sloane Street<br/>
+                  Bryanston, 2191<br/>
+                  South Africa
                 </span>
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 text-blue-400 mr-3 flex-shrink-0" />
-                <span className="text-gray-300 text-sm">+33 1 23 45 67 89</span>
+                <span className="text-sm">+27 76 152 5291</span>
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 text-blue-400 mr-3 flex-shrink-0" />
-                <span className="text-gray-300 text-sm">contact@futuris-group.com</span>
+                <span className="text-sm">contact@futuris-group.com</span>
               </li>
             </ul>
           </div>
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-white/10 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-gray-400 text-sm mb-4 md:mb-0">
-              © 2024 Futuris Group. Tous droits réservés.
-            </div>
-            <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                Mentions légales
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                Politique de confidentialité
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                Cookies
-              </a>
-            </div>
+        <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
+          <span>© 2025 FUTURIS Group. All rights reserved.</span>
+          <div className="flex space-x-6 mt-4 md:mt-0">
+            <a href="/legal" className="hover:text-white">Legal Notice</a>
+            <a href="/privacy" className="hover:text-white">Privacy Policy</a>
+            <a href="/cookies" className="hover:text-white">Cookie Policy</a>
           </div>
         </div>
       </div>

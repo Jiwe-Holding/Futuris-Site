@@ -7,6 +7,7 @@ import Testimonials from './components/Testimonials';
 import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Partners from './components/Partners';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Hero />
       <Services />
       <Integrations />
+      <Partners />
       <Testimonials />
       <About />
       <Contact />

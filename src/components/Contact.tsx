@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
 
-const Contact = () => {
+const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -10,15 +10,13 @@ const Contact = () => {
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
+    // TODO: integrate with your email/API
   };
 
   return (
@@ -32,39 +30,35 @@ const Contact = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-20">
-          <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6">
-            <span className="text-sm font-medium text-gray-300">Contact</span>
-          </div>
+          <span className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6 text-sm font-medium text-gray-300">
+            Get in Touch
+          </span>
           <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6">
-            Prêt à transformer
+            Ready to Transform
             <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              votre entreprise ?
+              Your Business?
             </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Discutons de vos projets et découvrons ensemble comment nous pouvons 
-            vous accompagner vers le succès.
+            Let’s discuss your projects and explore how we can partner for success.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Contact Info */}
           <div>
-            <h3 className="text-2xl font-bold text-white mb-8">
-              Parlons de votre projet
-            </h3>
-            
+            <h3 className="text-2xl font-bold text-white mb-8">Talk to Us</h3>
             <div className="space-y-6 mb-12">
               <div className="flex items-center">
                 <div className="w-14 h-14 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mr-4 shadow-lg">
                   <Phone className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <div className="font-semibold text-white text-lg">Téléphone</div>
-                  <div className="text-gray-300">+33 1 23 45 67 89</div>
+                  <div className="font-semibold text-white text-lg">Phone</div>
+                  <div className="text-gray-300">+27 76 152 5291<br/>+243 814 444 602</div>
                 </div>
               </div>
-              
+
               <div className="flex items-center">
                 <div className="w-14 h-14 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mr-4 shadow-lg">
                   <Mail className="h-6 w-6 text-white" />
@@ -74,57 +68,60 @@ const Contact = () => {
                   <div className="text-gray-300">contact@futuris-group.com</div>
                 </div>
               </div>
-              
+
               <div className="flex items-center">
                 <div className="w-14 h-14 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-2xl flex items-center justify-center mr-4 shadow-lg">
                   <MapPin className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <div className="font-semibold text-white text-lg">Adresse</div>
+                  <div className="font-semibold text-white text-lg">Address</div>
                   <div className="text-gray-300">
-                    123 Avenue des Champs-Élysées<br />
-                    75008 Paris, France
+                    57th Sloane Street, Bryanston<br/>
+                    2191, South Africa
                   </div>
                 </div>
               </div>
-              
+
               <div className="flex items-center">
                 <div className="w-14 h-14 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mr-4 shadow-lg">
                   <Clock className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <div className="font-semibold text-white text-lg">Horaires</div>
+                  <div className="font-semibold text-white text-lg">Business Hours</div>
                   <div className="text-gray-300">
-                    Lun - Ven: 9h00 - 18h00<br />
-                    Sam: 9h00 - 12h00
+                    Mon – Fri: 9:00 AM – 6:00 PM<br/>
+                    Sat: 9:00 AM – 12:00 PM
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* CTA Card */}
+            {/* Webmail CTA */}
             <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-8 text-white shadow-2xl">
-              <h4 className="text-xl font-semibold mb-3">Consultation gratuite</h4>
+              <h4 className="text-xl font-semibold mb-3">Webmail Access</h4>
               <p className="text-blue-100 mb-6 leading-relaxed">
-                Planifiez un rendez-vous avec nos experts pour discuter de vos défis et opportunités.
+                Login to our webmail portal for secure internal communication.
               </p>
-              <button className="bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-full hover:bg-white/30 transition-all duration-300 font-semibold border border-white/20">
-                Planifier une consultation
-              </button>
+              <a
+                href="https://mail.ovh.net"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-6 py-3 bg-white/20 backdrop-blur-sm text-white rounded-full hover:bg-white/30 transition-all duration-300 font-semibold border border-white/20"
+              >
+                <Send className="h-5 w-5 mr-2" />
+                Go to Webmail
+              </a>
             </div>
           </div>
 
           {/* Contact Form */}
           <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20 shadow-2xl">
-            <h3 className="text-2xl font-bold text-white mb-8">
-              Envoyez-nous un message
-            </h3>
-            
+            <h3 className="text-2xl font-bold text-white mb-8">Send Us a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                    Nom complet *
+                    Full Name *
                   </label>
                   <input
                     type="text"
@@ -133,11 +130,10 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-white/20 backdrop-blur-sm border border-white/20 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-white placeholder-gray-400"
-                    placeholder="Votre nom"
+                    placeholder="Your name"
+                    className="w-full px-4 py-3 bg-white/20 backdrop-blur-sm border border-white/20 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-white placeholder-gray-400 transition-all duration-300"
                   />
                 </div>
-                
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
                     Email *
@@ -149,15 +145,14 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-white/20 backdrop-blur-sm border border-white/20 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-white placeholder-gray-400"
-                    placeholder="votre@email.com"
+                    placeholder="you@example.com"
+                    className="w-full px-4 py-3 bg-white/20 backdrop-blur-sm border border-white/20 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-white placeholder-gray-400 transition-all duration-300"
                   />
                 </div>
               </div>
-              
               <div>
                 <label htmlFor="company" className="block text-sm font-medium text-gray-300 mb-2">
-                  Entreprise
+                  Company
                 </label>
                 <input
                   type="text"
@@ -165,11 +160,10 @@ const Contact = () => {
                   name="company"
                   value={formData.company}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-white/20 backdrop-blur-sm border border-white/20 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-white placeholder-gray-400"
-                  placeholder="Nom de votre entreprise"
+                  placeholder="Your company"
+                  className="w-full px-4 py-3 bg-white/20 backdrop-blur-sm border border-white/20 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-white placeholder-gray-400 transition-all duration-300"
                 />
               </div>
-              
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
                   Message *
@@ -181,17 +175,16 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 bg-white/20 backdrop-blur-sm border border-white/20 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 resize-none text-white placeholder-gray-400"
-                  placeholder="Décrivez votre projet ou vos besoins..."
-                ></textarea>
+                  placeholder="Describe your project or needs..."
+                  className="w-full px-4 py-3 bg-white/20 backdrop-blur-sm border border-white/20 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-white placeholder-gray-400 resize-none transition-all duration-300"
+                />
               </div>
-              
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 px-6 rounded-2xl hover:shadow-xl transition-all duration-300 transform hover:scale-105 font-semibold flex items-center justify-center gap-2"
+                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 rounded-2xl hover:shadow-xl transition-all duration-300 transform hover:scale-105 font-semibold flex items-center justify-center gap-2"
               >
                 <Send className="h-5 w-5" />
-                Envoyer le message
+                Send Message
               </button>
             </form>
           </div>

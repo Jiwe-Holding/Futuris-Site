@@ -1,55 +1,55 @@
 import React from 'react';
-import { TrendingUp, Zap, Database, Shield, Users, Lightbulb, ArrowRight } from 'lucide-react';
+import { Clipboard, CheckCircle, Lightbulb, Eye, BarChart2, Users } from 'lucide-react';
 
-const Services = () => {
+const Services: React.FC = () => {
   const services = [
     {
       number: "01",
-      icon: <TrendingUp className="h-6 w-6" />,
-      title: "Conseil Stratégique",
-      description: "Développement de stratégies sur-mesure pour optimiser votre performance et anticiper les défis futurs.",
-      features: ["Analyse concurrentielle", "Stratégie digitale", "Optimisation des processus"],
+      icon: <Clipboard className="h-6 w-6" />,
+      title: "Fieldwork & Verification",
+      description: "On‑the‑ground data collection, observation and verification across 30 African markets.",
+      features: ["Face‑to‑Face Interviews", "Mall Intercepts", "CATI Stations"],
       color: "from-blue-500 to-blue-600"
     },
     {
       number: "02",
-      icon: <Zap className="h-6 w-6" />,
-      title: "Transformation Digitale",
-      description: "Accompagnement complet dans votre mutation numérique pour une entreprise plus agile et performante.",
-      features: ["Digitalisation des processus", "Solutions cloud", "Automatisation"],
+      icon: <CheckCircle className="h-6 w-6" />,
+      title: "Quality Control",
+      description: "Rigorous multi‑level checks to ensure data accuracy and reliability at every step.",
+      features: ["Data Validation", "Supervisor Audits", "Real‑time Monitoring"],
       color: "from-purple-500 to-purple-600"
     },
     {
       number: "03",
-      icon: <Database className="h-6 w-6" />,
-      title: "Data & Analytics",
-      description: "Exploitation intelligente de vos données pour des décisions éclairées et une croissance durable.",
-      features: ["Business Intelligence", "Machine Learning", "Tableaux de bord"],
+      icon: <Lightbulb className="h-6 w-6" />,
+      title: "Intelligence & Training",
+      description: "Bespoke consultancy, analytics and training programs to elevate your team’s capabilities.",
+      features: ["Custom Workshops", "Insight Dashboards", "Strategic Roadmaps"],
       color: "from-emerald-500 to-emerald-600"
     },
     {
       number: "04",
-      icon: <Shield className="h-6 w-6" />,
-      title: "Cybersécurité",
-      description: "Protection avancée de vos actifs numériques avec des solutions de sécurité robustes et évolutives.",
-      features: ["Audit de sécurité", "Protection des données", "Formation équipes"],
-      color: "from-red-500 to-red-600"
+      icon: <Eye className="h-6 w-6" />,
+      title: "Mystery Shopping",
+      description: "Secret‑shopper studies to benchmark service levels and customer experience quality.",
+      features: ["Scenario Design", "Field Execution", "Detailed Reporting"],
+      color: "from-pink-500 to-pink-600"
     },
     {
       number: "05",
-      icon: <Users className="h-6 w-6" />,
-      title: "Change Management",
-      description: "Conduite du changement personnalisée pour une adoption réussie de vos nouvelles solutions.",
-      features: ["Formation utilisateurs", "Gestion des résistances", "Communication interne"],
-      color: "from-orange-500 to-orange-600"
+      icon: <BarChart2 className="h-6 w-6" />,
+      title: "Usage & Attitude Research",
+      description: "Understanding customer usage patterns and attitudes to drive product and service innovation.",
+      features: ["Panel Surveys", "Usage Tracking", "Attitudinal Analysis"],
+      color: "from-yellow-500 to-yellow-600"
     },
     {
       number: "06",
-      icon: <Lightbulb className="h-6 w-6" />,
-      title: "Innovation & R&D",
-      description: "Développement de solutions innovantes et recherche de nouvelles opportunités technologiques.",
-      features: ["Veille technologique", "POC/MVP", "Partenariats stratégiques"],
-      color: "from-pink-500 to-pink-600"
+      icon: <Users className="h-6 w-6" />,
+      title: "Brand & Pricing Studies",
+      description: "Evaluating brand health and price sensitivity to inform positioning and growth strategies.",
+      features: ["Brand Health Tracking", "Price Testing", "Competitive Benchmarking"],
+      color: "from-cyan-500 to-cyan-600"
     }
   ];
 
@@ -65,24 +65,23 @@ const Services = () => {
         {/* Header */}
         <div className="text-center mb-20">
           <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-900/50 to-purple-900/50 rounded-full border border-blue-500/30 mb-6">
-            <span className="text-sm font-medium text-blue-300">Nos Services</span>
+            <span className="text-sm font-medium text-blue-300">Our Expertise</span>
           </div>
           <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6">
-            Une gamme complète de
+            Comprehensive Market Research
             <span className="block bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              solutions expertes
+              & Data Solutions
             </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Nous accompagnons votre transformation et maximisons votre potentiel 
-            de croissance avec des services sur-mesure.
+            Delivering end‑to‑end insights—from field data collection to strategic intelligence—to power your growth.
           </p>
         </div>
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div 
+            <div
               key={index}
               className="group relative bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
             >
@@ -104,26 +103,19 @@ const Services = () => {
               <h3 className="text-xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors">
                 {service.title}
               </h3>
-              
               <p className="text-gray-300 mb-6 leading-relaxed">
                 {service.description}
               </p>
 
               {/* Features */}
               <ul className="space-y-2 mb-6">
-                {service.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-center text-sm text-gray-400">
+                {service.features.map((feature, i) => (
+                  <li key={i} className="flex items-center text-sm text-gray-400">
                     <div className={`w-1.5 h-1.5 bg-gradient-to-r ${service.color} rounded-full mr-3`}></div>
                     {feature}
                   </li>
                 ))}
               </ul>
-
-              {/* CTA */}
-              <button className="flex items-center text-blue-400 font-semibold hover:text-purple-400 transition-colors group-hover:gap-3 gap-2">
-                En savoir plus
-                <ArrowRight className="h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
-              </button>
             </div>
           ))}
         </div>
@@ -131,7 +123,7 @@ const Services = () => {
         {/* Bottom CTA */}
         <div className="text-center mt-16">
           <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300 transform hover:scale-105 font-semibold">
-            Découvrir tous nos services
+            View All Services
           </button>
         </div>
       </div>

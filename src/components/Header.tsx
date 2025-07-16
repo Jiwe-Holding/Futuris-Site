@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
-const Header = () => {
+const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -18,8 +18,8 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            <a href="#accueil" className="text-white hover:text-gray-900 transition-colors font-medium">
-              Accueil
+            <a href="#home" className="text-white hover:text-gray-900 transition-colors font-medium">
+              Home
             </a>
             <a href="#services" className="text-white hover:text-gray-900 transition-colors font-medium">
               Services
@@ -30,8 +30,8 @@ const Header = () => {
             <a href="#clients" className="text-white hover:text-gray-900 transition-colors font-medium">
               Clients
             </a>
-            <a href="#a-propos" className="text-white hover:text-gray-900 transition-colors font-medium">
-              À propos
+            <a href="#about" className="text-white hover:text-gray-900 transition-colors font-medium">
+              About
             </a>
             <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2.5 rounded-full hover:shadow-lg transition-all duration-300 font-medium">
               Contact
@@ -41,7 +41,7 @@ const Header = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 text-gray-600 hover:text-gray-900"
+            className="lg:hidden p-2 text-white hover:text-gray-200"
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -51,20 +51,20 @@ const Header = () => {
         {isMenuOpen && (
           <div className="lg:hidden border-t border-gray-100 py-4">
             <div className="space-y-4">
-              <a href="#accueil" className="block text-white hover:text-gray-900 transition-colors">
-                Accueil
+              <a href="#home" className="block text-white hover:text-gray-200 transition-colors">
+                Home
               </a>
-              <a href="#services" className="block text-white hover:text-gray-900 transition-colors">
+              <a href="#services" className="block text-white hover:text-gray-200 transition-colors">
                 Services
               </a>
-              <a href="#expertise" className="block text-white hover:text-gray-900 transition-colors">
+              <a href="#expertise" className="block text-white hover:text-gray-200 transition-colors">
                 Expertise
               </a>
-              <a href="#clients" className="block text-white hover:text-gray-900 transition-colors">
+              <a href="#clients" className="block text-white hover:text-gray-200 transition-colors">
                 Clients
               </a>
-              <a href="#a-propos" className="block text-white hover:text-gray-900 transition-colors">
-                À propos
+              <a href="#about" className="block text-white hover:text-gray-200 transition-colors">
+                About
               </a>
               <button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2.5 rounded-full">
                 Contact
