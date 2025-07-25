@@ -15,9 +15,6 @@ const Footer: React.FC = () => {
           {/* Company Info */}
           <div>
             <div className="flex items-center mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center mr-3">
-                <span className="text-white font-bold text-lg">F</span>
-              </div>
               <span className="text-2xl font-bold">FUTURIS Group</span>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
