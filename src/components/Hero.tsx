@@ -32,10 +32,10 @@ const Hero: React.FC = () => {
       </video>
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-black/60 z-0" />
+      <div className="absolute inset-0 pt-10 bg-gradient-to-br from-black/80 via-black/70 to-black/60 z-0" />
 
       {/* Main Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 flex flex-col justify-center h-full text-white">
+      <div className="relative z-10 max-w-7xl pt-5 mx-auto px-6 flex flex-col justify-center h-full text-white">
         <div className="text-center">
           {/* Badge */}
           <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6">
