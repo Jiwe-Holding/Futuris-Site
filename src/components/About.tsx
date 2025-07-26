@@ -48,7 +48,7 @@ const About: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-20">
           <span className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6 text-sm font-medium text-gray-300">
-            About FUTURIS Group
+            About FUTURIS
           </span>
           <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6">
             Your Market Research Partner
@@ -69,7 +69,7 @@ const About: React.FC = () => {
             </h3>
             <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
               <p>
-                Founded in 2009, FUTURIS Group was born from the conviction that data-driven insights can revolutionize industry practices. We combine technical expertise, strategic vision and human-centric approach to deliver sustainable, high‑impact research.
+                Founded in 2009, FUTURIS was born from the conviction that data-driven insights can revolutionize industry practices. We combine technical expertise, strategic vision and human-centric approach to deliver sustainable, high‑impact research.
               </p>
               <p>
                 Our multidisciplinary team of consultants, field agents and analysts works closely with clients at every step—from initial brief and proposal to fieldwork, quality control and final reporting—to ensure excellence and speed in every project.

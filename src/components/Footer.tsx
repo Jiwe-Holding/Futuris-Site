@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
           {/* Company Info */}
           <div>
             <div className="flex items-center mb-6">
-              <span className="text-2xl font-bold">FUTURIS Group</span>
+              <span className="text-2xl font-bold">FUTURIS</span>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
               FUTURIS is a market-research specialist on a mission to revolutionize industry practices by delivering best‑in‑class data quality and insights across 30 African markets.
@@ -76,7 +76,7 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 text-blue-400 mr-3 flex-shrink-0" />
-                <span className="text-sm">contact@futuris-group.com</span>
+                <span className="text-sm">contact@futuris.com</span>
               </li>
             </ul>
           </div>
@@ -84,7 +84,7 @@ const Footer: React.FC = () => {
 
         {/* Bottom Section */}
         <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
-          <span>© 2025 FUTURIS Group. All rights reserved.</span>
+          <span>© 2025 FUTURIS. All rights reserved.</span>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="/legal" className="hover:text-white">Legal Notice</a>
             <a href="/privacy" className="hover:text-white">Privacy Policy</a>

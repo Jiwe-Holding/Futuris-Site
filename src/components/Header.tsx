@@ -10,7 +10,7 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <span className="ml-3 text-xl font-bold text-white">Futuris Group</span>
+            <span className="ml-3 text-xl font-bold text-white">Futuris</span>
           </div>
 
           {/* Desktop Navigation */}
