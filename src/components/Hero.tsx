@@ -18,7 +18,7 @@ const Hero: React.FC = () => {
   ];
 
   return (
-    <section id="home" className="relative h-screen w-full overflow-hidden">
+    <section id="home" className="relative pt-5 h-screen w-full overflow-hidden">
       {/* Video Background */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
@@ -32,11 +32,11 @@ const Hero: React.FC = () => {
       </video>
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 pt-10 bg-gradient-to-br from-black/80 via-black/70 to-black/60 z-0" />
+      <div className="absolute inset-0 pt-5 bg-gradient-to-br from-black/80 via-black/70 to-black/60 z-0" />
 
       {/* Main Content */}
       <div className="relative z-10 max-w-7xl pt-5 mx-auto px-6 flex flex-col justify-center h-full text-white">
-        <div className="text-center">
+        <div className="text-center mt-32 sm:mt-0">
           {/* Badge */}
           <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6">
             <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse" />
