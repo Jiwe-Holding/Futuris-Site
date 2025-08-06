@@ -5,28 +5,40 @@ const About: React.FC = () => {
   const values = [
     {
       icon: <Award className="h-6 w-6" />,
-      title: "Excellence",
-      description: "We strive for excellence in every project, upholding the highest quality standards.",
+      title: "Research",
+      description: "In-depth exploration to uncover actionable insights.",
       color: "from-blue-500 to-blue-600"
     },
     {
       icon: <Users className="h-6 w-6" />,
-      title: "Collaboration",
-      description: "We work hand‑in‑hand with our clients to deliver optimal results.",
+      title: "Data collection",
+      description: "Robust methodologies to gather reliable data.",
       color: "from-purple-500 to-purple-600"
     },
     {
       icon: <Globe className="h-6 w-6" />,
-      title: "Innovation",
-      description: "We embrace cutting‑edge technologies and methodologies to stay at the forefront.",
+      title: "Quality Control",
+      description: "Rigorous checks to ensure data accuracy and integrity.",
       color: "from-emerald-500 to-emerald-600"
     },
     {
       icon: <Target className="h-6 w-6" />,
-      title: "Integrity",
-      description: "We maintain transparency and fairness in all our engagements.",
+      title: "Analytics",
+      description: "Advanced analysis to transform data into knowledge.",
       color: "from-orange-500 to-orange-600"
-    }
+    },
+    {
+      icon: <Award className="h-6 w-6" />,
+      title: "Intelligence",
+      description: "Strategic intelligence for informed decision-making.",
+      color: "from-pink-500 to-pink-600"
+    },
+    {
+      icon: <Users className="h-6 w-6" />,
+      title: "Insights",
+      description: "Clear, actionable insights to drive your success.",
+      color: "from-yellow-500 to-yellow-600"
+    },
   ];
 
   const stats = [

@@ -39,10 +39,12 @@ const Hero: React.FC = () => {
         {/* Left: Text Content */}
         <div className="w-full lg:w-1/2 flex flex-col justify-center items-start mt-32 sm:mt-0">
           {/* Badge */}
-          {/* <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6">
-            <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse" />
-            <span className="text-sm font-medium">Market Research</span>
-          </div> */}
+          <div className="inline-flex items-center px-5 py-2 bg-white/10 backdrop-blur-md rounded-lg border border-blue-200/30 mb-6 shadow-sm">
+            <TrendingUp className="h-5 w-5 text-blue-400 mr-3" />
+            <span className="text-sm font-semibold text-white/90 tracking-wide">
+              Research <span className="mx-2 text-blue-300">·</span> Data collection <span className="mx-2 text-blue-300">·</span> Quality Control <span className="mx-2 text-blue-300">·</span> Analytics <span className="mx-2 text-blue-300">·</span> Intelligence <span className="mx-2 text-blue-300">·</span> Insights
+            </span>
+          </div>
 
           {/* Title */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl text-blue-600 font-extrabold leading-tight mb-6 text-left">
