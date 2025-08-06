@@ -32,33 +32,13 @@ const BlogSection: React.FC = () => {
         />
       )
     },
-    // {
-    //   title: "Market Intelligence & Analytics",
-    //   url: "https://www.insightsassociation.org/",
-    //   media: (
-    //     <div
-    //       className="w-full h-0 pb-[56.25%] bg-cover rounded-2xl"
-    //       style={{ backgroundImage: 'url(/images/insights_ass_logo.jpg)' }}
-    //     />
-    //   )
-    // },
-    // {
-    //   title: "Analytics",
-    //   url: "#",
-    //   media: (
-    //     <div
-    //       className="w-full h-0 pb-[56.25%] bg-cover rounded-2xl"
-    //       style={{ backgroundImage: 'url(/images/full_image_4_.jpg)' }}
-    //     />
-    //   )
-    // }
   ];
 
   return (
     <section id="blog" className="py-24 bg-slate-800 text-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Heading */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 font-[Montserrat]">
           <h2 className="text-4xl lg:text-5xl font-bold mb-4">
             READ FROM OUR <span className="text-blue-400">BLOG, RESEARCH BODY & PARTNERS</span>
           </h2>
