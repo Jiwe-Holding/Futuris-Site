@@ -45,11 +45,8 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Title */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 text-left">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl text-blue-600 font-extrabold leading-tight mb-6 text-left">
             Futuris
-            <span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient">
-              Revolutionizing Industry Insights
-            </span>
           </h1>
 
           {/* Subtitle */}
@@ -86,7 +83,7 @@ const Hero: React.FC = () => {
         </div>
         {/* Right: Hero Image */}
         <div className="w-full lg:w-1/2 flex justify-center items-center mt-10 lg:mt-0">
-          <img src="/assets/img/hero_bg.png" alt="Futuris Hero" className="max-w-[180px] sm:max-w-[280px] lg:max-w-[340px] xl:max-w-[400px] w-full h-auto rounded-xl" />
+          <img src="/assets/img/hero_bg.png" alt="Futuris Hero" className="max-w-[180px] sm:max-w-[250px] lg:max-w-[310px] xl:max-w-[350px] w-full h-auto rounded-xl" />
         </div>
       </div>
     </section>
