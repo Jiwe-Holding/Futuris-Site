@@ -39,9 +39,9 @@ const Hero: React.FC = () => {
         {/* Left: Text Content */}
         <div className="w-full lg:w-1/2 flex flex-col justify-center items-start mt-32 sm:mt-0">
           {/* Badge */}
-          <div className="inline-flex items-center px-5 py-2 bg-white/10 backdrop-blur-md rounded-lg border border-blue-200/30 mb-6 shadow-sm">
+          <div className="inline-flex items-center mb-6">
             <TrendingUp className="h-5 w-5 text-blue-400 mr-3" />
-            <span className="text-sm font-semibold text-white/90 tracking-wide">
+            <span className="text-sm font-semibold text-white/90 tracking-wide whitespace-nowrap">
               Research <span className="mx-2 text-blue-300">·</span> Data collection <span className="mx-2 text-blue-300">·</span> Quality Control <span className="mx-2 text-blue-300">·</span> Analytics <span className="mx-2 text-blue-300">·</span> Intelligence <span className="mx-2 text-blue-300">·</span> Insights
             </span>
           </div>
