@@ -39,10 +39,10 @@ const Hero: React.FC = () => {
         {/* Left: Text Content */}
         <div className="w-full lg:w-1/2 flex flex-col justify-center items-start mt-32 sm:mt-0">
           {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6">
+          {/* <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6">
             <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse" />
             <span className="text-sm font-medium">Market Research</span>
-          </div>
+          </div> */}
 
           {/* Title */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl text-blue-600 font-extrabold leading-tight mb-6 text-left">
