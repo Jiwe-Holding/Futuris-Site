@@ -35,8 +35,9 @@ const Hero: React.FC = () => {
       <div className="absolute inset-0 pt-5 bg-gradient-to-br from-black/80 via-black/70 to-black/60 z-0" />
 
       {/* Main Content */}
-      <div className="relative z-10 max-w-7xl pt-5 mx-auto px-6 flex flex-col justify-center h-full text-white">
-        <div className="text-center mt-32 sm:mt-0">
+      <div className="relative z-10 max-w-7xl pt-5 mx-auto px-6 flex flex-col lg:flex-row items-center justify-between h-full text-white">
+        {/* Left: Text Content */}
+        <div className="w-full lg:w-1/2 flex flex-col justify-center items-start mt-32 sm:mt-0">
           {/* Badge */}
           <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6">
             <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse" />
@@ -44,20 +45,20 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Title */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-            Revolutionizing
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 text-left">
+            Futuris
             <span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient">
-              Industry Insights
+              Revolutionizing Industry Insights
             </span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto mb-10">
+          <p className="text-lg sm:text-xl text-white/80 max-w-3xl mb-10 text-left">
             Delivering best‑in‑class data quality and actionable insights through quantitative and qualitative methodologies.
           </p>
 
           {/* Buttons */}
-          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-10">
+          <div className="flex flex-col sm:flex-row gap-4 mb-10">
             <button className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full hover:shadow-xl transition-all font-medium flex items-center gap-2">
               Get Started
               <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -69,7 +70,7 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 mb-4 gap-6 max-w-4xl mx-auto text-center">
+          <div className="grid grid-cols-2 sm:grid-cols-4 mb-4 gap-6 max-w-4xl text-center">
             {stats.map((stat, idx) => (
               <div key={idx}>
                 <div className="flex justify-center mb-2">
@@ -83,9 +84,11 @@ const Hero: React.FC = () => {
             ))}
           </div>
         </div>
+        {/* Right: Hero Image */}
+        <div className="w-full lg:w-1/2 flex justify-center items-center mt-10 lg:mt-0">
+          <img src="/assets/img/hero_bg.png" alt="Futuris Hero" className="max-w-[180px] sm:max-w-[280px] lg:max-w-[340px] xl:max-w-[400px] w-full h-auto rounded-xl" />
+        </div>
       </div>
-
-     
     </section>
   );
 };

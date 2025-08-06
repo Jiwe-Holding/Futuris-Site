@@ -1,5 +1,6 @@
 import React from 'react';
 import { Facebook, Twitter, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import logo from '/assets/img/logo.jpg';
 
 const Footer: React.FC = () => {
   return (
@@ -15,6 +16,7 @@ const Footer: React.FC = () => {
           {/* Company Info */}
           <div>
             <div className="flex items-center mb-6">
+              <img src={logo} alt="Futuris Logo" className="h-10 mr-3 rounded" />
               <span className="text-2xl font-bold">FUTURIS</span>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">

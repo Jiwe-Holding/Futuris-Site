@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import logo from '/assets/img/logo.jpg';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,7 +11,8 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <span className="ml-3 text-xl font-bold text-white">Futuris</span>
+            <img src={logo} alt="Futuris Logo" className="h-10 mr-3 rounded" />
+            <span className="text-xl font-bold text-white">Futuris</span>
           </div>
 
           {/* Desktop Navigation */}
