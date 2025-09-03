@@ -1,27 +1,24 @@
 import React from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Services from './components/Services';
-import Integrations from './components/Integrations';
-import Testimonials from './components/Testimonials';
-import About from './components/About';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import Partners from './components/Partners';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Services from './pages/Services';
+import About from './pages/About';
+import Blog from './pages/Blog';
+import Contact from './pages/Contact';
 
 function App() {
   return (
-    <div className="min-h-screen bg-slate-900">
-      <Header />
-      <Hero />
-      <Services />
-      <Integrations />
-      <Partners />
-      <Testimonials />
-      <About />
-      <Contact />
-      <Footer />
-    </div>
+    <Router>
+      <div className="min-h-screen bg-slate-900">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
