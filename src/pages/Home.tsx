@@ -2,7 +2,6 @@ import React from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import Services from '../components/Services';
-import Integrations from '../components/Integrations';
 import Testimonials from '../components/Testimonials';
 import About from '../components/About';
 import Contact from '../components/Contact';
@@ -15,10 +14,9 @@ const Home: React.FC = () => {
       <Header />
       <Hero />
       <Services />
-      <Integrations />
+      <About />
       <Partners />
       <Testimonials />
-      <About />
       <Contact />
       <Footer />
     </div>
