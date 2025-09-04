@@ -38,26 +38,6 @@ const About: React.FC = () => {
     { number: "11", label: "Qualitative Moderators" }
   ];
 
-  const team = [
-    {
-      name: "Dr. Sarah Johnson",
-      role: "CEO & Founder",
-      image: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg",
-      description: "15+ years in market research with expertise in African markets."
-    },
-    {
-      name: "Michael Chen",
-      role: "Head of Operations",
-      image: "https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg",
-      description: "Operations specialist with deep knowledge of field research methodologies."
-    },
-    {
-      name: "Aisha Okafor",
-      role: "Regional Director",
-      image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg",
-      description: "Leading our West African operations with 10+ years of experience."
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-slate-900">
@@ -183,30 +163,6 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      {/* Team */}
-      <section className="py-24 bg-slate-900">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">Meet Our Team</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              The experts behind our success, dedicated to delivering exceptional results.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {team.map((member, index) => (
-              <div key={index} className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center">
-                <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4">
-                  <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">{member.name}</h3>
-                <div className="text-blue-400 font-semibold mb-3">{member.role}</div>
-                <p className="text-gray-300 text-sm leading-relaxed">{member.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <Footer />
     </div>
