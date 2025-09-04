@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ChatWidget from '../components/ChatWidget';
-import { Phone, Mail, MapPin, Clock, Send, MessageCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -273,17 +273,13 @@ const Contact: React.FC = () => {
           <p className="text-xl text-white/90 mb-8 leading-relaxed">
             Get in touch with our team of experts and let's discuss how we can help you achieve your market research goals.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex justify-center">
             <button 
               onClick={handleCall}
               className="bg-white text-blue-600 px-8 py-4 rounded-full hover:bg-gray-100 transition-all font-semibold flex items-center gap-2 justify-center"
             >
               <Phone className="h-5 w-5" />
               Call Us Now
-            </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-full hover:bg-white hover:text-blue-600 transition-all font-semibold flex items-center gap-2 justify-center">
-              <MessageCircle className="h-5 w-5" />
-              Start a Chat
             </button>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MessageCircle, X, User, Send } from 'lucide-react';
 
 const ChatWidget: React.FC = () => {
@@ -7,6 +7,16 @@ const ChatWidget: React.FC = () => {
     { id: 1, sender: 'agent', message: 'Hello! Welcome to FUTURIS. How can I help you today?', time: '10:30' }
   ]);
   const [currentMessage, setCurrentMessage] = useState('');
+
+  // Auto-open chat after 15 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsChatOpen(true);
+    }, 15000); // 15 seconds
+
+    // Cleanup timer if component unmounts or chat is manually opened
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleChatToggle = () => {
     setIsChatOpen(!isChatOpen);
@@ -128,3 +138,4 @@ const ChatWidget: React.FC = () => {
 };
 
 export default ChatWidget;
+
