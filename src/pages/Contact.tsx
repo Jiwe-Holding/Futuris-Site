@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import ChatWidget from '../components/ChatWidget';
 import { Phone, Mail, MapPin, Clock, Send, MessageCircle } from 'lucide-react';
 
 const Contact: React.FC = () => {
@@ -12,6 +13,7 @@ const Contact: React.FC = () => {
     subject: '',
     message: ''
   });
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -30,6 +32,10 @@ const Contact: React.FC = () => {
       subject: '',
       message: ''
     });
+  };
+
+  const handleCall = () => {
+    window.location.href = 'tel:+27761525291';
   };
 
   return (
@@ -268,11 +274,14 @@ const Contact: React.FC = () => {
             Get in touch with our team of experts and let's discuss how we can help you achieve your market research goals.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-blue-600 px-8 py-4 rounded-full hover:bg-gray-100 transition-all font-semibold flex items-center gap-2">
+            <button 
+              onClick={handleCall}
+              className="bg-white text-blue-600 px-8 py-4 rounded-full hover:bg-gray-100 transition-all font-semibold flex items-center gap-2 justify-center"
+            >
               <Phone className="h-5 w-5" />
               Call Us Now
             </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-full hover:bg-white hover:text-blue-600 transition-all font-semibold flex items-center gap-2">
+            <button className="border-2 border-white text-white px-8 py-4 rounded-full hover:bg-white hover:text-blue-600 transition-all font-semibold flex items-center gap-2 justify-center">
               <MessageCircle className="h-5 w-5" />
               Start a Chat
             </button>
@@ -281,6 +290,7 @@ const Contact: React.FC = () => {
       </section>
 
       <Footer />
+      <ChatWidget />
     </div>
   );
 };

@@ -7,6 +7,7 @@ import About from '../components/About';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import Partners from '../components/Partners';
+import ChatWidget from '../components/ChatWidget';
 
 const Home: React.FC = () => {
   return (
@@ -19,6 +20,7 @@ const Home: React.FC = () => {
       <Testimonials />
       <Contact />
       <Footer />
+      <ChatWidget />
     </div>
   );
 };

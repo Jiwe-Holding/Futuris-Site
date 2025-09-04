@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import ChatWidget from '../components/ChatWidget';
 import { ArrowRight, Calendar, User, Search } from 'lucide-react';
 
 const Blog: React.FC = () => {
@@ -233,6 +234,7 @@ const Blog: React.FC = () => {
       </section>
 
       <Footer />
+      <ChatWidget />
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import ChatWidget from '../components/ChatWidget';
 import { ArrowRight, CheckCircle, Users, Target, Shield, TrendingUp, Globe, Award } from 'lucide-react';
 
 const Services: React.FC = () => {
@@ -149,6 +150,7 @@ const Services: React.FC = () => {
       </section>
 
       <Footer />
+      <ChatWidget />
     </div>
   );
 };
