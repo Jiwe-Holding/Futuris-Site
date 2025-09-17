@@ -81,48 +81,50 @@ const Services: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-900">
+    <div className="min-h-screen bg-white">
       <Header />
       
-      {/* Mini Hero */}
-      <section className="pt-32 pb-32 bg-slate-900 relative overflow-hidden">
+      {/* Corporate Hero with Image */}
+      <section className="relative pt-32 pb-20 bg-black overflow-hidden">
+        {/* Corporate Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg')",
-            opacity: 0.2
+            backgroundImage: "url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2126&q=80')"
           }}
         />
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-20 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl"></div>
-        </div>
+        {/* Corporate Overlay */}
+        <div className="absolute inset-0 bg-black/70"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
-            Our <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Services</span>
+          <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-8">
+            <span className="text-sm font-medium text-white uppercase tracking-wide">Our Services</span>
+          </div>
+          <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+            Comprehensive Market Research
+            <span className="block text-blue-600">Solutions</span>
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-white/90 max-w-4xl mx-auto leading-relaxed">
             Comprehensive market research solutions designed to deliver actionable insights across 30 African markets.
           </p>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-24 bg-slate-800">
+      {/* Corporate Services Grid */}
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {services.map((service, index) => (
-              <div key={index} className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
-                <div className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-xl flex items-center justify-center text-white mb-6`}>
+              <div key={index} className="bg-white rounded-lg border border-gray-200 p-8 hover:shadow-md hover:border-blue-200 transition-all duration-300">
+                <div className="w-16 h-16 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600 mb-6">
                   {service.icon}
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
-                <p className="text-gray-300 mb-6 leading-relaxed">{service.description}</p>
+                <h3 className="text-2xl font-bold text-black mb-4">{service.title}</h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
                 <ul className="space-y-3">
                   {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-gray-300">
-                      <CheckCircle className="h-5 w-5 text-green-400 mr-3 flex-shrink-0" />
+                    <li key={featureIndex} className="flex items-center text-gray-600">
+                      <CheckCircle className="h-5 w-5 text-blue-600 mr-3 flex-shrink-0" />
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -133,16 +135,16 @@ const Services: React.FC = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-r from-blue-600 to-purple-600">
+      {/* Corporate CTA Section */}
+      <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl lg:text-4xl font-bold text-black mb-6">
             Ready to Transform Your Market Research?
           </h2>
-          <p className="text-xl text-white/90 mb-8 leading-relaxed">
+          <p className="text-xl text-gray-600 mb-8 leading-relaxed">
             Let's discuss how our comprehensive services can help you achieve your business objectives.
           </p>
-          <button className="bg-white text-blue-600 px-8 py-4 rounded-full hover:bg-gray-100 transition-all font-semibold flex items-center gap-2 mx-auto">
+          <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg transition-colors font-semibold inline-flex items-center gap-2">
             Get Started Today
             <ArrowRight className="h-5 w-5" />
           </button>

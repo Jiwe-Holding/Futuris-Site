@@ -1,96 +1,158 @@
 import React from 'react';
-import { Facebook, Twitter, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
-import logo from '/assets/img/logo.jpg';
+import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
+  const currentYear = new Date().getFullYear();
+
+  const services = [
+    'Market Research',
+    'Data Collection', 
+    'Quality Control',
+    'Analytics',
+    'Consulting',
+    'Training'
+  ];
+
+  const quickLinks = [
+    { name: 'About Us', path: '/about' },
+    { name: 'Services', path: '/services' },
+    { name: 'Blog', path: '/blog' },
+    { name: 'Contact', path: '/contact' }
+  ];
+
+  const socialLinks = [
+    { name: 'LinkedIn', icon: <Linkedin className="h-5 w-5" />, href: '#' },
+    { name: 'Twitter', icon: <Twitter className="h-5 w-5" />, href: '#' },
+    { name: 'Facebook', icon: <Facebook className="h-5 w-5" />, href: '#' }
+  ];
+
   return (
-    <footer className="bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-blue-600/10 to-purple-600/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-gradient-to-br from-purple-600/10 to-pink-600/10 rounded-full blur-3xl"></div>
-      </div>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <div>
-            <div className="flex items-center mb-6">
-              <img src={logo} alt="Futuris Logo" className="h-10 mr-3 rounded" />
-              <span className="text-2xl font-bold">FUTURIS</span>
+    <footer className="bg-black text-white">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        {/* Main Footer Content */}
+        <div className="py-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            {/* Company Info */}
+            <div className="lg:col-span-1">
+              <div className="flex items-center mb-6">
+                <img src="/assets/img/logo.jpg" alt="Futuris Logo" className="h-10 mr-3 rounded" />
+                <span className="text-2xl font-bold">Futuris</span>
+              </div>
+              <p className="text-gray-400 mb-6 leading-relaxed">
+                Excellence in Market Research across 30 African markets. Delivering data-driven insights for strategic business decisions.
+              </p>
+              <div className="flex space-x-4">
+                {socialLinks.map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.href}
+                    className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:text-blue-600 hover:bg-gray-700 transition-all duration-300"
+                    aria-label={social.name}
+                  >
+                    {social.icon}
+                  </a>
+                ))}
+              </div>
             </div>
-            <p className="text-gray-300 mb-6 leading-relaxed">
-              FUTURIS is a market-research specialist on a mission to revolutionize industry practices by delivering best‑in‑class data quality and insights across 30 African markets.
-            </p>
-            <div className="flex space-x-4">
-              <a href="https://facebook.com/futuris-group" className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-500 transition-all duration-300">
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a href="https://twitter.com/futuris_group" className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-400 transition-all duration-300">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="https://linkedin.com/company/futuris-group" className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-600 transition-all duration-300">
-                <Linkedin className="h-5 w-5" />
-              </a>
+
+            {/* Quick Links */}
+            <div>
+              <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
+              <ul className="space-y-3">
+                {quickLinks.map((link, index) => (
+                  <li key={index}>
+                    <Link
+                      to={link.path}
+                      className="text-gray-400 hover:text-blue-600 transition-colors duration-300 flex items-center group"
+                    >
+                      <ArrowRight className="h-4 w-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
 
-          {/* Our Services */}
-          <div>
-            <h3 className="text-xl font-semibold mb-6">Services</h3>
-            <ul className="space-y-3">
-              <li><a href="#services" className="text-gray-300 hover:text-white">Fieldwork & Verification</a></li>
-              <li><a href="#services" className="text-gray-300 hover:text-white">Quality Control</a></li>
-              <li><a href="#services" className="text-gray-300 hover:text-white">Intelligence & Training</a></li>
-              <li><a href="#services" className="text-gray-300 hover:text-white">Mystery Shopping</a></li>
-              <li><a href="#services" className="text-gray-300 hover:text-white">Usage & Attitude Research</a></li>
-              <li><a href="#services" className="text-gray-300 hover:text-white">Brand & Pricing Studies</a></li>
-            </ul>
-          </div>
+            {/* Services */}
+            <div>
+              <h3 className="text-lg font-semibold mb-6">Our Services</h3>
+              <ul className="space-y-3">
+                {services.map((service, index) => (
+                  <li key={index}>
+                    <span className="text-gray-400 hover:text-blue-600 transition-colors duration-300 cursor-pointer">
+                      {service}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Company */}
-          <div>
-            <h3 className="text-xl font-semibold mb-6">Company</h3>
-            <ul className="space-y-3">
-              <li><a href="#about" className="text-gray-300 hover:text-white">About Us</a></li>
-              <li><a href="#team" className="text-gray-300 hover:text-white">Our Team</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white">Careers</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white">News</a></li>
-              <li><a href="#contact" className="text-gray-300 hover:text-white">Contact</a></li>
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h3 className="text-xl font-semibold mb-6">Contact</h3>
-            <ul className="space-y-4 text-gray-300">
-              <li className="flex items-start">
-                <MapPin className="h-5 w-5 text-blue-400 mr-3 flex-shrink-0" />
-                <span className="text-sm">
-                  57th Sloane Street<br/>
-                  Bryanston, 2191<br/>
-                  South Africa
-                </span>
-              </li>
-              <li className="flex items-center">
-                <Phone className="h-5 w-5 text-blue-400 mr-3 flex-shrink-0" />
-                <span className="text-sm">+27 76 152 5291</span>
-              </li>
-              <li className="flex items-center">
-                <Mail className="h-5 w-5 text-blue-400 mr-3 flex-shrink-0" />
-                <span className="text-sm">contact@futuris.com</span>
-              </li>
-            </ul>
+            {/* Contact Info */}
+            <div>
+              <h3 className="text-lg font-semibold mb-6">Contact Info</h3>
+              <div className="space-y-4">
+                <div className="flex items-start">
+                  <MapPin className="h-5 w-5 text-blue-600 mr-3 mt-1" />
+                  <div className="text-gray-400">
+                    57th Sloane Street, Bryanston<br/>
+                    2191, South Africa
+                  </div>
+                </div>
+                <div className="flex items-center">
+                  <Phone className="h-5 w-5 text-blue-600 mr-3" />
+                  <div className="text-gray-400">
+                    +27 76 152 5291
+                  </div>
+                </div>
+                <div className="flex items-center">
+                  <Mail className="h-5 w-5 text-blue-600 mr-3" />
+                  <div className="text-gray-400">
+                    contact@futuris.com
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
-          <span>© 2025 FUTURIS. All rights reserved.</span>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="/legal" className="hover:text-white">Legal Notice</a>
-            <a href="/privacy" className="hover:text-white">Privacy Policy</a>
-            <a href="/cookies" className="hover:text-white">Cookie Policy</a>
+        {/* Newsletter Signup */}
+        <div className="border-t border-gray-800 py-12">
+          <div className="max-w-2xl mx-auto text-center">
+            <h3 className="text-2xl font-bold mb-4">Stay Updated</h3>
+            <p className="text-gray-400 mb-8">
+              Subscribe to our newsletter for the latest insights and industry updates.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition-all duration-300"
+              />
+              <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-300 whitespace-nowrap">
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="border-t border-gray-800 py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="text-gray-400 text-sm mb-4 md:mb-0">
+              © {currentYear} Futuris. All rights reserved.
+            </div>
+            <div className="flex space-x-6 text-sm">
+              <a href="#" className="text-gray-400 hover:text-blue-600 transition-colors duration-300">
+                Privacy Policy
+              </a>
+              <a href="#" className="text-gray-400 hover:text-blue-600 transition-colors duration-300">
+                Terms of Service
+              </a>
+              <a href="#" className="text-gray-400 hover:text-blue-600 transition-colors duration-300">
+                Cookie Policy
+              </a>
+            </div>
           </div>
         </div>
       </div>

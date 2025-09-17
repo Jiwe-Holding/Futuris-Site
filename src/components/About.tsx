@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Award, Users, Globe, Target, ArrowRight, Sparkles, TrendingUp } from 'lucide-react';
+import { Award, Users, Globe, Target, ArrowRight, TrendingUp } from 'lucide-react';
 
 const About: React.FC = () => {
   const [visibleSections, setVisibleSections] = useState<string[]>([]);
@@ -122,116 +122,100 @@ const About: React.FC = () => {
   ];
 
   return (
-    <section id="about" className="py-24 bg-slate-800 relative overflow-hidden">
-      {/* Enhanced Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl animate-pulse delay-500"></div>
-      </div>
-
-      {/* Floating Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-32 left-16 w-3 h-3 bg-blue-400/30 rounded-full animate-float"></div>
-        <div className="absolute top-64 right-24 w-2 h-2 bg-purple-400/30 rounded-full animate-bounce-slow"></div>
-        <div className="absolute bottom-40 left-1/4 w-4 h-4 bg-cyan-400/30 rounded-full animate-pulse"></div>
-      </div>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Enhanced Header */}
+    <section id="about" className="py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        {/* Corporate Header */}
         <div 
           ref={(el) => sectionRefs.current['header'] = el}
           data-section="header"
-          className={`text-center mb-20 transition-all duration-1000 ${
-            visibleSections.includes('header') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          className={`text-center mb-16 transition-all duration-700 ${
+            visibleSections.includes('header') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
           }`}
         >
-          <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-8 text-sm font-medium text-gray-300 hover:border-blue-400/50 transition-all duration-300 group">
-            <Sparkles className="h-4 w-4 text-blue-400 mr-2 group-hover:animate-pulse" />
-            <span>About FUTURIS</span>
+          <div className="inline-flex items-center px-4 py-2 bg-white rounded-full border border-gray-200 mb-6">
+            <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">About FUTURIS</span>
           </div>
-          <h2 className="text-4xl lg:text-6xl font-bold text-white mb-8">
+          <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6 leading-tight">
             Your Market Research Partner
-            <span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient bg-300%">
+            <span className="block text-blue-600">
               across 30 African markets
             </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Delivering best‑in‑class data quality and insights through quantitative and qualitative methodologies.
           </p>
         </div>
 
-        {/* Enhanced Mission & History */}
+        {/* Corporate Mission & History */}
         <div 
           ref={(el) => sectionRefs.current['mission'] = el}
           data-section="mission"
-          className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24 transition-all duration-1000 ${
-            visibleSections.includes('mission') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          className={`bg-white rounded-lg shadow-sm border border-gray-200 p-12 mb-16 transition-all duration-700 ${
+            visibleSections.includes('mission') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
           }`}
         >
-          <div className="space-y-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h3 className="text-3xl font-bold text-white mb-8 flex items-center">
-                <TrendingUp className="h-8 w-8 text-blue-400 mr-3" />
+              <h3 className="text-3xl font-bold text-black mb-6 flex items-center">
+                <TrendingUp className="h-8 w-8 text-blue-600 mr-3" />
                 Our Mission & Story
               </h3>
-              <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
-                <p className="transform transition-all duration-700 hover:text-white">
+              <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
+                <p>
                   Founded in 2009, FUTURIS was born from the conviction that data-driven insights can revolutionize industry practices. We combine technical expertise, strategic vision and human-centric approach to deliver sustainable, high‑impact research.
                 </p>
-                <p className="transform transition-all duration-700 hover:text-white">
+                <p>
                   Our multidisciplinary team of consultants, field agents and analysts works closely with clients at every step—from initial brief and proposal to fieldwork, quality control and final reporting—to ensure excellence and speed in every project.
                 </p>
               </div>
+              <button className="mt-8 bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg transition-colors duration-300 font-semibold inline-flex items-center">
+                Meet Our Team
+                <ArrowRight className="h-5 w-5 ml-2" />
+              </button>
             </div>
-            <button className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 flex items-center gap-2 font-semibold overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <span className="relative z-10">Meet Our Team</span>
-              <ArrowRight className="h-5 w-5 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
-            </button>
-          </div>
 
-          {/* Enhanced Illustration */}
-          <div className="relative group">
-            <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-2 border border-white/20 shadow-2xl group-hover:shadow-3xl transition-all duration-500">
-              <img
-                src="https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg"
-                alt="FUTURIS Team"
-                className="rounded-2xl w-full transform group-hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            {/* Enhanced Floating Stats */}
-            <div className={`absolute -top-6 -right-6 bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-lg transition-all duration-700 ${
-              visibleSections.includes('mission') ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
-            }`}>
-              <div className="text-center">
-                <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  {statsCounters[0]}+
-                </div>
-                <div className="text-sm text-gray-300">Projects Delivered</div>
+            {/* Corporate Illustration */}
+            <div className="relative">
+              <div className="bg-gray-50 rounded-lg p-2 border border-gray-200">
+                <img
+                  src="https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg"
+                  alt="FUTURIS Team"
+                  className="rounded-lg w-full"
+                />
               </div>
-            </div>
-            <div className={`absolute -bottom-6 -left-6 bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-lg transition-all duration-700 delay-300 ${
-              visibleSections.includes('mission') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-            }`}>
-              <div className="text-center">
-                <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  {statsCounters[1]}+
+              {/* Floating Stats */}
+              <div className={`absolute -top-4 -right-4 bg-white rounded-lg p-4 border border-gray-200 shadow-sm transition-all duration-700 ${
+                visibleSections.includes('mission') ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'
+              }`}>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-blue-600">
+                    {statsCounters[0]}+
+                  </div>
+                  <div className="text-sm text-gray-500">Projects Delivered</div>
                 </div>
-                <div className="text-sm text-gray-300">Years of Experience</div>
+              </div>
+              <div className={`absolute -bottom-4 -left-4 bg-white rounded-lg p-4 border border-gray-200 shadow-sm transition-all duration-700 delay-200 ${
+                visibleSections.includes('mission') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
+              }`}>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-blue-600">
+                    {statsCounters[1]}+
+                  </div>
+                  <div className="text-sm text-gray-500">Years of Experience</div>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Enhanced Core Values */}
+        {/* Corporate Core Values */}
         <div 
           ref={(el) => sectionRefs.current['values'] = el}
           data-section="values"
-          className="mb-24"
+          className="mb-16"
         >
-          <h3 className={`text-3xl font-bold text-white text-center mb-16 transition-all duration-1000 ${
-            visibleSections.includes('values') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          <h3 className={`text-3xl font-bold text-black text-center mb-12 transition-all duration-700 ${
+            visibleSections.includes('values') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
           }`}>
             Our Core Values
           </h3>
@@ -239,20 +223,20 @@ const About: React.FC = () => {
             {values.map((value, i) => (
               <div 
                 key={i} 
-                className={`group text-center transition-all duration-700 transform ${
-                  counters[i] ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-10 scale-95'
+                className={`bg-white rounded-lg border border-gray-200 p-8 text-center transition-all duration-500 hover:shadow-md hover:border-blue-200 ${
+                  counters[i] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
                 }`}
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
-                <div className={`w-20 h-20 bg-gradient-to-r ${value.color} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg group-hover:shadow-xl`}>
-                  <div className="text-white transform group-hover:scale-110 transition-transform duration-300">
+                <div className="w-16 h-16 bg-blue-50 rounded-lg flex items-center justify-center mx-auto mb-6 transition-all duration-300 hover:bg-blue-100">
+                  <div className="text-blue-600">
                     {value.icon}
                   </div>
                 </div>
-                <h4 className="text-xl font-semibold text-white mb-4 group-hover:text-blue-400 transition-colors duration-300">
+                <h4 className="text-xl font-semibold text-black mb-4">
                   {value.title}
                 </h4>
-                <p className="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
+                <p className="text-gray-600 leading-relaxed">
                   {value.description}
                 </p>
               </div>
@@ -260,30 +244,30 @@ const About: React.FC = () => {
           </div>
         </div>
 
-        {/* Enhanced Team Stats */}
+        {/* Corporate Team Stats */}
         <div 
           ref={(el) => sectionRefs.current['stats'] = el}
           data-section="stats"
-          className={`bg-white/10 backdrop-blur-sm rounded-3xl p-12 border border-white/20 shadow-2xl transition-all duration-1000 ${
-            visibleSections.includes('stats') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          className={`bg-white rounded-lg shadow-sm border border-gray-200 p-12 transition-all duration-700 ${
+            visibleSections.includes('stats') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
           }`}
         >
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-white mb-4">Team by the Numbers</h3>
-            <p className="text-gray-300 text-lg">
+            <h3 className="text-3xl font-bold text-black mb-4">Team by the Numbers</h3>
+            <p className="text-gray-600 text-lg">
               Our footprint and expertise in figures
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {stats.map((stat, i) => (
               <div key={i} className="group">
-                <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2 transition-all duration-300 group-hover:scale-110">
+                <div className="text-4xl font-bold text-blue-600 mb-2 transition-all duration-300">
                   {i < 2 ? 
                     `${statsCounters[i + 2]}${stat.number.includes('+') ? '+' : ''}` :
                     stat.number
                   }
                 </div>
-                <div className="text-gray-300 group-hover:text-white transition-colors duration-300">
+                <div className="text-gray-500 font-medium">
                   {stat.label}
                 </div>
               </div>

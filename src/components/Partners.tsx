@@ -1,75 +1,102 @@
 import React from 'react';
 
 const Partners: React.FC = () => {
-  const partners = [
+  // Ligne 1: 5 images (droite → gauche)
+  const line1Partners = [
     { name: "Canon", logo: "/assets/img/partners/Canon.png" },
     { name: "GFK", logo: "/assets/img/partners/GFK.png"},
     { name: "Airbnb", logo: "/assets/img/partners/Airbnb.png"},
     { name: "Dynata", logo: "/assets/img/partners/Dynata.png"},
     { name: "Evernote", logo: "/assets/img/partners/Evernote.png"},
+  ];
+
+  // Ligne 2: 7 images (droite → gauche) - fusion ligne 2 et 3
+  const line2Partners = [
     { name: "MTN", logo: "/assets/img/partners/MTN.png"},
     { name: "Skol", logo: "/assets/img/partners/Skol.png"},
     { name: "Square", logo: "/assets/img/partners/Square.png"},
     { name: "The World Bank", logo: "/assets/img/partners/The World Bank.png"},
-    { name: "Transparency International", logo: "/assets/img/partners/Transparency International.png",},
+    { name: "Transparency International", logo: "/assets/img/partners/Transparency International.png"},
     { name: "bill_gate", logo: "/assets/img/partners/bill_gate.png"},
     { name: "Imshealth", logo: "/assets/img/partners/Imshealth.png"},
   ];
 
-  // Duplicate the array so the animation loops seamlessly
-  const marqueeItems = [...partners, ...partners];
+  // Duplicate arrays for seamless animation
+  const marqueeItems1 = [...line1Partners, ...line1Partners];
+  const marqueeItems2 = [...line2Partners, ...line2Partners];
 
   return (
-    <section id="clients" className="py-20 bg-slate-900 relative">
+    <section id="clients" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
+        {/* Corporate Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Our <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Partners</span>
+          <div className="inline-flex items-center px-4 py-2 bg-white rounded-full border border-gray-200 mb-6">
+            <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">Our Partners</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
+            Trusted by <span className="text-blue-600">Industry Leaders</span>
           </h2>
-          <p className="text-xl text-white max-w-3xl mx-auto">
-            We collaborate with the world’s leading technology partners to bring you the best solutions and ensure your success.
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+            We collaborate with the world's leading organizations to deliver exceptional market research and data insights.
           </p>
         </div>
 
-        {/* Marquee */}
-        <div className="marquee">
-          <div className="marquee-content">
-            {marqueeItems.map((p, i) => (
-              <div key={i} className="marquee-item group text-center">
-                <div className="w-full h-20 bg-gray-100 rounded-lg overflow-hidden mb-4 group-hover:shadow-lg transition-shadow">
-                  <img
-                    src={p.logo}
-                    // alt={p.name}
-                    className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity"
-                  />
+        {/* Two Centered Lines of Partners */}
+        <div className="space-y-12 mb-16">
+          {/* Ligne 1: 5 images (droite → gauche) */}
+          <div className="marquee-right-to-left">
+            <div className="marquee-content-rtl">
+              {marqueeItems1.map((partner, i) => (
+                <div key={i} className="marquee-item group text-center flex-shrink-0">
+                  <div className="w-48 h-20 bg-white rounded-lg border border-gray-200 overflow-hidden group-hover:border-blue-200 group-hover:shadow-md transition-all duration-300 mx-4">
+                    <img
+                      src={partner.logo}
+                      alt={partner.name}
+                      className="w-full h-full object-contain p-4 opacity-70 group-hover:opacity-100 transition-opacity"
+                    />
+                  </div>
                 </div>
-                {/* <h3 className="font-semibold text-gray-900 mb-1 group-hover:text-blue-900 transition-colors">
-                  {p.name}
-                </h3> */}
-                {/* <p className="text-sm text-white">{p.description}</p> */}
-              </div>
-            ))}
+              ))}
+            </div>
+          </div>
+
+          {/* Ligne 2: 7 images (gauche → droite) */}
+          <div className="marquee-left-to-right">
+            <div className="marquee-content-ltr">
+              {marqueeItems2.map((partner, i) => (
+                <div key={i} className="marquee-item group text-center flex-shrink-0">
+                  <div className="w-48 h-20 bg-white rounded-lg border border-gray-200 overflow-hidden group-hover:border-blue-200 group-hover:shadow-md transition-all duration-300 mx-4">
+                    <img
+                      src={partner.logo}
+                      alt={partner.name}
+                      className="w-full h-full object-contain p-4 opacity-70 group-hover:opacity-100 transition-opacity"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Stats */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          <div>
-            <div className="text-3xl font-bold text-blue-900 mb-2">786821+</div>
-            <div className="text-white">Interviews conducted</div>
-          </div>
-          <div>
-            <div className="text-3xl font-bold text-blue-900 mb-2">34+</div>
-            <div className="text-white">Regular Clients</div>
-          </div>
-          <div>
-            <div className="text-3xl font-bold text-blue-900 mb-2">654+</div>
-            <div className="text-white">Projects covered</div>
-          </div>
-          <div>
-            <div className="text-3xl font-bold text-blue-900 mb-2">549+</div>
-            <div className="text-white">Cities & Villages covered</div>
+        {/* Corporate Stats */}
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-3xl font-bold text-blue-600 mb-2">786,821+</div>
+              <div className="text-gray-600 font-medium">Interviews conducted</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-blue-600 mb-2">34+</div>
+              <div className="text-gray-600 font-medium">Regular Clients</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-blue-600 mb-2">654+</div>
+              <div className="text-gray-600 font-medium">Projects covered</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-blue-600 mb-2">549+</div>
+              <div className="text-gray-600 font-medium">Cities & Villages covered</div>
+            </div>
           </div>
         </div>
       </div>

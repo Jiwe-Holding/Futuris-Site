@@ -10,6 +10,8 @@ const Contact: React.FC = () => {
     email: '',
     company: '',
     phone: '',
+    country: '',
+    companyType: '',
     subject: '',
     message: ''
   });
@@ -29,6 +31,8 @@ const Contact: React.FC = () => {
       email: '',
       company: '',
       phone: '',
+      country: '',
+      companyType: '',
       subject: '',
       message: ''
     });
@@ -39,78 +43,80 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900">
+    <div className="min-h-screen bg-white">
       <Header />
       
-      {/* Mini Hero */}
-      <section className="pt-32 pb-32 bg-slate-900 relative overflow-hidden">
+      {/* Corporate Hero with Image */}
+      <section className="relative pt-32 pb-20 bg-black overflow-hidden">
+        {/* Corporate Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://images.pexels.com/photos/3184357/pexels-photo-3184357.jpeg')",
-            opacity: 0.2
+            backgroundImage: "url('https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2274&q=80')"
           }}
         />
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-20 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl"></div>
-        </div>
+        {/* Corporate Overlay */}
+        <div className="absolute inset-0 bg-black/70"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
-            Get In <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Touch</span>
+          <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-8">
+            <span className="text-sm font-medium text-white uppercase tracking-wide">Get in Touch</span>
+          </div>
+          <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+            Ready to Transform
+            <span className="block text-blue-600">Your Business?</span>
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-white/90 max-w-4xl mx-auto leading-relaxed">
             Ready to start your next market research project? Let's discuss how we can help you achieve your objectives.
           </p>
         </div>
       </section>
 
-      {/* Contact Info & Form */}
-      <section className="py-24 bg-slate-800">
+      {/* Corporate Contact Info & Form */}
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Contact Information */}
+            {/* Corporate Contact Information */}
             <div>
-              <h2 className="text-3xl font-bold text-white mb-8">Let's Start a Conversation</h2>
-              <p className="text-gray-300 mb-8 leading-relaxed">
+              <h2 className="text-3xl font-bold text-black mb-8">Let's Start a Conversation</h2>
+              <p className="text-gray-600 mb-8 leading-relaxed">
                 We're here to help you navigate the complexities of African markets. Reach out to us for a consultation or to discuss your research needs.
               </p>
               
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <div className="w-14 h-14 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mr-4 shadow-lg flex-shrink-0">
-                    <Phone className="h-6 w-6 text-white" />
+                  <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                    <Phone className="h-6 w-6 text-blue-600" />
                   </div>
                   <div>
-                    <div className="font-semibold text-white text-lg mb-1">Phone</div>
-                    <div className="text-gray-300">+27 76 152 5291</div>
-                    <div className="text-gray-300">+243 814 444 602</div>
+                    <div className="font-semibold text-black text-lg mb-1">Phone</div>
+                    <div className="text-gray-600">+27 76 152 5291</div>
+                    <div className="text-gray-600">+243 814 444 602</div>
                   </div>
                 </div>
 
                 <div className="flex items-start">
-                  <div className="w-14 h-14 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mr-4 shadow-lg flex-shrink-0">
-                    <Mail className="h-6 w-6 text-white" />
+                  <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                    <Mail className="h-6 w-6 text-blue-600" />
                   </div>
                   <div>
-                    <div className="font-semibold text-white text-lg mb-1">Email</div>
-                    <div className="text-gray-300">contact@futuris.com</div>
-                    <div className="text-gray-300">info@futuris.com</div>
+                    <div className="font-semibold text-black text-lg mb-1">Email</div>
+                    <div className="text-gray-600">contact@futuris.com</div>
+                    <div className="text-gray-600">info@futuris.com</div>
                   </div>
                 </div>
 
                 <div className="flex items-start">
-                  <div className="w-14 h-14 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-2xl flex items-center justify-center mr-4 shadow-lg flex-shrink-0">
-                    <MapPin className="h-6 w-6 text-white" />
+                  <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                    <MapPin className="h-6 w-6 text-blue-600" />
                   </div>
                   <div>
-                    <div className="font-semibold text-white text-lg mb-1">Address</div>
-                    <div className="text-gray-300">
+                    <div className="font-semibold text-black text-lg mb-1">Address</div>
+                    <div className="text-gray-600">
                       57th Sloane Street, Bryanston<br/>
                       2191, South Africa
                     </div>
-                    <div className="text-gray-300 mt-2">
+                    <div className="text-gray-600 mt-2">
                       Kinshasa Office<br/>
                       Democratic Republic of Congo
                     </div>
@@ -118,26 +124,26 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div className="flex items-start">
-                  <div className="w-14 h-14 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mr-4 shadow-lg flex-shrink-0">
-                    <Clock className="h-6 w-6 text-white" />
+                  <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                    <Clock className="h-6 w-6 text-blue-600" />
                   </div>
                   <div>
-                    <div className="font-semibold text-white text-lg mb-1">Business Hours</div>
-                    <div className="text-gray-300">Monday - Friday: 8:00 AM - 6:00 PM</div>
-                    <div className="text-gray-300">Saturday: 9:00 AM - 2:00 PM</div>
-                    <div className="text-gray-300">Sunday: Closed</div>
+                    <div className="font-semibold text-black text-lg mb-1">Business Hours</div>
+                    <div className="text-gray-600">Monday - Friday: 8:00 AM - 6:00 PM</div>
+                    <div className="text-gray-600">Saturday: 9:00 AM - 2:00 PM</div>
+                    <div className="text-gray-600">Sunday: Closed</div>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Contact Form */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-              <h3 className="text-2xl font-bold text-white mb-6">Send us a Message</h3>
+            {/* Corporate Contact Form */}
+            <div className="bg-white rounded-lg p-8 border border-gray-200 shadow-sm">
+              <h3 className="text-2xl font-bold text-black mb-6">Send us a Message</h3>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="name" className="block text-white font-medium mb-2">Name *</label>
+                    <label htmlFor="name" className="block text-gray-700 font-medium mb-2">Name *</label>
                     <input
                       type="text"
                       id="name"
@@ -145,12 +151,12 @@ const Contact: React.FC = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-400"
+                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
                       placeholder="Your full name"
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-white font-medium mb-2">Email *</label>
+                    <label htmlFor="email" className="block text-gray-700 font-medium mb-2">Email *</label>
                     <input
                       type="email"
                       id="email"
@@ -158,7 +164,7 @@ const Contact: React.FC = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-400"
+                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
                       placeholder="your@email.com"
                     />
                   </div>
@@ -166,40 +172,107 @@ const Contact: React.FC = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="company" className="block text-white font-medium mb-2">Company</label>
+                    <label htmlFor="company" className="block text-gray-700 font-medium mb-2">Company</label>
                     <input
                       type="text"
                       id="company"
                       name="company"
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-400"
+                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
                       placeholder="Your company name"
                     />
                   </div>
                   <div>
-                    <label htmlFor="phone" className="block text-white font-medium mb-2">Phone</label>
+                    <label htmlFor="phone" className="block text-gray-700 font-medium mb-2">Phone</label>
                     <input
                       type="tel"
                       id="phone"
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-400"
+                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
                       placeholder="+1 (555) 123-4567"
                     />
                   </div>
                 </div>
 
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="country" className="block text-gray-700 font-medium mb-2">Country *</label>
+                    <select
+                      id="country"
+                      name="country"
+                      value={formData.country}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
+                    >
+                      <option value="">Select your country</option>
+                      <option value="ZA">South Africa</option>
+                      <option value="CD">Democratic Republic of Congo</option>
+                      <option value="CG">Republic of Congo</option>
+                      <option value="CF">Central African Republic</option>
+                      <option value="TD">Chad</option>
+                      <option value="CM">Cameroon</option>
+                      <option value="GA">Gabon</option>
+                      <option value="AO">Angola</option>
+                      <option value="ZM">Zambia</option>
+                      <option value="ZW">Zimbabwe</option>
+                      <option value="BW">Botswana</option>
+                      <option value="NA">Namibia</option>
+                      <option value="MW">Malawi</option>
+                      <option value="MZ">Mozambique</option>
+                      <option value="TZ">Tanzania</option>
+                      <option value="KE">Kenya</option>
+                      <option value="UG">Uganda</option>
+                      <option value="RW">Rwanda</option>
+                      <option value="BI">Burundi</option>
+                      <option value="ET">Ethiopia</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="companyType" className="block text-gray-700 font-medium mb-2">Company Type *</label>
+                    <select
+                      id="companyType"
+                      name="companyType"
+                      value={formData.companyType}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
+                    >
+                      <option value="">Select company type</option>
+                      <option value="multinational">Multinational Corporation</option>
+                      <option value="large-enterprise">Large Enterprise</option>
+                      <option value="medium-enterprise">Medium Enterprise</option>
+                      <option value="small-business">Small Business</option>
+                      <option value="startup">Startup</option>
+                      <option value="ngo">NGO / Non-Profit</option>
+                      <option value="government">Government Agency</option>
+                      <option value="research-institution">Research Institution</option>
+                      <option value="consulting">Consulting Firm</option>
+                      <option value="financial-services">Financial Services</option>
+                      <option value="healthcare">Healthcare</option>
+                      <option value="education">Education</option>
+                      <option value="technology">Technology</option>
+                      <option value="manufacturing">Manufacturing</option>
+                      <option value="retail">Retail</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                </div>
+
                 <div>
-                  <label htmlFor="subject" className="block text-white font-medium mb-2">Subject *</label>
+                  <label htmlFor="subject" className="block text-gray-700 font-medium mb-2">Subject *</label>
                   <select
                     id="subject"
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:border-blue-400"
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
                   >
                     <option value="">Select a subject</option>
                     <option value="general">General Inquiry</option>
@@ -212,7 +285,7 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-white font-medium mb-2">Message *</label>
+                  <label htmlFor="message" className="block text-gray-700 font-medium mb-2">Message *</label>
                   <textarea
                     id="message"
                     name="message"
@@ -220,14 +293,14 @@ const Contact: React.FC = () => {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 resize-none"
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-none transition-all duration-300"
                     placeholder="Tell us about your project or inquiry..."
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 font-semibold"
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg transition-colors font-semibold flex items-center justify-center gap-2"
                 >
                   <Send className="h-5 w-5" />
                   Send Message
@@ -238,45 +311,56 @@ const Contact: React.FC = () => {
         </div>
       </section>
 
-             {/* Map Section */}
-       <section className="py-16 bg-slate-900">
-         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-           <div className="text-center mb-12">
-             <h2 className="text-3xl font-bold text-white mb-4">Find Us in Kinshasa</h2>
-             <p className="text-gray-300 max-w-2xl mx-auto">
-               Our Kinshasa office serves as our central hub for Central and West African operations.
-             </p>
-           </div>
-           
-           <div className="bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10">
-             <iframe
-               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.5!2d15.2663!3d-4.4419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwMjYnMzAuOSJTIDE1wrAxNSc1OC43IkU!5e0!3m2!1sen!2scd!4v1234567890123!5m2!1sen!2scd"
-               width="100%"
-               height="400"
-               style={{ border: 0 }}
-               allowFullScreen
-               loading="lazy"
-               referrerPolicy="no-referrer-when-downgrade"
-               title="FUTURIS Office Location in Kinshasa"
-               className="rounded-2xl"
-             />
-           </div>
-         </div>
-       </section>
+      {/* Corporate Map Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-black mb-4">Find Us in Bryanston</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Our Bryanston office serves as our headquarters for African market research operations.
+            </p>
+          </div>
+          
+          <div className="bg-gray-50 rounded-lg overflow-hidden border border-gray-200">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3583.8!2d28.0457!3d-26.0789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950c68f0406a51%3A0x5d9b8b8b8b8b8b8b!2sSloane%20St%2C%20Bryanston%2C%20Sandton%2C%202191%2C%20South%20Africa!5e0!3m2!1sen!2sza!4v1699999999999!5m2!1sen!2sza"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="FUTURIS Office Location - 57th Sloane Street, Bryanston, South Africa"
+              className="rounded-lg"
+            />
+          </div>
+          
+          {/* Address Details */}
+          <div className="mt-8 text-center">
+            <div className="bg-gray-50 rounded-lg p-6 border border-gray-200 inline-block">
+              <h3 className="font-semibold text-black mb-2">Headquarters</h3>
+              <p className="text-gray-600">
+                57th Sloane Street, Bryanston<br/>
+                2191, South Africa
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600">
+      {/* Corporate CTA Section */}
+      <section className="py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl lg:text-4xl font-bold text-black mb-6">
             Ready to Start Your Research Project?
           </h2>
-          <p className="text-xl text-white/90 mb-8 leading-relaxed">
+          <p className="text-xl text-gray-600 mb-8 leading-relaxed">
             Get in touch with our team of experts and let's discuss how we can help you achieve your market research goals.
           </p>
           <div className="flex justify-center">
             <button 
               onClick={handleCall}
-              className="bg-white text-blue-600 px-8 py-4 rounded-full hover:bg-gray-100 transition-all font-semibold flex items-center gap-2 justify-center"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg transition-colors font-semibold inline-flex items-center gap-2"
             >
               <Phone className="h-5 w-5" />
               Call Us Now

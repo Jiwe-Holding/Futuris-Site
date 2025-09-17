@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ChatWidget from '../components/ChatWidget';
+import WorldMap from '../components/WorldMap';
 import { ArrowRight, Users, Globe, Target, Award, TrendingUp } from 'lucide-react';
 
 const About: React.FC = () => {
@@ -39,42 +40,95 @@ const About: React.FC = () => {
     { number: "11", label: "Qualitative Moderators" }
   ];
 
+  const offices = [
+    {
+      name: "South Africa",
+      code: "ZA",
+      city: "Bryanston, Johannesburg",
+      address: "57th Sloane Street, Bryanston, 2191",
+      coordinates: { lat: -26.0789, lng: 28.0457 },
+      isHeadquarters: true,
+      established: "2009"
+    },
+    {
+      name: "Central African Republic",
+      code: "CF",
+      city: "Bangui",
+      address: "Central Business District",
+      coordinates: { lat: 4.3947, lng: 18.5582 },
+      isHeadquarters: false,
+      established: "2015"
+    },
+    {
+      name: "Democratic Republic of Congo",
+      code: "CD",
+      city: "Kinshasa",
+      address: "Gombe District",
+      coordinates: { lat: -4.4419, lng: 15.3163 },
+      isHeadquarters: false,
+      established: "2012"
+    },
+    {
+      name: "Republic of Congo",
+      code: "CG",
+      city: "Brazzaville",
+      address: "Centre-ville",
+      coordinates: { lat: -4.2634, lng: 15.1429 },
+      isHeadquarters: false,
+      established: "2018"
+    },
+    {
+      name: "Chad",
+      code: "TD",
+      city: "N'Djamena",
+      address: "Quartier des Affaires",
+      coordinates: { lat: 12.1348, lng: 15.0557 },
+      isHeadquarters: false,
+      established: "2020"
+    }
+  ];
+
 
   return (
-    <div className="min-h-screen bg-slate-900">
+    <div className="min-h-screen bg-white">
       <Header />
       
-      {/* Mini Hero */}
-      <section className="pt-32 pb-32 bg-slate-900 relative overflow-hidden">
+      {/* Corporate Hero with Image */}
+      <section className="relative pt-32 pb-20 bg-black overflow-hidden">
+        {/* Corporate Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg')",
-            opacity: 0.2
+            backgroundImage: "url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2487&q=80')"
           }}
         />
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-20 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl"></div>
-        </div>
+        {/* Corporate Overlay */}
+        <div className="absolute inset-0 bg-black/70"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
-            About <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">FUTURIS</span>
+          <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-8">
+            <span className="text-sm font-medium text-white uppercase tracking-wide">About FUTURIS</span>
+          </div>
+          <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+            Your Market Research Partner
+            <span className="block text-blue-600">Across 30 African Markets</span>
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-white/90 max-w-4xl mx-auto leading-relaxed">
             Your trusted market research partner across 30 African markets, delivering excellence since 2009.
           </p>
         </div>
       </section>
 
-      {/* Mission & Story */}
-      <section className="py-24 bg-slate-800">
+      {/* Corporate Mission & Story */}
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-white mb-8">Our Mission & Story</h2>
-              <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
+              <h2 className="text-3xl font-bold text-black mb-8 flex items-center">
+                <TrendingUp className="h-8 w-8 text-blue-600 mr-3" />
+                Our Mission & Story
+              </h2>
+              <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
                 <p>
                   Founded in 2009, FUTURIS was born from the conviction that data-driven insights can revolutionize industry practices. We combine technical expertise, strategic vision and human-centric approach to deliver sustainable, high‑impact research.
                 </p>
@@ -85,30 +139,30 @@ const About: React.FC = () => {
                   Today, we're proud to be the go-to research partner for leading organizations across Africa, helping them make informed decisions that drive growth and innovation.
                 </p>
               </div>
-              <button className="mt-8 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center gap-2 font-semibold">
+              <button className="mt-8 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg transition-colors font-semibold inline-flex items-center gap-2">
                 Meet Our Team
                 <ArrowRight className="h-5 w-5" />
               </button>
             </div>
 
             <div className="relative">
-              <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-2 border border-white/20 shadow-2xl">
+              <div className="bg-white rounded-lg p-2 border border-gray-200 shadow-sm">
                 <img
                   src="https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg"
                   alt="FUTURIS Team"
-                  className="rounded-2xl w-full"
+                  className="rounded-lg w-full"
                 />
               </div>
-              <div className="absolute -top-6 -right-6 bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-lg">
+              <div className="absolute -top-4 -right-4 bg-white rounded-lg p-4 border border-gray-200 shadow-sm">
                 <div className="text-center">
-                  <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">200+</div>
-                  <div className="text-sm text-gray-300">Projects Delivered</div>
+                  <div className="text-2xl font-bold text-blue-600">200+</div>
+                  <div className="text-sm text-gray-500">Projects Delivered</div>
                 </div>
               </div>
-              <div className="absolute -bottom-6 -left-6 bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-lg">
+              <div className="absolute -bottom-4 -left-4 bg-white rounded-lg p-4 border border-gray-200 shadow-sm">
                 <div className="text-center">
-                  <div className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">15+</div>
-                  <div className="text-sm text-gray-300">Years Experience</div>
+                  <div className="text-2xl font-bold text-blue-600">15+</div>
+                  <div className="text-sm text-gray-500">Years Experience</div>
                 </div>
               </div>
             </div>
@@ -116,54 +170,77 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="py-24 bg-slate-900">
+      {/* Corporate Stats */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">Our Impact</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <h2 className="text-3xl lg:text-4xl font-bold text-black mb-6">Our Impact</h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
               Numbers that reflect our commitment to excellence and growth across Africa.
             </p>
           </div>
           
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <TrendingUp className="h-8 w-8 text-white" />
+          <div className="bg-gray-50 rounded-lg p-12">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+              {stats.map((stat, index) => (
+                <div key={index}>
+                  <div className="w-16 h-16 bg-blue-50 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <TrendingUp className="h-8 w-8 text-blue-600" />
+                  </div>
+                  <div className="text-3xl lg:text-4xl font-bold text-blue-600 mb-2">{stat.number}</div>
+                  <div className="text-gray-600 font-medium">{stat.label}</div>
                 </div>
-                <div className="text-3xl lg:text-4xl font-bold text-white mb-2">{stat.number}</div>
-                <div className="text-gray-300">{stat.label}</div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Values */}
-      <section className="py-24 bg-slate-800">
+      {/* Corporate Values */}
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">Our Values</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <h2 className="text-3xl lg:text-4xl font-bold text-black mb-6">Our Values</h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
               The principles that guide everything we do and shape our culture.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <div key={index} className="text-center">
-                <div className={`w-16 h-16 bg-gradient-to-r ${value.color} rounded-2xl flex items-center justify-center mx-auto mb-6`}>
-                  {value.icon}
+              <div key={index} className="bg-white rounded-lg border border-gray-200 p-8 text-center hover:shadow-md hover:border-blue-200 transition-all duration-300">
+                <div className="w-16 h-16 bg-blue-50 rounded-lg flex items-center justify-center mx-auto mb-6">
+                  <div className="text-blue-600">
+                    {value.icon}
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4">{value.title}</h3>
-                <p className="text-gray-300 leading-relaxed">{value.description}</p>
+                <h3 className="text-xl font-bold text-black mb-4">{value.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{value.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* Corporate Offices Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 bg-white rounded-full border border-gray-200 mb-6">
+              <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">Global Presence</span>
+            </div>
+            <h2 className="text-3xl lg:text-4xl font-bold text-black mb-6">
+              Our Offices Across
+              <span className="block text-blue-600">Central & Southern Africa</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Strategically positioned across 5 countries to serve 30+ African markets with local expertise and global standards.
+            </p>
+          </div>
+
+          <WorldMap offices={offices} />
+        </div>
+      </section>
 
       <Footer />
       <ChatWidget />

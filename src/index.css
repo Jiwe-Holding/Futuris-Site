@@ -207,6 +207,22 @@ html {
 .bg-300% {
   background-size: 300% 300%;
 }
+
+/* Responsive utilities */
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+@media (max-width: 640px) {
+  .truncate-mobile {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
 /* Glass morphism effect */
 .glass {
   background: rgba(255, 255, 255, 0.1);
@@ -307,6 +323,16 @@ button:focus {
   100% { transform: translateX(-50%); }
 }
 
+@keyframes marquee-rtl {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-ltr {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
 .marquee {
   overflow: hidden;
   position: relative;
@@ -322,4 +348,27 @@ button:focus {
   flex: 0 0 auto;
   width: 200px;                  /* same as your logo width */
   margin-right: 2rem;
+}
+
+/* New marquee styles for three lines */
+.marquee-right-to-left {
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-content-rtl {
+  display: flex;
+  width: max-content;
+  animation: marquee-rtl 60s linear infinite;
+}
+
+.marquee-left-to-right {
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-content-ltr {
+  display: flex;
+  width: max-content;
+  animation: marquee-ltr 60s linear infinite;
 }
