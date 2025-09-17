@@ -1,14 +1,18 @@
-import { ArrowRight, Play, Shield, TrendingUp, Users, Zap } from "lucide-react";
+import { ArrowRight, Play, Shield, TrendingUp, Users, Zap, Sparkles, ChevronDown } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const Hero: React.FC = () => {
-  const integrations = [
-    { name: "CATI & CAPI", logo: "/assets/img/services/CC.png" },
-    { name: "Panel Surveys", logo: "/assets/img/services/PS.png" },
-    { name: "Focus Groups", logo: "/assets/img/services/FG.png" },
-    { name: "IDI Interviews", logo: "/assets/img/services/IDI.png" },
-    { name: "Mystery Shopping", logo: "/assets/img/services/MS.png" },
-    { name: "Consulting & Training", logo: "/assets/img/services/CT.png" },
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const [counters, setCounters] = useState([0, 0, 0, 0]);
+
+  const rotatingTexts = [
+    "Delivering best‑in‑class data quality and actionable insights",
+    "Transforming data into strategic business intelligence",
+    "Empowering decisions through advanced market research",
+    "Your trusted partner for African market insights"
   ];
+
 
   const stats = [
     { icon: <TrendingUp className="h-5 w-5" />, value: "30+", label: "African Markets" },
@@ -16,6 +20,56 @@ const Hero: React.FC = () => {
     { icon: <Zap className="h-5 w-5" />, value: "76", label: "Supervisors" },
     { icon: <Shield className="h-5 w-5" />, value: "11", label: "Qualitative Moderators" },
   ];
+
+  // Text rotation effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTextIndex((prev) => (prev + 1) % rotatingTexts.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Entrance animation
+  useEffect(() => {
+    setIsVisible(true);
+    // Animated counters
+    const animateCounters = () => {
+      stats.forEach((stat, index) => {
+        let start = 0;
+        const end = stat.value;
+        const duration = 2000;
+        const increment = end / (duration / 16);
+        
+        const timer = setInterval(() => {
+          start += increment;
+          if (start >= end) {
+            setCounters(prev => {
+              const newCounters = [...prev];
+              newCounters[index] = end;
+              return newCounters;
+            });
+            clearInterval(timer);
+          } else {
+            setCounters(prev => {
+              const newCounters = [...prev];
+              newCounters[index] = Math.floor(start);
+              return newCounters;
+            });
+          }
+        }, 16);
+      });
+    };
+
+    const timer = setTimeout(animateCounters, 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const scrollToNext = () => {
+    const nextSection = document.getElementById('services');
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <section id="home" className="relative pt-5 h-screen w-full overflow-hidden">
