@@ -127,21 +127,24 @@ const Services: React.FC = () => {
                 </div>
               </div>
 
-              {/* Minimalist Icon */}
-              <div className={`w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-6 transition-all duration-300 ${
-                hoveredCard === index ? 'bg-blue-100 scale-105' : ''
-              }`}>
-                <div className="text-blue-600">
-                  {service.icon}
+              {/* Icon and Title on same line */}
+              <div className="flex items-center mb-4">
+                {/* Minimalist Icon */}
+                <div className={`w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mr-4 transition-all duration-300 ${
+                  hoveredCard === index ? 'bg-blue-100 scale-105' : ''
+                }`}>
+                  <div className="text-blue-600">
+                    {service.icon}
+                  </div>
                 </div>
-              </div>
 
-              {/* Content */}
-              <h3 className={`text-xl font-bold text-black mb-4 transition-colors duration-300 ${
-                hoveredCard === index ? 'text-blue-600' : ''
-              }`}>
-                {service.title}
-              </h3>
+                {/* Content */}
+                <h3 className={`text-xl font-bold text-black transition-colors duration-300 ${
+                  hoveredCard === index ? 'text-blue-600' : ''
+                }`}>
+                  {service.title}
+                </h3>
+              </div>
               <p className="text-gray-600 mb-6 leading-relaxed">
                 {service.description}
               </p>
