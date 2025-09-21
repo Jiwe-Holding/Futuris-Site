@@ -63,7 +63,7 @@ const Services: React.FC = () => {
     {
       number: "04",
       icon: <Eye className="h-6 w-6" />,
-      title: "Mystery Shopping",
+      title: "Insights & Strategic",
       description: "Secret‑shopper studies to benchmark service levels and customer experience quality.",
       features: ["Scenario Design", "Field Execution", "Detailed Reporting"],
       color: "from-pink-500 to-pink-600"
