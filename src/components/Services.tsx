@@ -55,7 +55,7 @@ const Services: React.FC = () => {
     {
       number: "03",
       icon: <Lightbulb className="h-6 w-6" />,
-      title: "Intelligence & Training",
+      title: "Data Analytics/ Modeling & Intelligence",
       description: "Bespoke consultancy, analytics and training programs to elevate your team’s capabilities.",
       features: ["Custom Workshops", "Insight Dashboards", "Strategic Roadmaps"],
       color: "from-emerald-500 to-emerald-600"
