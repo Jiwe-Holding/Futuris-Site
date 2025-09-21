@@ -41,7 +41,7 @@ const Hero: React.FC = () => {
                   <div>Research <span className="mx-1 sm:mx-2 text-blue-600">·</span> Data collection <span className="mx-1 sm:mx-2 text-blue-600">·</span> Quality Control</div>
                   <div>Analytics <span className="mx-1 sm:mx-2 text-blue-600">·</span> Intelligence <span className="mx-1 sm:mx-2 text-blue-600">·</span> Insights</div>
                 </div>
-                <span className="sm:hidden">Market Research <span className="mx-1 text-blue-600">·</span> Data Analytics</span>
+                <span className="sm:hidden">Research <span className="mx-1 text-blue-600">·</span> Data collection</span>
               </span>
             </div>
           </div>
