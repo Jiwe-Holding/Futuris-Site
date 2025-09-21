@@ -46,7 +46,10 @@ const Services: React.FC = () => {
       icon: <CheckCircle className="h-6 w-6" />,
       title: "Quality Control",
       description: "Rigorous multi‑level checks to ensure data accuracy and reliability at every step.",
-      features: ["Data Validation", "Supervisor Audits", "Real‑time Monitoring"],
+      features: [ "Real‑time Monitoring",
+        "Forensic Checks",
+        "Supervisor Audits/ Physical Checks", 
+        "DataBase Validation",],
       color: "from-purple-500 to-purple-600"
     },
     {
