@@ -56,7 +56,7 @@ const Services: React.FC = () => {
       number: "03",
       icon: <Lightbulb className="h-6 w-6" />,
       title: "Data Analytics",
-      description: "Bespoke consultancy, analytics and training programs to elevate your team’s capabilities.",
+      description: "Bespoke consultancy, analytics and training programs to elevate your team's capabilities.",
       features: ["Custom Workshops", "Insight Dashboards", "Strategic Roadmaps"],
       color: "from-emerald-500 to-emerald-600"
     },
@@ -68,16 +68,11 @@ const Services: React.FC = () => {
       features: ["Scenario Design", "Field Execution", "Detailed Reporting"],
       color: "from-pink-500 to-pink-600"
     },
+  ];
+
+  const methodologies = [
     {
-      number: "05",
-      icon: <BarChart2 className="h-6 w-6" />,
-      title: "Usage & Attitude Research",
-      description: "Understanding customer usage patterns and attitudes to drive product and service innovation.",
-      features: ["Panel Surveys", "Usage Tracking", "Attitudinal Analysis"],
-      color: "from-yellow-500 to-yellow-600"
-    },
-    {
-      number: "06",
+      number: "01",
       icon: <Users className="h-6 w-6" />,
       title: "Brand & Pricing Studies",
       description: "Evaluating brand health and price sensitivity to inform positioning and growth strategies.",
@@ -85,100 +80,100 @@ const Services: React.FC = () => {
       color: "from-cyan-500 to-cyan-600"
     },
     {
-      number: "07",
+      number: "02",
       icon: <ShoppingBag className="h-6 w-6" />,
       title: "Mystery Shopping",
       description: "To provide from Customer Experiences - Mystery shopping help organizations to measure their service level",
       features: [],
-      color: "from-red-500 to-red-600"
+      color: "from-gray-500 to-gray-600"
     },
     {
-      number: "08",
+      number: "03",
       icon: <Heart className="h-6 w-6" />,
       title: "Customer Satisfaction",
       description: "To find out what customers think about your organizations and also help organizations measure their customer's expectation.",
       features: [],
-      color: "from-red-500 to-red-600"
+      color: "from-gray-500 to-gray-600"
     },
     {
-      number: "09",
+      number: "04",
       icon: <UserCheck className="h-6 w-6" />,
       title: "Employee Satisfaction",
       description: "To find out what employee's expectation. Describe whether employees are happy, contended and fulfilling their desires and needs at work.",
       features: [],
-      color: "from-red-500 to-red-600"
+      color: "from-gray-500 to-gray-600"
     },
     {
-      number: "10",
+      number: "05",
       icon: <BarChart2 className="h-6 w-6" />,
       title: "Usage & Attitude Study",
       description: "To understand a market and identify customer usage and customer attitude toward products and services.",
       features: [],
-      color: "from-red-500 to-red-600"
+      color: "from-gray-500 to-gray-600"
     },
     {
-      number: "11",
+      number: "06",
       icon: <MessageSquare className="h-6 w-6" />,
       title: "Communication Research",
       description: "To identify effectiveness communication organization, also to know patterns of customer toward communication",
       features: [],
-      color: "from-red-500 to-red-600"
+      color: "from-gray-500 to-gray-600"
     },
     {
-      number: "12",
+      number: "07",
       icon: <Star className="h-6 w-6" />,
       title: "Brand Research",
       description: "To identify company brand health, and to know threats and opportunities from customer insight. Brand research assists with the creation, development and strengthening of brands.",
       features: [],
-      color: "from-red-500 to-red-600"
+      color: "from-gray-500 to-gray-600"
     },
     {
-      number: "13",
+      number: "08",
       icon: <Package className="h-6 w-6" />,
       title: "Product Research",
       description: "To understand customer needs toward product. Product research useful for New product development, product improvement, test new features, test marketing, revitalizing a declining product etc.",
       features: [],
-      color: "from-red-500 to-red-600"
+      color: "from-gray-500 to-gray-600"
     },
     {
-      number: "14",
+      number: "09",
       icon: <DollarSign className="h-6 w-6" />,
       title: "Pricing Research",
       description: "To measure acceptability toward product price and to determine the maximum price for new products.",
       features: [],
-      color: "from-red-500 to-red-600"
+      color: "from-gray-500 to-gray-600"
     },
     {
-      number: "15",
+      number: "10",
       icon: <Search className="h-6 w-6" />,
       title: "Competitor Intelligence",
       description: "To gathering relevant information from the market, to analyzed, and for decision making in determining market opportunity, market penetration strategy & market development.",
       features: [],
-      color: "from-red-500 to-red-600"
+      color: "from-gray-500 to-gray-600"
     }
   ];
 
   return (
     <section ref={sectionRef} id="services" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Corporate Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-gray-100 rounded-full mb-6">
-            <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">Our Expertise</span>
+        {/* Services Section */}
+        <div className="mb-20">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full mb-6">
+              <span className="text-sm font-medium text-blue-600 uppercase tracking-wide">Our Services</span>
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6 leading-tight">
+              Core Services
+              <span className="block text-blue-600">
+                & Data Solutions
+              </span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Comprehensive data collection, quality control, and analytics services
+            </p>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6 leading-tight">
-            Robust Data Solutions
-            <span className="block text-blue-600">
-              & Innovative Research Insights
-            </span>
-          </h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Delivering end‑to‑end insights—from field data collection to strategic intelligence
-          </p>
-        </div>
 
-        {/* Corporate Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <div
               key={index}
@@ -250,6 +245,99 @@ const Services: React.FC = () => {
               </button>
             </div>
           ))}
+        </div>
+        </div>
+
+        {/* Methodologies Section */}
+        <div className="mb-20">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 bg-gray-100 rounded-full mb-6">
+              <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">Research Methods</span>
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6 leading-tight">
+              Research Methods
+              <span className="block text-gray-600">
+                & Specialized Studies
+              </span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Specialized research methodologies to understand market dynamics and consumer behavior
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {methodologies.map((methodology, index) => (
+              <div
+                key={index}
+                ref={(el) => cardRefs.current[index + 4] = el}
+                onMouseEnter={() => setHoveredCard(index + 4)}
+                onMouseLeave={() => setHoveredCard(null)}
+                className={`group bg-white rounded-lg border border-gray-200 p-8 transition-all duration-300 cursor-pointer ${
+                  visibleItems.includes(index + 4) 
+                    ? 'opacity-100 translate-y-0' 
+                    : 'opacity-0 translate-y-5'
+                } ${
+                  hoveredCard === index + 4 
+                    ? 'shadow-lg border-gray-600 -translate-y-1' 
+                    : 'hover:shadow-md hover:border-gray-300'
+                }`}
+              >
+                {/* Number Badge */}
+                <div className="flex items-center justify-between mb-6">
+                  <div className={`w-10 h-10 bg-gray-600 text-white rounded-lg flex items-center justify-center font-semibold text-sm transition-all duration-300 ${
+                    hoveredCard === index + 4 ? 'scale-105' : ''
+                  }`}>
+                    {methodology.number}
+                  </div>
+                </div>
+
+                {/* Icon and Title on same line */}
+                <div className="flex items-center mb-4">
+                  {/* Minimalist Icon */}
+                  <div className={`w-12 h-12 bg-gray-50 rounded-lg flex items-center justify-center mr-4 transition-all duration-300 ${
+                    hoveredCard === index + 4 ? 'bg-gray-100 scale-105' : ''
+                  }`}>
+                    <div className="text-gray-600">
+                      {methodology.icon}
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <h3 className={`text-xl font-bold text-black transition-colors duration-300 ${
+                    hoveredCard === index + 4 ? 'text-gray-600' : ''
+                  }`}>
+                    {methodology.title}
+                  </h3>
+                </div>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  {methodology.description}
+                </p>
+
+                {/* Features */}
+                <ul className="space-y-2 mb-6">
+                  {methodology.features.map((feature, i) => (
+                    <li key={i} className="flex items-center text-sm text-gray-500">
+                      <div className="w-1.5 h-1.5 bg-gray-600 rounded-full mr-3"></div>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Subtle CTA */}
+                <button 
+                  onClick={() => navigate(`/services#service-${index + 5}`)}
+                  className={`flex items-center text-sm font-medium text-gray-600 transition-all duration-300 hover:cursor-pointer ${
+                    hoveredCard === index + 4 
+                      ? 'opacity-100 translate-x-1' 
+                      : 'opacity-70 hover:opacity-100'
+                  }`}
+                >
+                  <span>Learn More</span>
+                  <ArrowRight className="h-4 w-4 ml-2 transition-transform duration-300" />
+                </button>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Corporate Bottom CTA */}

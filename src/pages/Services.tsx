@@ -1,10 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ChatWidget from '../components/ChatWidget';
 import { ArrowRight, CheckCircle, Users, Clipboard, Lightbulb, Eye, BarChart2, ShoppingBag, Heart, UserCheck, MessageSquare, Star, Package, DollarSign, Search } from 'lucide-react';
 
 const Services: React.FC = () => {
+  const navigate = useNavigate();
+  
   const services = [
     {
       icon: <Clipboard className="h-8 w-8" />,
@@ -30,13 +33,13 @@ const Services: React.FC = () => {
         "Real‑time Monitoring",
         "Forensic Checks",
         "Supervisor Audits/ Physical Checks", 
-        "DataBase Validation",
+        "DataBase Validation"
       ],
       color: "from-purple-500 to-purple-600"
     },
     {
       icon: <Lightbulb className="h-8 w-8" />,
-      title: "Intelligence & Training",
+      title: "Data Analytics",
       description: "Bespoke consultancy, analytics and training programs to elevate your team's capabilities.",
       features: [
         "Custom Workshops",
@@ -47,7 +50,7 @@ const Services: React.FC = () => {
     },
     {
       icon: <Eye className="h-8 w-8" />,
-      title: "Mystery Shopping",
+      title: "Insights & Strategic",
       description: "Secret‑shopper studies to benchmark service levels and customer experience quality.",
       features: [
         "Scenario Design",
@@ -55,18 +58,10 @@ const Services: React.FC = () => {
         "Detailed Reporting"
       ],
       color: "from-pink-500 to-pink-600"
-    },
-    {
-      icon: <BarChart2 className="h-8 w-8" />,
-      title: "Usage & Attitude Research",
-      description: "Understanding customer usage patterns and attitudes to drive product and service innovation.",
-      features: [
-        "Panel Surveys",
-        "Usage Tracking", 
-        "Attitudinal Analysis"
-      ],
-      color: "from-yellow-500 to-yellow-600"
-    },
+    }
+  ];
+
+  const methods = [
     {
       icon: <Users className="h-8 w-8" />,
       title: "Brand & Pricing Studies",
@@ -83,63 +78,63 @@ const Services: React.FC = () => {
       title: "Mystery Shopping",
       description: "To provide from Customer Experiences - Mystery shopping help organizations to measure their service level",
       features: [],
-      color: "from-red-500 to-red-600"
+      color: "from-gray-500 to-gray-600"
     },
     {
       icon: <Heart className="h-8 w-8" />,
       title: "Customer Satisfaction",
       description: "To find out what customers think about your organizations and also help organizations measure their customer's expectation.",
       features: [],
-      color: "from-red-500 to-red-600"
+      color: "from-gray-500 to-gray-600"
     },
     {
       icon: <UserCheck className="h-8 w-8" />,
       title: "Employee Satisfaction",
       description: "To find out what employee's expectation. Describe whether employees are happy, contended and fulfilling their desires and needs at work.",
       features: [],
-      color: "from-red-500 to-red-600"
+      color: "from-gray-500 to-gray-600"
     },
     {
       icon: <BarChart2 className="h-8 w-8" />,
       title: "Usage & Attitude Study",
       description: "To understand a market and identify customer usage and customer attitude toward products and services.",
       features: [],
-      color: "from-red-500 to-red-600"
+      color: "from-gray-500 to-gray-600"
     },
     {
       icon: <MessageSquare className="h-8 w-8" />,
       title: "Communication Research",
       description: "To identify effectiveness communication organization, also to know patterns of customer toward communication",
       features: [],
-      color: "from-red-500 to-red-600"
+      color: "from-gray-500 to-gray-600"
     },
     {
       icon: <Star className="h-8 w-8" />,
       title: "Brand Research",
       description: "To identify company brand health, and to know threats and opportunities from customer insight. Brand research assists with the creation, development and strengthening of brands.",
       features: [],
-      color: "from-red-500 to-red-600"
+      color: "from-gray-500 to-gray-600"
     },
     {
       icon: <Package className="h-8 w-8" />,
       title: "Product Research",
       description: "To understand customer needs toward product. Product research useful for New product development, product improvement, test new features, test marketing, revitalizing a declining product etc.",
       features: [],
-      color: "from-red-500 to-red-600"
+      color: "from-gray-500 to-gray-600"
     },
     {
       icon: <DollarSign className="h-8 w-8" />,
       title: "Pricing Research",
       description: "To measure acceptability toward product price and to determine the maximum price for new products.",
       features: [],
-      color: "from-red-500 to-red-600"
+      color: "from-gray-500 to-gray-600"
     },
     {
       icon: <Search className="h-8 w-8" />,
       title: "Competitor Intelligence",
       description: "To gathering relevant information from the market, to analyzed, and for decision making in determining market opportunity, market penetration strategy & market development.",
       features: [],
-      color: "from-red-500 to-red-600"
+      color: "from-gray-500 to-gray-600"
     }
   ];
 
@@ -173,13 +168,28 @@ const Services: React.FC = () => {
         </div>
       </section>
 
-      {/* Corporate Services Grid */}
+      {/* Services Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full mb-6">
+              <span className="text-sm font-medium text-blue-600 uppercase tracking-wide">Our Services</span>
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6 leading-tight">
+              Core Services
+              <span className="block text-blue-600">
+                & Data Solutions
+              </span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Comprehensive data collection, quality control, and analytics services
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
             {services.map((service, index) => (
               <div key={index} id={`service-${index + 1}`} className="bg-white rounded-lg border border-gray-200 p-8 hover:shadow-md hover:border-blue-200 transition-all duration-300">
-                <div className={`w-16 h-16 ${index >= 4 ? 'bg-red-50' : 'bg-blue-50'} rounded-lg flex items-center justify-center ${index >= 4 ? 'text-red-600' : 'text-blue-600'} mb-6`}>
+                <div className="w-16 h-16 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600 mb-6">
                   {service.icon}
                 </div>
                 <h3 className="text-2xl font-bold text-black mb-4">{service.title}</h3>
@@ -187,7 +197,47 @@ const Services: React.FC = () => {
                 <ul className="space-y-3">
                   {service.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center text-gray-600">
-                      <CheckCircle className={`h-5 w-5 ${index >= 4 ? 'text-red-600' : 'text-blue-600'} mr-3 flex-shrink-0`} />
+                      <CheckCircle className="h-5 w-5 text-blue-600 mr-3 flex-shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Research Methods Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 bg-gray-100 rounded-full mb-6">
+              <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">Research Methods</span>
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6 leading-tight">
+              Research Methods
+              <span className="block text-gray-600">
+                & Specialized Studies
+              </span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Specialized research methodologies to understand market dynamics and consumer behavior
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            {methods.map((method, index) => (
+              <div key={index} id={`service-${index + 5}`} className="bg-white rounded-lg border border-gray-200 p-8 hover:shadow-md hover:border-gray-300 transition-all duration-300">
+                <div className="w-16 h-16 bg-gray-50 rounded-lg flex items-center justify-center text-gray-600 mb-6">
+                  {method.icon}
+                </div>
+                <h3 className="text-2xl font-bold text-black mb-4">{method.title}</h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">{method.description}</p>
+                <ul className="space-y-3">
+                  {method.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-center text-gray-600">
+                      <CheckCircle className="h-5 w-5 text-gray-600 mr-3 flex-shrink-0" />
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -207,7 +257,10 @@ const Services: React.FC = () => {
           <p className="text-xl text-gray-600 mb-8 leading-relaxed">
             Let's discuss how our comprehensive services can help you achieve your business objectives.
           </p>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg transition-colors font-semibold inline-flex items-center gap-2">
+          <button 
+            onClick={() => navigate('/contact')}
+            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg transition-colors font-semibold inline-flex items-center gap-2"
+          >
             Get Started Today
             <ArrowRight className="h-5 w-5" />
           </button>
