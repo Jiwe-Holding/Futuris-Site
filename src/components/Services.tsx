@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Clipboard, CheckCircle, Lightbulb, Eye, BarChart2, Users, ArrowRight, ShoppingBag, Heart, UserCheck, MessageSquare, Star, Package, DollarSign, Search } from 'lucide-react';
+import { Clipboard, CheckCircle, Lightbulb, Eye, Users, ArrowRight, ShoppingBag, Heart, UserCheck } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const Services: React.FC = () => {
@@ -57,7 +57,7 @@ const Services: React.FC = () => {
       icon: <Lightbulb className="h-6 w-6" />,
       title: "Data Analytics",
       description: "Bespoke consultancy, analytics and training programs to elevate your team's capabilities.",
-      features: ["Custom Workshops", "Insight Dashboards", "Strategic Roadmaps"],
+      features: ["Custom Workshops", "Insight Dashboards", "Strategic Roadmaps", "Data Visualization"],
       color: "from-emerald-500 to-emerald-600"
     },
     {
@@ -102,54 +102,6 @@ const Services: React.FC = () => {
       description: "To find out what employee's expectation. Describe whether employees are happy, contended and fulfilling their desires and needs at work.",
       features: [],
       color: "from-gray-500 to-gray-600"
-    },
-    {
-      number: "05",
-      icon: <BarChart2 className="h-6 w-6" />,
-      title: "Usage & Attitude Study",
-      description: "To understand a market and identify customer usage and customer attitude toward products and services.",
-      features: [],
-      color: "from-gray-500 to-gray-600"
-    },
-    {
-      number: "06",
-      icon: <MessageSquare className="h-6 w-6" />,
-      title: "Communication Research",
-      description: "To identify effectiveness communication organization, also to know patterns of customer toward communication",
-      features: [],
-      color: "from-gray-500 to-gray-600"
-    },
-    {
-      number: "07",
-      icon: <Star className="h-6 w-6" />,
-      title: "Brand Research",
-      description: "To identify company brand health, and to know threats and opportunities from customer insight. Brand research assists with the creation, development and strengthening of brands.",
-      features: [],
-      color: "from-gray-500 to-gray-600"
-    },
-    {
-      number: "08",
-      icon: <Package className="h-6 w-6" />,
-      title: "Product Research",
-      description: "To understand customer needs toward product. Product research useful for New product development, product improvement, test new features, test marketing, revitalizing a declining product etc.",
-      features: [],
-      color: "from-gray-500 to-gray-600"
-    },
-    {
-      number: "09",
-      icon: <DollarSign className="h-6 w-6" />,
-      title: "Pricing Research",
-      description: "To measure acceptability toward product price and to determine the maximum price for new products.",
-      features: [],
-      color: "from-gray-500 to-gray-600"
-    },
-    {
-      number: "10",
-      icon: <Search className="h-6 w-6" />,
-      title: "Competitor Intelligence",
-      description: "To gathering relevant information from the market, to analyzed, and for decision making in determining market opportunity, market penetration strategy & market development.",
-      features: [],
-      color: "from-gray-500 to-gray-600"
     }
   ];
 
@@ -180,68 +132,55 @@ const Services: React.FC = () => {
               ref={(el) => cardRefs.current[index] = el}
               onMouseEnter={() => setHoveredCard(index)}
               onMouseLeave={() => setHoveredCard(null)}
-              className={`group bg-white rounded-lg border border-gray-200 p-8 transition-all duration-300 cursor-pointer ${
+              className={`group bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl border-2 border-blue-200 p-8 transition-all duration-500 cursor-pointer ${
                 visibleItems.includes(index) 
                   ? 'opacity-100 translate-y-0' 
                   : 'opacity-0 translate-y-5'
               } ${
                 hoveredCard === index 
-                  ? 'shadow-lg border-blue-600 -translate-y-1' 
-                  : 'hover:shadow-md hover:border-gray-300'
+                  ? 'shadow-2xl border-blue-400 -translate-y-2 scale-105' 
+                  : 'hover:shadow-lg hover:border-blue-300'
               }`}
             >
-              {/* Number Badge */}
-              <div className="flex items-center justify-between mb-6">
-                <div className={`w-10 h-10 ${index >= 4 ? 'bg-red-600' : 'bg-blue-600'} text-white rounded-lg flex items-center justify-center font-semibold text-sm transition-all duration-300 ${
-                  hoveredCard === index ? 'scale-105' : ''
+              {/* Icon with gradient background */}
+              <div className="flex justify-center mb-6">
+                <div className={`w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center transition-all duration-300 ${
+                  hoveredCard === index ? 'scale-110 rotate-6' : 'scale-100'
                 }`}>
-                  {service.number}
-                </div>
-              </div>
-
-              {/* Icon and Title on same line */}
-              <div className="flex items-center mb-4">
-                {/* Minimalist Icon */}
-                <div className={`w-12 h-12 ${index >= 4 ? 'bg-red-50' : 'bg-blue-50'} rounded-lg flex items-center justify-center mr-4 transition-all duration-300 ${
-                  hoveredCard === index ? `${index >= 4 ? 'bg-red-100' : 'bg-blue-100'} scale-105` : ''
-                }`}>
-                  <div className={`${index >= 4 ? 'text-red-600' : 'text-blue-600'}`}>
+                  <div className="text-white text-2xl">
                     {service.icon}
                   </div>
                 </div>
-
-                {/* Content */}
-                <h3 className={`text-xl font-bold text-black transition-colors duration-300 ${
-                  hoveredCard === index ? `${index >= 4 ? 'text-red-600' : 'text-blue-600'}` : ''
-                }`}>
-                  {service.title}
-                </h3>
               </div>
-              <p className="text-gray-600 mb-6 leading-relaxed">
+
+              {/* Title centered */}
+              <h3 className="text-2xl font-bold text-blue-900 text-center mb-4 transition-colors duration-300">
+                {service.title}
+              </h3>
+              
+              {/* Description */}
+              <p className="text-blue-700 text-center mb-6 leading-relaxed">
                 {service.description}
               </p>
 
-              {/* Features */}
-              <ul className="space-y-2 mb-6">
+              {/* Features with checkmarks */}
+              <ul className="space-y-3 mb-8">
                 {service.features.map((feature, i) => (
-                  <li key={i} className="flex items-center text-sm text-gray-500">
-                    <div className={`w-1.5 h-1.5 ${index >= 4 ? 'bg-red-600' : 'bg-blue-600'} rounded-full mr-3`}></div>
-                    {feature}
+                  <li key={i} className="flex items-center text-blue-800">
+                    <div className="w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                      <CheckCircle className="w-3 h-3 text-white" />
+                    </div>
+                    <span className="text-sm font-medium">{feature}</span>
                   </li>
                 ))}
               </ul>
 
-              {/* Subtle CTA */}
+              {/* CTA Button */}
               <button 
                 onClick={() => navigate(`/services#service-${index + 1}`)}
-                className={`flex items-center text-sm font-medium ${index >= 4 ? 'text-red-600' : 'text-blue-600'} transition-all duration-300 hover:cursor-pointer ${
-                  hoveredCard === index 
-                    ? 'opacity-100 translate-x-1' 
-                    : 'opacity-70 hover:opacity-100'
-                }`}
+                className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white py-3 px-6 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
               >
-                <span>Learn More</span>
-                <ArrowRight className="h-4 w-4 ml-2 transition-transform duration-300" />
+                Learn More
               </button>
             </div>
           ))}
@@ -272,68 +211,54 @@ const Services: React.FC = () => {
                 ref={(el) => cardRefs.current[index + 4] = el}
                 onMouseEnter={() => setHoveredCard(index + 4)}
                 onMouseLeave={() => setHoveredCard(null)}
-                className={`group bg-white rounded-lg border border-gray-200 p-8 transition-all duration-300 cursor-pointer ${
+                className={`group bg-gray-50 rounded-none border-l-4 border-gray-400 p-6 transition-all duration-500 cursor-pointer ${
                   visibleItems.includes(index + 4) 
                     ? 'opacity-100 translate-y-0' 
                     : 'opacity-0 translate-y-5'
                 } ${
                   hoveredCard === index + 4 
-                    ? 'shadow-lg border-gray-600 -translate-y-1' 
-                    : 'hover:shadow-md hover:border-gray-300'
+                    ? 'border-l-gray-600 -translate-y-1 shadow-lg bg-white' 
+                    : 'hover:border-l-gray-500 hover:bg-gray-100'
                 }`}
               >
-                {/* Number Badge */}
-                <div className="flex items-center justify-between mb-6">
-                  <div className={`w-10 h-10 bg-gray-600 text-white rounded-lg flex items-center justify-center font-semibold text-sm transition-all duration-300 ${
-                    hoveredCard === index + 4 ? 'scale-105' : ''
+                {/* Minimalist header with icon and title */}
+                <div className="flex items-start justify-between mb-4">
+                  <div className={`w-10 h-10 bg-gray-200 rounded-none flex items-center justify-center transition-all duration-300 ${
+                    hoveredCard === index + 4 ? 'bg-gray-300 scale-110' : ''
                   }`}>
-                    {methodology.number}
-                  </div>
-                </div>
-
-                {/* Icon and Title on same line */}
-                <div className="flex items-center mb-4">
-                  {/* Minimalist Icon */}
-                  <div className={`w-12 h-12 bg-gray-50 rounded-lg flex items-center justify-center mr-4 transition-all duration-300 ${
-                    hoveredCard === index + 4 ? 'bg-gray-100 scale-105' : ''
-                  }`}>
-                    <div className="text-gray-600">
+                    <div className="text-gray-700">
                       {methodology.icon}
                     </div>
                   </div>
-
-                  {/* Content */}
-                  <h3 className={`text-xl font-bold text-black transition-colors duration-300 ${
-                    hoveredCard === index + 4 ? 'text-gray-600' : ''
-                  }`}>
-                    {methodology.title}
-                  </h3>
+                  <div className={`w-6 h-6 border-2 border-gray-300 rounded-full transition-all duration-300 ${
+                    hoveredCard === index + 4 ? 'border-gray-500 bg-gray-400' : ''
+                  }`}></div>
                 </div>
-                <p className="text-gray-600 mb-6 leading-relaxed">
+
+                {/* Title */}
+                <h3 className="text-lg font-light text-gray-800 mb-3 leading-tight">
+                  {methodology.title}
+                </h3>
+                
+                {/* Description */}
+                <p className="text-gray-600 text-sm leading-relaxed mb-4">
                   {methodology.description}
                 </p>
 
-                {/* Features */}
-                <ul className="space-y-2 mb-6">
-                  {methodology.features.map((feature, i) => (
-                    <li key={i} className="flex items-center text-sm text-gray-500">
-                      <div className="w-1.5 h-1.5 bg-gray-600 rounded-full mr-3"></div>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
+                {/* Minimalist divider */}
+                <div className="w-full h-px bg-gray-300 mb-4"></div>
 
                 {/* Subtle CTA */}
                 <button 
-                  onClick={() => navigate(`/services#service-${index + 5}`)}
-                  className={`flex items-center text-sm font-medium text-gray-600 transition-all duration-300 hover:cursor-pointer ${
+                  onClick={() => navigate('/services')}
+                  className={`group/btn flex items-center text-xs font-light text-gray-500 hover:text-gray-800 transition-all duration-300 ${
                     hoveredCard === index + 4 
-                      ? 'opacity-100 translate-x-1' 
-                      : 'opacity-70 hover:opacity-100'
+                      ? 'opacity-100' 
+                      : 'opacity-60 hover:opacity-100'
                   }`}
                 >
-                  <span>Learn More</span>
-                  <ArrowRight className="h-4 w-4 ml-2 transition-transform duration-300" />
+                  <span>EXPLORE</span>
+                  <ArrowRight className="h-3 w-3 ml-2 transition-transform duration-300 group-hover/btn:translate-x-1" />
                 </button>
               </div>
             ))}
@@ -342,7 +267,10 @@ const Services: React.FC = () => {
 
         {/* Corporate Bottom CTA */}
         <div className="text-center mt-16">
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg transition-colors duration-300 font-semibold inline-flex items-center">
+          <button 
+            onClick={() => navigate('/services')}
+            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg transition-colors duration-300 font-semibold inline-flex items-center"
+          >
             View All Services
             <ArrowRight className="h-5 w-5 ml-2" />
           </button>

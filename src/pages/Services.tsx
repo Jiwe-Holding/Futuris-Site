@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ChatWidget from '../components/ChatWidget';
-import { ArrowRight, CheckCircle, Users, Clipboard, Lightbulb, Eye, BarChart2, ShoppingBag, Heart, UserCheck, MessageSquare, Star, Package, DollarSign, Search } from 'lucide-react';
+import { ArrowRight, CheckCircle, Users, Clipboard, Lightbulb, Eye, BarChart2, ShoppingBag, Heart, UserCheck, MessageSquare, Star, Package, DollarSign, Search, Users2, TrendingUp, Layers, Crown } from 'lucide-react';
 
 const Services: React.FC = () => {
   const navigate = useNavigate();
@@ -133,6 +133,34 @@ const Services: React.FC = () => {
       icon: <Search className="h-8 w-8" />,
       title: "Competitor Intelligence",
       description: "To gathering relevant information from the market, to analyzed, and for decision making in determining market opportunity, market penetration strategy & market development.",
+      features: [],
+      color: "from-gray-500 to-gray-600"
+    },
+    {
+      icon: <Users2 className="h-8 w-8" />,
+      title: "Social Research",
+      description: "Understanding social dynamics, cultural trends, and community behaviors to inform strategic decision-making and social impact initiatives.",
+      features: [],
+      color: "from-gray-500 to-gray-600"
+    },
+    {
+      icon: <TrendingUp className="h-8 w-8" />,
+      title: "Market Sizing",
+      description: "Comprehensive analysis to determine market volume, potential, and growth opportunities across different segments and regions.",
+      features: [],
+      color: "from-gray-500 to-gray-600"
+    },
+    {
+      icon: <Layers className="h-8 w-8" />,
+      title: "Segmentation",
+      description: "Identifying and analyzing distinct customer groups to develop targeted strategies and personalized approaches for different market segments.",
+      features: [],
+      color: "from-gray-500 to-gray-600"
+    },
+    {
+      icon: <Crown className="h-8 w-8" />,
+      title: "Brand Archetype",
+      description: "Defining brand personality and archetypal positioning to create authentic connections with target audiences and differentiate from competitors.",
       features: [],
       color: "from-gray-500 to-gray-600"
     }
