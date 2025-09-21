@@ -90,7 +90,7 @@ const Services: React.FC = () => {
             <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">Our Expertise</span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6 leading-tight">
-            Comprehensive Market Research
+            Innovative Research Insights
             <span className="block text-blue-600">
               & Data Solutions
             </span>
