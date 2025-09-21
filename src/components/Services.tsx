@@ -34,7 +34,7 @@ const Services: React.FC = () => {
     {
       number: "01",
       icon: <Clipboard className="h-6 w-6" />,
-      title: "Fieldwork & Verification",
+      title: "Data Collection",
       description: "On‑the‑ground data collection, observation and verification across 30 African markets.",
       features: ["Face‑to‑Face Interviews", "Mall Intercepts", "CATI Stations"],
       color: "from-blue-500 to-blue-600"
