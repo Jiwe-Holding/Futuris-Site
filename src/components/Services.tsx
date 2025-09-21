@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Clipboard, CheckCircle, Lightbulb, Eye, BarChart2, Users, ArrowRight } from 'lucide-react';
+import { Clipboard, CheckCircle, Lightbulb, Eye, BarChart2, Users, ArrowRight, ShoppingBag, Heart, UserCheck, MessageSquare, Star, Package, DollarSign, Search } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const Services: React.FC = () => {
@@ -83,6 +83,78 @@ const Services: React.FC = () => {
       description: "Evaluating brand health and price sensitivity to inform positioning and growth strategies.",
       features: ["Brand Health Tracking", "Price Testing", "Competitive Benchmarking"],
       color: "from-cyan-500 to-cyan-600"
+    },
+    {
+      number: "07",
+      icon: <ShoppingBag className="h-6 w-6" />,
+      title: "Mystery Shopping",
+      description: "To provide from Customer Experiences - Mystery shopping help organizations to measure their service level",
+      features: [],
+      color: "from-red-500 to-red-600"
+    },
+    {
+      number: "08",
+      icon: <Heart className="h-6 w-6" />,
+      title: "Customer Satisfaction",
+      description: "To find out what customers think about your organizations and also help organizations measure their customer's expectation.",
+      features: [],
+      color: "from-red-500 to-red-600"
+    },
+    {
+      number: "09",
+      icon: <UserCheck className="h-6 w-6" />,
+      title: "Employee Satisfaction",
+      description: "To find out what employee's expectation. Describe whether employees are happy, contended and fulfilling their desires and needs at work.",
+      features: [],
+      color: "from-red-500 to-red-600"
+    },
+    {
+      number: "10",
+      icon: <BarChart2 className="h-6 w-6" />,
+      title: "Usage & Attitude Study",
+      description: "To understand a market and identify customer usage and customer attitude toward products and services.",
+      features: [],
+      color: "from-red-500 to-red-600"
+    },
+    {
+      number: "11",
+      icon: <MessageSquare className="h-6 w-6" />,
+      title: "Communication Research",
+      description: "To identify effectiveness communication organization, also to know patterns of customer toward communication",
+      features: [],
+      color: "from-red-500 to-red-600"
+    },
+    {
+      number: "12",
+      icon: <Star className="h-6 w-6" />,
+      title: "Brand Research",
+      description: "To identify company brand health, and to know threats and opportunities from customer insight. Brand research assists with the creation, development and strengthening of brands.",
+      features: [],
+      color: "from-red-500 to-red-600"
+    },
+    {
+      number: "13",
+      icon: <Package className="h-6 w-6" />,
+      title: "Product Research",
+      description: "To understand customer needs toward product. Product research useful for New product development, product improvement, test new features, test marketing, revitalizing a declining product etc.",
+      features: [],
+      color: "from-red-500 to-red-600"
+    },
+    {
+      number: "14",
+      icon: <DollarSign className="h-6 w-6" />,
+      title: "Pricing Research",
+      description: "To measure acceptability toward product price and to determine the maximum price for new products.",
+      features: [],
+      color: "from-red-500 to-red-600"
+    },
+    {
+      number: "15",
+      icon: <Search className="h-6 w-6" />,
+      title: "Competitor Intelligence",
+      description: "To gathering relevant information from the market, to analyzed, and for decision making in determining market opportunity, market penetration strategy & market development.",
+      features: [],
+      color: "from-red-500 to-red-600"
     }
   ];
 
@@ -125,7 +197,7 @@ const Services: React.FC = () => {
             >
               {/* Number Badge */}
               <div className="flex items-center justify-between mb-6">
-                <div className={`w-10 h-10 bg-blue-600 text-white rounded-lg flex items-center justify-center font-semibold text-sm transition-all duration-300 ${
+                <div className={`w-10 h-10 ${index >= 4 ? 'bg-red-600' : 'bg-blue-600'} text-white rounded-lg flex items-center justify-center font-semibold text-sm transition-all duration-300 ${
                   hoveredCard === index ? 'scale-105' : ''
                 }`}>
                   {service.number}
@@ -135,17 +207,17 @@ const Services: React.FC = () => {
               {/* Icon and Title on same line */}
               <div className="flex items-center mb-4">
                 {/* Minimalist Icon */}
-                <div className={`w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mr-4 transition-all duration-300 ${
-                  hoveredCard === index ? 'bg-blue-100 scale-105' : ''
+                <div className={`w-12 h-12 ${index >= 4 ? 'bg-red-50' : 'bg-blue-50'} rounded-lg flex items-center justify-center mr-4 transition-all duration-300 ${
+                  hoveredCard === index ? `${index >= 4 ? 'bg-red-100' : 'bg-blue-100'} scale-105` : ''
                 }`}>
-                  <div className="text-blue-600">
+                  <div className={`${index >= 4 ? 'text-red-600' : 'text-blue-600'}`}>
                     {service.icon}
                   </div>
                 </div>
 
                 {/* Content */}
                 <h3 className={`text-xl font-bold text-black transition-colors duration-300 ${
-                  hoveredCard === index ? 'text-blue-600' : ''
+                  hoveredCard === index ? `${index >= 4 ? 'text-red-600' : 'text-blue-600'}` : ''
                 }`}>
                   {service.title}
                 </h3>
@@ -158,7 +230,7 @@ const Services: React.FC = () => {
               <ul className="space-y-2 mb-6">
                 {service.features.map((feature, i) => (
                   <li key={i} className="flex items-center text-sm text-gray-500">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
+                    <div className={`w-1.5 h-1.5 ${index >= 4 ? 'bg-red-600' : 'bg-blue-600'} rounded-full mr-3`}></div>
                     {feature}
                   </li>
                 ))}
@@ -166,8 +238,8 @@ const Services: React.FC = () => {
 
               {/* Subtle CTA */}
               <button 
-                onClick={() => navigate('/services')}
-                className={`flex items-center text-sm font-medium text-blue-600 transition-all duration-300 hover:cursor-pointer ${
+                onClick={() => navigate(`/services#service-${index + 1}`)}
+                className={`flex items-center text-sm font-medium ${index >= 4 ? 'text-red-600' : 'text-blue-600'} transition-all duration-300 hover:cursor-pointer ${
                   hoveredCard === index 
                     ? 'opacity-100 translate-x-1' 
                     : 'opacity-70 hover:opacity-100'
