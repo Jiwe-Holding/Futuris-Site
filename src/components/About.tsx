@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Award, Users, Globe, Target, ArrowRight, TrendingUp } from 'lucide-react';
+import { ArrowRight, TrendingUp, Star, Handshake, Lightbulb, Shield } from 'lucide-react';
 
 const About: React.FC = () => {
   const [visibleSections, setVisibleSections] = useState<string[]>([]);
-  const [counters, setCounters] = useState([0, 0, 0, 0, 0, 0]);
+  const [counters, setCounters] = useState([0, 0, 0, 0]);
   const [statsCounters, setStatsCounters] = useState([0, 0, 0, 0]);
   const sectionRefs = useRef<{[key: string]: HTMLElement | null}>({});
 
@@ -77,41 +77,29 @@ const About: React.FC = () => {
   };
   const values = [
     {
-      icon: <Award className="h-6 w-6" />,
-      title: "Research",
-      description: "In-depth exploration to uncover actionable insights.",
+      icon: <Star className="h-6 w-6" />,
+      title: "Excellence",
+      description: "We strive for excellence in every project, upholding the highest quality standards.",
       color: "from-blue-500 to-blue-600"
     },
     {
-      icon: <Users className="h-6 w-6" />,
-      title: "Data collection",
-      description: "Robust methodologies to gather reliable data.",
+      icon: <Handshake className="h-6 w-6" />,
+      title: "Collaboration",
+      description: "We work hand‑in‑hand with our clients to deliver optimal results.",
       color: "from-purple-500 to-purple-600"
     },
     {
-      icon: <Globe className="h-6 w-6" />,
-      title: "Quality Control",
-      description: "Rigorous checks to ensure data accuracy and integrity.",
+      icon: <Lightbulb className="h-6 w-6" />,
+      title: "Innovation",
+      description: "We embrace cutting‑edge technologies and methodologies to stay at the forefront.",
       color: "from-emerald-500 to-emerald-600"
     },
     {
-      icon: <Target className="h-6 w-6" />,
-      title: "Analytics",
-      description: "Advanced analysis to transform data into knowledge.",
+      icon: <Shield className="h-6 w-6" />,
+      title: "Integrity",
+      description: "We maintain transparency and fairness in all our engagements.",
       color: "from-orange-500 to-orange-600"
-    },
-    {
-      icon: <Award className="h-6 w-6" />,
-      title: "Intelligence",
-      description: "Strategic intelligence for informed decision-making.",
-      color: "from-pink-500 to-pink-600"
-    },
-    {
-      icon: <Users className="h-6 w-6" />,
-      title: "Insights",
-      description: "Clear, actionable insights to drive your success.",
-      color: "from-yellow-500 to-yellow-600"
-    },
+    }
   ];
 
   const stats = [
@@ -219,7 +207,7 @@ const About: React.FC = () => {
           }`}>
             Our Core Values
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, i) => (
               <div 
                 key={i} 
