@@ -96,7 +96,7 @@ const Services: React.FC = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Delivering end‑to‑end insights—from field data collection to strategic intelligence—to power your growth.
+            Delivering end‑to‑end insights—from field data collection
           </p>
         </div>
 
