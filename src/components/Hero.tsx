@@ -36,8 +36,11 @@ const Hero: React.FC = () => {
           <div className="inline-flex items-center mb-4 sm:mb-6">
             <div className="flex items-center  rounded-full px-3 sm:px-4 py-2">
               <TrendingUp className="h-3 w-3 sm:h-4 sm:w-4 text-blue-600 mr-2 sm:mr-3 flex-shrink-0" />
-              <span className="text-xs sm:text-sm font-semibold text-white tracking-wide">
-                <span className="hidden sm:inline">Research <span className="mx-1 sm:mx-2 text-blue-600">·</span> Data collection <span className="mx-1 sm:mx-2 text-blue-600">·</span> Quality Control <span className="mx-1 sm:mx-2 text-blue-600">·</span> Analytics <span className="mx-1 sm:mx-2 text-blue-600">·</span> Intelligence <span className="mx-1 sm:mx-2 text-blue-600">·</span> Insights</span>
+              <span className="text-sm sm:text-base font-semibold text-white tracking-wide">
+                <div className="hidden sm:block">
+                  <div>Research <span className="mx-1 sm:mx-2 text-blue-600">·</span> Data collection <span className="mx-1 sm:mx-2 text-blue-600">·</span> Quality Control</div>
+                  <div>Analytics <span className="mx-1 sm:mx-2 text-blue-600">·</span> Intelligence <span className="mx-1 sm:mx-2 text-blue-600">·</span> Insights</div>
+                </div>
                 <span className="sm:hidden">Market Research <span className="mx-1 text-blue-600">·</span> Data Analytics</span>
               </span>
             </div>
