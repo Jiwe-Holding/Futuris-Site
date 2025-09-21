@@ -55,7 +55,7 @@ const Services: React.FC = () => {
     {
       number: "03",
       icon: <Lightbulb className="h-6 w-6" />,
-      title: "Data Analytics/ Modeling & Intelligence",
+      title: "Data Analytics",
       description: "Bespoke consultancy, analytics and training programs to elevate your team’s capabilities.",
       features: ["Custom Workshops", "Insight Dashboards", "Strategic Roadmaps"],
       color: "from-emerald-500 to-emerald-600"
@@ -106,7 +106,7 @@ const Services: React.FC = () => {
         </div>
 
         {/* Corporate Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <div
               key={index}
