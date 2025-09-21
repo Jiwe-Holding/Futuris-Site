@@ -138,7 +138,7 @@ const About: React.FC = () => {
           <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6 leading-tight">
             Your Market Research Partner
             <span className="block text-blue-600">
-              across 30 African markets
+              across 29 African markets
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">

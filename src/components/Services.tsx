@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Clipboard, CheckCircle, Lightbulb, Eye, BarChart2, Users, ArrowRight, Zap } from 'lucide-react';
+import { Clipboard, CheckCircle, Lightbulb, Eye, BarChart2, Users, ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Services: React.FC = () => {
+  const navigate = useNavigate();
   const [visibleItems, setVisibleItems] = useState<number[]>([]);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
@@ -36,7 +38,7 @@ const Services: React.FC = () => {
       icon: <Clipboard className="h-6 w-6" />,
       title: "Data Collection",
       description: "On‑the‑ground data collection, observation and verification across 30 African markets.",
-      features: ["Face‑to‑Face Interviews", "Mall Intercepts", "CATI Stations"],
+      features: ["Face‑to‑Face Interviews (CAPI)", "CATI Stations/Interviews", "Focus Groups", "In‑depth Interviews"],
       color: "from-blue-500 to-blue-600"
     },
     {
@@ -160,14 +162,17 @@ const Services: React.FC = () => {
               </ul>
 
               {/* Subtle CTA */}
-              <div className={`flex items-center text-sm font-medium text-blue-600 transition-all duration-300 ${
-                hoveredCard === index 
-                  ? 'opacity-100 translate-x-1' 
-                  : 'opacity-70'
-              }`}>
+              <button 
+                onClick={() => navigate('/services')}
+                className={`flex items-center text-sm font-medium text-blue-600 transition-all duration-300 hover:cursor-pointer ${
+                  hoveredCard === index 
+                    ? 'opacity-100 translate-x-1' 
+                    : 'opacity-70 hover:opacity-100'
+                }`}
+              >
                 <span>Learn More</span>
                 <ArrowRight className="h-4 w-4 ml-2 transition-transform duration-300" />
-              </div>
+              </button>
             </div>
           ))}
         </div>

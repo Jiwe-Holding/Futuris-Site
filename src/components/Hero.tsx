@@ -5,7 +5,7 @@ const Hero: React.FC = () => {
   const navigate = useNavigate();
   
   const stats = [
-    { icon: <TrendingUp className="h-5 w-5" />, value: "30+", label: "African Markets" },
+    { icon: <TrendingUp className="h-5 w-5" />, value: "29", label: "African Markets" },
     { icon: <Users className="h-5 w-5" />, value: "3,685", label: "Field Agents" },
     { icon: <Zap className="h-5 w-5" />, value: "76", label: "Supervisors" },
     { icon: <Shield className="h-5 w-5" />, value: "11", label: "Qualitative Moderators" },

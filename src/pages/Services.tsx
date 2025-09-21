@@ -2,79 +2,78 @@ import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ChatWidget from '../components/ChatWidget';
-import { ArrowRight, CheckCircle, Users, Target, Shield, TrendingUp, Globe, Award } from 'lucide-react';
+import { ArrowRight, CheckCircle, Users, Clipboard, Lightbulb, Eye, BarChart2 } from 'lucide-react';
 
 const Services: React.FC = () => {
   const services = [
     {
-      icon: <Users className="h-8 w-8" />,
-      title: "Fieldwork & Verification",
-      description: "Comprehensive data collection across 30 African markets with rigorous verification processes.",
+      icon: <Clipboard className="h-8 w-8" />,
+      title: "Data Collection",
+      description: "On‑the‑ground data collection, observation and verification across 30 African markets.",
       features: [
-        "Multi-channel data collection (CATI, CAPI, Online)",
-        "Real-time quality monitoring",
-        "Local field agent networks",
-        "Cross-cultural research expertise"
+        "Face‑to‑Face Interviews (CAPI)",
+        "CATI Stations/Interviews", 
+        "Focus Groups",
+        "In‑depth Interviews",
+        "Central Location Test",
+        "Computer Assisted Telephone Interview",
+        "Mystery Shopping",
+        "Intelligence & Training",
       ],
       color: "from-blue-500 to-blue-600"
     },
     {
-      icon: <Shield className="h-8 w-8" />,
+      icon: <CheckCircle className="h-8 w-8" />,
       title: "Quality Control",
-      description: "Advanced quality assurance protocols ensuring data integrity and reliability.",
+      description: "Rigorous multi‑level checks to ensure data accuracy and reliability at every step.",
       features: [
-        "Automated data validation",
-        "Multi-level verification checks",
-        "Statistical quality metrics",
-        "ISO 20252 compliance"
+        "Data Validation",
+        "Supervisor Audits", 
+        "Real‑time Monitoring"
       ],
       color: "from-purple-500 to-purple-600"
     },
     {
-      icon: <TrendingUp className="h-8 w-8" />,
-      title: "Analytics & Intelligence",
-      description: "Transform raw data into actionable business intelligence and strategic insights.",
+      icon: <Lightbulb className="h-8 w-8" />,
+      title: "Intelligence & Training",
+      description: "Bespoke consultancy, analytics and training programs to elevate your team's capabilities.",
       features: [
-        "Advanced statistical analysis",
-        "Predictive modeling",
-        "Market trend analysis",
-        "Competitive intelligence"
+        "Custom Workshops",
+        "Insight Dashboards", 
+        "Strategic Roadmaps"
       ],
       color: "from-emerald-500 to-emerald-600"
     },
     {
-      icon: <Target className="h-8 w-8" />,
+      icon: <Eye className="h-8 w-8" />,
       title: "Mystery Shopping",
-      description: "Comprehensive mystery shopping programs to evaluate customer experience and service quality.",
+      description: "Secret‑shopper studies to benchmark service levels and customer experience quality.",
       features: [
-        "Multi-location coverage",
-        "Detailed performance reports",
-        "Competitor benchmarking",
-        "Actionable recommendations"
-      ],
-      color: "from-orange-500 to-orange-600"
-    },
-    {
-      icon: <Globe className="h-8 w-8" />,
-      title: "Usage & Attitude Research",
-      description: "Deep understanding of consumer behavior, preferences, and market dynamics.",
-      features: [
-        "Consumer segmentation",
-        "Brand perception studies",
-        "Purchase decision analysis",
-        "Market opportunity assessment"
+        "Scenario Design",
+        "Field Execution", 
+        "Detailed Reporting"
       ],
       color: "from-pink-500 to-pink-600"
     },
     {
-      icon: <Award className="h-8 w-8" />,
+      icon: <BarChart2 className="h-8 w-8" />,
+      title: "Usage & Attitude Research",
+      description: "Understanding customer usage patterns and attitudes to drive product and service innovation.",
+      features: [
+        "Panel Surveys",
+        "Usage Tracking", 
+        "Attitudinal Analysis"
+      ],
+      color: "from-yellow-500 to-yellow-600"
+    },
+    {
+      icon: <Users className="h-8 w-8" />,
       title: "Brand & Pricing Studies",
       description: "Strategic brand positioning and pricing optimization for maximum market impact.",
       features: [
-        "Brand equity measurement",
-        "Price sensitivity analysis",
-        "Market positioning studies",
-        "ROI optimization"
+        "Brand Equity Analysis",
+        "Price Sensitivity Studies", 
+        "Market Positioning Research"
       ],
       color: "from-indigo-500 to-indigo-600"
     }
