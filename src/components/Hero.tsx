@@ -1,6 +1,9 @@
 import { ArrowRight, Play, Shield, TrendingUp, Users, Zap } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Hero: React.FC = () => {
+  const navigate = useNavigate();
+  
   const stats = [
     { icon: <TrendingUp className="h-5 w-5" />, value: "30+", label: "African Markets" },
     { icon: <Users className="h-5 w-5" />, value: "3,685", label: "Field Agents" },
@@ -52,11 +55,17 @@ const Hero: React.FC = () => {
 
           {/* Corporate Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8 lg:mb-10 w-full sm:w-auto">
-            <button className="group bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg transition-colors font-semibold flex items-center justify-center gap-2 text-sm sm:text-base">
+            <button 
+              onClick={() => navigate('/contact')}
+              className="group bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg transition-colors font-semibold flex items-center justify-center gap-2 text-sm sm:text-base"
+            >
               Get Started
               <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
             </button>
-            <button className="group border border-white/30 bg-white/10 backdrop-blur-sm text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:bg-white/20 hover:border-white/50 transition-all font-semibold flex items-center justify-center gap-2 text-sm sm:text-base">
+            <button 
+              onClick={() => navigate('/about')}
+              className="group border border-white/30 bg-white/10 backdrop-blur-sm text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:bg-white/20 hover:border-white/50 transition-all font-semibold flex items-center justify-center gap-2 text-sm sm:text-base"
+            >
               <Play className="h-4 w-4 sm:h-5 sm:w-5" />
               Learn More
             </button>
