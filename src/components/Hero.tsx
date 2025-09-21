@@ -26,7 +26,7 @@ const Hero: React.FC = () => {
       </video>
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 pt-5 bg-gradient-to-br from-black/20 via-black/30 to-black/25 z-0" />
+      <div className="absolute inset-0 pt-5 bg-gradient-to-br from-black/40 via-black/70 to-black/60 z-0" />
 
       {/* Main Content */}
       <div className="relative z-10 max-w-7xl pt-5 mx-auto px-4 sm:px-6 flex flex-col lg:flex-row items-center justify-between h-full text-white">
