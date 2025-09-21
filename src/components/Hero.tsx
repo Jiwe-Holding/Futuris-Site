@@ -26,10 +26,10 @@ const Hero: React.FC = () => {
       </video>
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 pt-5 bg-gradient-to-br from-black/40 via-black/70 to-black/60 z-0" />
+      <div className="absolute inset-0 pt-2 bg-gradient-to-br from-black/40 via-black/70 to-black/60 z-0" />
 
       {/* Main Content */}
-      <div className="relative z-10 max-w-7xl pt-5 mx-auto px-4 sm:px-6 flex flex-col lg:flex-row items-center justify-between h-full text-white">
+      <div className="relative z-10 max-w-7xl pt-1 mx-auto px-4 sm:px-6 flex flex-col lg:flex-row items-center justify-between h-full text-white">
         {/* Left: Text Content */}
         <div className="w-full lg:w-1/2 flex flex-col justify-center items-start mt-20 sm:mt-24 lg:mt-0">
           {/* Corporate Badge */}
