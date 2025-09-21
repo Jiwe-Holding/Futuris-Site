@@ -18,7 +18,7 @@ const Services: React.FC = () => {
         "Central Location Test",
         "Computer Assisted Telephone Interview",
         "Mystery Shopping",
-        "Intelligence & Training",
+        "Intelligence data",
       ],
       color: "from-blue-500 to-blue-600"
     },
