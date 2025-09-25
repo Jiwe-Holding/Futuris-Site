@@ -75,7 +75,7 @@ const About: React.FC = () => {
 
   // Liste des pays africains (triés par ordre alphabétique)
   const africanCountries = [
-    "Angola", "Botswana", "Burkina-Faso", "Burundi", "CAR", "Cameroun", "Chad",
+    "Angola", "Botswana", "Burkina-Faso", "Burundi", "Central African Republic", "Cameroun", "Chad",
     "Comoros", "Congo B (ROC)", "DRC", "Egypt", "Ethiopia", "Ghana", "Ivory Coast",
     "Kenya", "Madagascar", "Mali", "Morocco", "Mozambique", "Niger", "Nigeria",
     "Rwanda", "Senegal", "South Africa", "Sudan", "Tunisia", "Uganda", "Zambia", "Zimbabwe"
