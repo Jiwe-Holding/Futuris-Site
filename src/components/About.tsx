@@ -4,6 +4,7 @@ import { ArrowRight, TrendingUp, Star, Handshake, Lightbulb, Shield } from 'luci
 const About: React.FC = () => {
   const [visibleSections, setVisibleSections] = useState<string[]>([]);
   const [counters, setCounters] = useState([0, 0, 0, 0]);
+  const [currentCountryIndex, setCurrentCountryIndex] = useState(0);
   const sectionRefs = useRef<{[key: string]: HTMLElement | null}>({});
 
   useEffect(() => {
@@ -72,6 +73,33 @@ const About: React.FC = () => {
     }
   ];
 
+  // Liste des pays africains
+  const africanCountries = [
+    "DRC", "Congo B (ROC)", "Chad", "CAR", "Comoros", "Cameroun", "Senegal",
+    "Burkina-Faso", "Morocco", "Mali", "Niger", "Ghana", "Ivory Coast", "Nigeria",
+    "Tunisia", "Egypt", "Ethiopia", "Sudan", "Burundi", "Rwanda", "Uganda", "Kenya",
+    "Mozambique", "Zambia", "South Africa", "Angola", "Madagascar", "Zimbabwe",
+    "Botswana"
+  ];
+
+  // Animation des pays
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentCountryIndex(prev => (prev + 6) % africanCountries.length);
+    }, 3000); // Change toutes les 3 secondes
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // Fonction pour obtenir les 6 pays actuels
+  const getCurrentCountries = () => {
+    const countries = [];
+    for (let i = 0; i < 6; i++) {
+      const index = (currentCountryIndex + i) % africanCountries.length;
+      countries.push(africanCountries[index]);
+    }
+    return countries;
+  };
 
   return (
     <section id="about" className="py-20 bg-gray-50">
@@ -90,6 +118,22 @@ const About: React.FC = () => {
           <h2 className="text-4xl lg:text-5xl font-bold text-blue-600 mb-6 leading-tight">
               We cover 29 African markets...
           </h2>
+          
+          {/* Liste animée des pays africains */}
+          <div className="mb-8">
+            <div className="flex flex-wrap justify-center items-center gap-3 text-sm font-medium text-gray-600">
+              {getCurrentCountries().map((country, index) => (
+                <span 
+                  key={`${country}-${currentCountryIndex}-${index}`}
+                  className="px-3 py-1 bg-white rounded-full border border-gray-200 shadow-sm transition-all duration-500 ease-in-out animate-fade-in"
+                >
+                  {country}
+                </span>
+              ))}
+            </div>
+  
+          </div>
+          
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Delivering best‑in‑class data quality and insights through quantitative and qualitative methodologies.
           </p>
