@@ -241,16 +241,11 @@ const Services: React.FC = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-4 py-2 bg-gray-100 rounded-full mb-6">
-              <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">Research Methods</span>
+              <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">Research Solutions</span>
             </div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6 leading-tight">
-              Research Methods
-              <span className="block text-gray-600">
-                & Specialized Studies
-              </span>
-            </h2>
+        
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Specialized research methodologies to understand market dynamics and consumer behavior
+              Providing the best- in class research solution.....
             </p>
           </div>
           
