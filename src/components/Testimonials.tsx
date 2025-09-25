@@ -44,11 +44,11 @@ const Testimonials: React.FC = () => {
     setCurrentSlide((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
-  // Auto-scroll every 3 seconds
+  // Auto-scroll every 12 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % testimonials.length);
-    }, 3000);
+    }, 12000);
 
     return () => clearInterval(interval);
   }, [testimonials.length]);
