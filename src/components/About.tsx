@@ -88,10 +88,7 @@ const About: React.FC = () => {
             <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">About FUTURIS</span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-blue-600 mb-6 leading-tight">
-            Your Market Research Partner
-            <span className="block text-blue-600">
-              across 29 African markets
-            </span>
+              We cover 29 African markets
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Delivering best‑in‑class data quality and insights through quantitative and qualitative methodologies.
