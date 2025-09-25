@@ -73,13 +73,12 @@ const About: React.FC = () => {
     }
   ];
 
-  // Liste des pays africains
+  // Liste des pays africains (triés par ordre alphabétique)
   const africanCountries = [
-    "DRC", "Congo B (ROC)", "Chad", "CAR", "Comoros", "Cameroun", "Senegal",
-    "Burkina-Faso", "Morocco", "Mali", "Niger", "Ghana", "Ivory Coast", "Nigeria",
-    "Tunisia", "Egypt", "Ethiopia", "Sudan", "Burundi", "Rwanda", "Uganda", "Kenya",
-    "Mozambique", "Zambia", "South Africa", "Angola", "Madagascar", "Zimbabwe",
-    "Botswana"
+    "Angola", "Botswana", "Burkina-Faso", "Burundi", "CAR", "Cameroun", "Chad",
+    "Comoros", "Congo B (ROC)", "DRC", "Egypt", "Ethiopia", "Ghana", "Ivory Coast",
+    "Kenya", "Madagascar", "Mali", "Morocco", "Mozambique", "Niger", "Nigeria",
+    "Rwanda", "Senegal", "South Africa", "Sudan", "Tunisia", "Uganda", "Zambia", "Zimbabwe"
   ];
 
   // Animation des pays - affichage de tous les pays
