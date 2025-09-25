@@ -34,9 +34,14 @@ const Partners: React.FC = () => {
     { name: "Vodacom", logo: "/assets/img/partners/Vodacom.png" }
   ];
 
+  // Create two different arrays to avoid identical logos crossing
+  // Split into even and odd indices for better distribution
+  const line1Partners = allPartners.filter((_, index) => index % 2 === 0); // Even indices
+  const line2Partners = allPartners.filter((_, index) => index % 2 === 1); // Odd indices
+  
   // Duplicate arrays for seamless animation
-  const marqueeItems1 = [...allPartners, ...allPartners];
-  const marqueeItems2 = [...allPartners, ...allPartners];
+  const marqueeItems1 = [...line1Partners, ...line1Partners];
+  const marqueeItems2 = [...line2Partners, ...line2Partners];
 
   return (
     <section id="clients" className="py-20 bg-gray-50">
