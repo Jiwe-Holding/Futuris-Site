@@ -116,7 +116,7 @@ const Services: React.FC = () => {
             </div>
             <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6 leading-tight">
               <span className="block text-blue-600">
-                Will Offer
+                We Offer
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
