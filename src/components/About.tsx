@@ -82,24 +82,14 @@ const About: React.FC = () => {
     "Botswana"
   ];
 
-  // Animation des pays
+  // Animation des pays - affichage de tous les pays
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentCountryIndex(prev => (prev + 6) % africanCountries.length);
-    }, 3000); // Change toutes les 3 secondes
+      setCurrentCountryIndex(prev => (prev + 1) % africanCountries.length);
+    }, 2000); // Change toutes les 2 secondes
 
     return () => clearInterval(interval);
   }, []);
-
-  // Fonction pour obtenir les 6 pays actuels
-  const getCurrentCountries = () => {
-    const countries = [];
-    for (let i = 0; i < 6; i++) {
-      const index = (currentCountryIndex + i) % africanCountries.length;
-      countries.push(africanCountries[index]);
-    }
-    return countries;
-  };
 
   return (
     <section id="about" className="py-20 bg-gray-50">
@@ -122,21 +112,20 @@ const About: React.FC = () => {
           {/* Liste animée des pays africains */}
           <div className="mb-8">
             <div className="flex flex-wrap justify-center items-center gap-3 text-sm font-medium text-gray-600">
-              {getCurrentCountries().map((country, index) => (
+              {africanCountries.map((country, index) => (
                 <span 
-                  key={`${country}-${currentCountryIndex}-${index}`}
-                  className="px-3 py-1 bg-white rounded-full border border-gray-200 shadow-sm transition-all duration-500 ease-in-out animate-fade-in"
+                  key={country}
+                  className={`px-3 py-1 rounded-full border shadow-sm transition-all duration-500 ease-in-out ${
+                    index === currentCountryIndex 
+                      ? 'bg-blue-600 text-white border-blue-600 scale-110 shadow-lg' 
+                      : 'bg-white text-gray-600 border-gray-200 hover:bg-gray-50'
+                  }`}
                 >
                   {country}
                 </span>
               ))}
             </div>
-  
           </div>
-          
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Delivering best‑in‑class data quality and insights through quantitative and qualitative methodologies.
-          </p>
         </div>
 
         {/* Corporate Mission & History */}
