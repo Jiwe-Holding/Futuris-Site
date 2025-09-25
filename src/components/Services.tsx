@@ -317,7 +317,15 @@ const Services: React.FC = () => {
                     {methodology.title}
                   </h3>
                   <button 
-                    onClick={() => navigate('/services')}
+                    onClick={() => {
+                      navigate('/services');
+                      setTimeout(() => {
+                        const element = document.getElementById(`service-${index + 5}`);
+                        if (element) {
+                          element.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }, 100);
+                    }}
                     className="text-xs text-white hover:text-blue-400 transition-colors duration-300"
                   >
                     Learn More →
