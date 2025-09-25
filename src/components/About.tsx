@@ -4,7 +4,6 @@ import { ArrowRight, TrendingUp, Star, Handshake, Lightbulb, Shield } from 'luci
 const About: React.FC = () => {
   const [visibleSections, setVisibleSections] = useState<string[]>([]);
   const [counters, setCounters] = useState([0, 0, 0, 0]);
-  const [statsCounters, setStatsCounters] = useState([0, 0, 0, 0]);
   const sectionRefs = useRef<{[key: string]: HTMLElement | null}>({});
 
   useEffect(() => {
@@ -17,9 +16,6 @@ const About: React.FC = () => {
               setVisibleSections(prev => [...prev, sectionId]);
               
               // Trigger counter animations
-              if (sectionId === 'stats') {
-                animateStatsCounters();
-              }
               if (sectionId === 'values') {
                 animateValuesCounters();
               }
@@ -37,32 +33,6 @@ const About: React.FC = () => {
     return () => observer.disconnect();
   }, [visibleSections]);
 
-  const animateStatsCounters = () => {
-    const targets = [200, 15, 30, 3685];
-    targets.forEach((target, index) => {
-      let start = 0;
-      const duration = 2000;
-      const increment = target / (duration / 16);
-      
-      const timer = setInterval(() => {
-        start += increment;
-        if (start >= target) {
-          setStatsCounters(prev => {
-            const newCounters = [...prev];
-            newCounters[index] = target;
-            return newCounters;
-          });
-          clearInterval(timer);
-        } else {
-          setStatsCounters(prev => {
-            const newCounters = [...prev];
-            newCounters[index] = Math.floor(start);
-            return newCounters;
-          });
-        }
-      }, 16);
-    });
-  };
 
   const animateValuesCounters = () => {
     values.forEach((_, index) => {
@@ -102,12 +72,6 @@ const About: React.FC = () => {
     }
   ];
 
-  const stats = [
-    { number: "30+", label: "African Markets", target: 30 },
-    { number: "3,685", label: "Field Agents", target: 3685 },
-    { number: "76", label: "Supervisors", target: 76 },
-    { number: "11", label: "Qualitative Moderators", target: 11 }
-  ];
 
   return (
     <section id="about" className="py-20 bg-gray-50">
@@ -171,27 +135,6 @@ const About: React.FC = () => {
                   className="rounded-lg w-full"
                 />
               </div>
-              {/* Floating Stats */}
-              <div className={`absolute -top-4 -right-4 bg-white rounded-lg p-4 border border-gray-200 shadow-sm transition-all duration-700 ${
-                visibleSections.includes('mission') ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'
-              }`}>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-blue-600">
-                    {statsCounters[0]}+
-                  </div>
-                  <div className="text-sm text-gray-500">Projects Delivered</div>
-                </div>
-              </div>
-              <div className={`absolute -bottom-4 -left-4 bg-white rounded-lg p-4 border border-gray-200 shadow-sm transition-all duration-700 delay-200 ${
-                visibleSections.includes('mission') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
-              }`}>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-blue-600">
-                    {statsCounters[1]}+
-                  </div>
-                  <div className="text-sm text-gray-500">Years of Experience</div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -232,36 +175,6 @@ const About: React.FC = () => {
           </div>
         </div>
 
-        {/* Corporate Team Stats */}
-        <div 
-          ref={(el) => sectionRefs.current['stats'] = el}
-          data-section="stats"
-          className={`bg-white rounded-lg shadow-sm border border-gray-200 p-12 transition-all duration-700 ${
-            visibleSections.includes('stats') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
-          }`}
-        >
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-black mb-4">Team by the Numbers</h3>
-            <p className="text-gray-600 text-lg">
-              Our footprint and expertise in figures
-            </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {stats.map((stat, i) => (
-              <div key={i} className="group">
-                <div className="text-4xl font-bold text-blue-600 mb-2 transition-all duration-300">
-                  {i < 2 ? 
-                    `${statsCounters[i + 2]}${stat.number.includes('+') ? '+' : ''}` :
-                    stat.number
-                  }
-                </div>
-                <div className="text-gray-500 font-medium">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );
