@@ -38,11 +38,11 @@ const ChatWidget: React.FC = () => {
         const corporateResponses = [
           'Thank you for your inquiry. A market research specialist will contact you within 24 hours.',
           'I understand your requirements. Let me connect you with our African markets expert.',
-          'Excellent question. Our team has 15+ years of experience across 30 African markets.',
+          'Excellent question. Our team has 15+ years of experience across 29 African markets.',
           'I\'d be pleased to assist you. Could you please provide more details about your research objectives?',
           'Our comprehensive services cover fieldwork, quality control, and analytics. Which area interests you most?',
           'Would you prefer to schedule a consultation call with our senior research consultant?',
-          'Our field operations span 30+ African markets with 3,685 trained agents.',
+          'Our field operations span 29+ African markets with 3,685 trained agents.',
           'For detailed proposals, I can arrange a meeting with our business development team.'
         ];
         

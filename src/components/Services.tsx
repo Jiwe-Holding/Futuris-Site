@@ -37,7 +37,7 @@ const Services: React.FC = () => {
       number: "01",
       icon: <Clipboard className="h-6 w-6" />,
       title: "Data Collection",
-      description: "On‑the‑ground data collection, observation and verification across 30 African markets.",
+      description: "On‑the‑ground data collection, observation and verification across 29 African markets.",
       features: ["Face‑to‑Face Interviews (CAPI)", "CATI Stations/Interviews", "Focus Groups", "In‑depth Interviews"],
       color: "from-blue-500 to-blue-600"
     },

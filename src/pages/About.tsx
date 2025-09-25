@@ -34,7 +34,7 @@ const About: React.FC = () => {
   ];
 
   const stats = [
-    { number: "30+", label: "African Markets" },
+    { number: "29+", label: "African Markets" },
     { number: "3,685", label: "Field Agents" },
     { number: "76", label: "Supervisors" },
     { number: "11", label: "Qualitative Moderators" }
@@ -111,10 +111,10 @@ const About: React.FC = () => {
           </div>
           <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
             Your Market Research Partner
-            <span className="block text-blue-600">Across 30 African Markets</span>
+            <span className="block text-blue-600">Across 29 African Markets</span>
           </h1>
           <p className="text-xl text-white/90 max-w-4xl mx-auto leading-relaxed">
-            Your trusted market research partner across 30 African markets, delivering excellence since 2009.
+            Your trusted market research partner across 29 African markets, delivering excellence since 2009.
           </p>
         </div>
       </section>
@@ -234,7 +234,7 @@ const About: React.FC = () => {
               <span className="block text-blue-600">Central & Southern Africa</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Strategically positioned across 5 countries to serve 30+ African markets with local expertise and global standards.
+              Strategically positioned across 5 countries to serve 29+ African markets with local expertise and global standards.
             </p>
           </div>
 

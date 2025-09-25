@@ -12,7 +12,7 @@ const Services: React.FC = () => {
     {
       icon: <Clipboard className="h-8 w-8" />,
       title: "Data Collection",
-      description: "On‑the‑ground data collection, observation and verification across 30 African markets.",
+      description: "On‑the‑ground data collection, observation and verification across 29 African markets.",
       features: [
         "Face‑to‑Face Interviews (CAPI)",
         "CATI Stations/Interviews", 
@@ -191,7 +191,7 @@ const Services: React.FC = () => {
             <span className="block text-blue-600">Solutions</span>
           </h1>
           <p className="text-xl text-white/90 max-w-4xl mx-auto leading-relaxed">
-            Comprehensive market research solutions designed to deliver actionable insights across 30 African markets.
+            Comprehensive market research solutions designed to deliver actionable insights across 29 African markets.
           </p>
         </div>
       </section>
