@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Clipboard, CheckCircle, Lightbulb, Eye, Users, ArrowRight, ShoppingBag, Heart, UserCheck, BarChart2, MessageSquare, Star, Package } from 'lucide-react';
+import { Clipboard, CheckCircle, Lightbulb, Eye, Users, ArrowRight, ShoppingBag, Heart, UserCheck, BarChart2, MessageSquare, Star, Package, DollarSign, Search, Users2, TrendingUp, Layers, Crown } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const Services: React.FC = () => {
@@ -134,6 +134,54 @@ const Services: React.FC = () => {
       description: "To understand customer needs toward product. Product research useful for New product development, product improvement, test new features, test marketing, revitalizing a declining product etc.",
       features: [],
       color: "from-gray-500 to-gray-600"
+    },
+    {
+      number: "09",
+      icon: <DollarSign className="h-6 w-6" />,
+      title: "Pricing Research",
+      description: "To measure acceptability toward product price and to determine the maximum price for new products.",
+      features: [],
+      color: "from-gray-500 to-gray-600"
+    },
+    {
+      number: "10",
+      icon: <Search className="h-6 w-6" />,
+      title: "Competitor Intelligence",
+      description: "To gathering relevant information from the market, to analyzed, and for decision making in determining market opportunity, market penetration strategy & market development.",
+      features: [],
+      color: "from-gray-500 to-gray-600"
+    },
+    {
+      number: "11",
+      icon: <Users2 className="h-6 w-6" />,
+      title: "Social Research",
+      description: "Understanding social dynamics, cultural trends, and community behaviors to inform strategic decision-making and social impact initiatives.",
+      features: [],
+      color: "from-gray-500 to-gray-600"
+    },
+    {
+      number: "12",
+      icon: <TrendingUp className="h-6 w-6" />,
+      title: "Market Sizing",
+      description: "Comprehensive analysis to determine market volume, potential, and growth opportunities across different segments and regions.",
+      features: [],
+      color: "from-gray-500 to-gray-600"
+    },
+    {
+      number: "13",
+      icon: <Layers className="h-6 w-6" />,
+      title: "Segmentation",
+      description: "Identifying and analyzing distinct customer groups to develop targeted strategies and personalized approaches for different market segments.",
+      features: [],
+      color: "from-gray-500 to-gray-600"
+    },
+    {
+      number: "14",
+      icon: <Crown className="h-6 w-6" />,
+      title: "Brand Archetype",
+      description: "Defining brand personality and archetypal positioning to create authentic connections with target audiences and differentiate from competitors.",
+      features: [],
+      color: "from-gray-500 to-gray-600"
     }
   ];
 
@@ -244,30 +292,36 @@ const Services: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
             {methodologies.map((methodology, index) => (
               <div
                 key={index}
                 ref={(el) => cardRefs.current[index + 4] = el}
                 onMouseEnter={() => setHoveredCard(index + 4)}
                 onMouseLeave={() => setHoveredCard(null)}
-                className={`group bg-white rounded-xl border border-gray-200 p-4 transition-all duration-300 cursor-pointer ${
+                className={`group bg-gray-800 rounded-xl border border-gray-700 p-4 transition-all duration-300 cursor-pointer ${
                   visibleItems.includes(index + 4) 
                     ? 'opacity-100 translate-y-0' 
                     : 'opacity-0 translate-y-5'
                 } ${
                   hoveredCard === index + 4 
-                    ? 'shadow-lg border-gray-400 -translate-y-1' 
-                    : 'hover:shadow-md hover:border-gray-300'
+                    ? 'shadow-lg border-gray-500 -translate-y-1' 
+                    : 'hover:shadow-md hover:border-gray-600'
                 }`}
               >
-                {/* Simple Title Only */}
+                {/* Title and Learn More Link */}
                 <div className="text-center">
-                  <h3 className="text-sm font-semibold text-gray-700 transition-colors duration-300 ${
-                    hoveredCard === index + 4 ? 'text-gray-900' : ''
+                  <h3 className="text-sm font-semibold text-white transition-colors duration-300 mb-2 ${
+                    hoveredCard === index + 4 ? 'text-gray-100' : ''
                   }">
                     {methodology.title}
                   </h3>
+                  <button 
+                    onClick={() => navigate('/services')}
+                    className="text-xs text-white hover:text-blue-400 transition-colors duration-300"
+                  >
+                    Learn More →
+                  </button>
                 </div>
               </div>
             ))}
