@@ -40,7 +40,7 @@ const Footer: React.FC = () => {
                 <span className="text-2xl font-bold">Futuris</span>
               </div>
               <p className="text-gray-400 mb-6 leading-relaxed">
-                Excellence in Market Research across 30 African markets. Delivering data-driven insights for strategic business decisions.
+                Excellence in Market Research across 29 African markets. Delivering data-driven insights for strategic business decisions.
               </p>
               <div className="flex space-x-4">
                 {socialLinks.map((social, index) => (

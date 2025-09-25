@@ -72,8 +72,11 @@ const Contact: React.FC = () => {
                 <div>
                   <div className="font-semibold text-black text-lg">Address</div>
                   <div className="text-gray-600">
-                    57th Sloane Street, Bryanston<br/>
-                    2191, South Africa
+                    17 Eaton Avenue<br/>
+                    Bryanston<br/>
+                    Johannesburg<br/>
+                    Gauteng<br/>
+                    2191
                   </div>
                 </div>
               </div>
