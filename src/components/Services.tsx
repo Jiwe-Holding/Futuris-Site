@@ -72,6 +72,14 @@ const Services: React.FC = () => {
 
   const methodologies = [
     {
+      number: "11",
+      icon: <Users2 className="h-6 w-6" />,
+      title: "Social Research",
+      description: "Understanding social dynamics, cultural trends, and community behaviors to inform strategic decision-making and social impact initiatives.",
+      features: [],
+      color: "from-gray-500 to-gray-600"
+    },
+    {
       number: "01",
       icon: <Users className="h-6 w-6" />,
       title: "Brand & Pricing Studies",
@@ -152,14 +160,6 @@ const Services: React.FC = () => {
       color: "from-gray-500 to-gray-600"
     },
     {
-      number: "11",
-      icon: <Users2 className="h-6 w-6" />,
-      title: "Social Research",
-      description: "Understanding social dynamics, cultural trends, and community behaviors to inform strategic decision-making and social impact initiatives.",
-      features: [],
-      color: "from-gray-500 to-gray-600"
-    },
-    {
       number: "12",
       icon: <TrendingUp className="h-6 w-6" />,
       title: "Market Sizing",
@@ -182,7 +182,15 @@ const Services: React.FC = () => {
       description: "Defining brand personality and archetypal positioning to create authentic connections with target audiences and differentiate from competitors.",
       features: [],
       color: "from-gray-500 to-gray-600"
-    }
+    },
+    {
+      number: "11",
+      icon: <Users2 className="h-6 w-6" />,
+      title: "Market Intelligence",
+      description: "Understanding social dynamics, cultural trends, and community behaviors to inform strategic decision-making and social impact initiatives.",
+      features: [],
+      color: "from-gray-500 to-gray-600"
+    },
   ];
 
   return (
