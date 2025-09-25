@@ -87,7 +87,7 @@ const About: React.FC = () => {
           <div className="inline-flex items-center px-4 py-2 bg-white rounded-full border border-gray-200 mb-6">
             <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">About FUTURIS</span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6 leading-tight">
+          <h2 className="text-4xl lg:text-5xl font-bold text-blue-600 mb-6 leading-tight">
             Your Market Research Partner
             <span className="block text-blue-600">
               across 29 African markets
@@ -108,7 +108,7 @@ const About: React.FC = () => {
         >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h3 className="text-3xl font-bold text-black mb-6 flex items-center">
+              <h3 className="text-3xl font-bold text-blue-600 mb-6 flex items-center">
                 <TrendingUp className="h-8 w-8 text-blue-600 mr-3" />
                 Our Mission & Story
               </h3>
@@ -145,7 +145,7 @@ const About: React.FC = () => {
           data-section="values"
           className="mb-16"
         >
-          <h3 className={`text-3xl font-bold text-black text-center mb-12 transition-all duration-700 ${
+          <h3 className={`text-3xl font-bold text-blue-600 text-center mb-12 transition-all duration-700 ${
             visibleSections.includes('values') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
           }`}>
             Our Core Values

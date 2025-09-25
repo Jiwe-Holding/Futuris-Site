@@ -186,8 +186,8 @@ const Services: React.FC = () => {
     {
       number: "11",
       icon: <Users2 className="h-6 w-6" />,
-      title: "Market Intelligence",
-      description: "Understanding social dynamics, cultural trends, and community behaviors to inform strategic decision-making and social impact initiatives.",
+      title: "Market & Competitor Intelligence",
+      description: "",
       features: [],
       color: "from-gray-500 to-gray-600"
     },
@@ -202,10 +202,9 @@ const Services: React.FC = () => {
             <div className="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full mb-6">
               <span className="text-sm font-medium text-blue-600 uppercase tracking-wide">Our Services</span>
             </div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6 leading-tight">
-              <span className="block text-blue-600">
-                We Offer...
-              </span>
+            <h2 className="text-4xl lg:text-5xl font-bold text-blue-600 mb-6 leading-tight">
+                 We Offer...
+           
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               a comprehensive data collection, quality control, and analytics services
@@ -250,7 +249,7 @@ const Services: React.FC = () => {
                 </div>
 
                 {/* Content */}
-                <h3 className={`text-xl font-bold text-black transition-colors duration-300 ${
+                <h3 className={`text-xl font-bold text-blue-600 transition-colors duration-300 ${
                   hoveredCard === index ? `${index >= 4 ? 'text-red-600' : 'text-blue-600'}` : ''
                 }`}>
                   {service.title}
@@ -293,7 +292,8 @@ const Services: React.FC = () => {
             <div className="inline-flex items-center px-4 py-2 bg-gray-100 rounded-full mb-6">
               <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">Research Solutions</span>
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-black mb-6 leading-tight">
+            <h2 className="text-3xl lg:text-4xl font-bold text-blue-600 mb-6 leading-tight">
+              Research Solutions
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Providing the best- in class research solution.....
@@ -334,7 +334,7 @@ const Services: React.FC = () => {
                         }
                       }, 100);
                     }}
-                    className="text-xs text-white hover:text-blue-400 transition-colors duration-300"
+                    className="text-xs text-blue-400 hover:text-white transition-colors duration-300"
                   >
                     Learn More →
                   </button>
