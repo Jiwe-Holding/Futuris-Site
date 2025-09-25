@@ -95,8 +95,11 @@ const Footer: React.FC = () => {
                 <div className="flex items-start">
                   <MapPin className="h-5 w-5 text-blue-600 mr-3 mt-1" />
                   <div className="text-gray-400">
-                    57th Sloane Street, Bryanston<br/>
-                    2191, South Africa
+                    17 Eaton Avenue<br/>
+                    Bryanston<br/>
+                    Johannesburg<br/>
+                    Gauteng<br/>
+                    2191
                   </div>
                 </div>
                 <div className="flex items-center">
