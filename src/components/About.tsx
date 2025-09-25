@@ -193,7 +193,7 @@ const About: React.FC = () => {
                     {value.icon}
                   </div>
                 </div>
-                <h4 className="text-xl font-semibold text-black mb-4">
+                <h4 className="text-xl font-semibold text-blue-600 mb-4">
                   {value.title}
                 </h4>
                 <p className="text-gray-600 leading-relaxed">

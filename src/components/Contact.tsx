@@ -29,7 +29,7 @@ const Contact: React.FC = () => {
           <div className="inline-flex items-center px-4 py-2 bg-gray-100 rounded-full mb-6">
             <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">Get in Touch</span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6 leading-tight">
+          <h2 className="text-4xl lg:text-5xl font-bold text-blue-600 mb-6 leading-tight">
             Ready to Transform
             <span className="block text-blue-600">
               Your Business?
@@ -43,7 +43,7 @@ const Contact: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Corporate Contact Info */}
           <div>
-            <h3 className="text-2xl font-bold text-black mb-8">Talk to Us</h3>
+            <h3 className="text-2xl font-bold text-blue-600 mb-8">Talk to Us</h3>
             <div className="space-y-6 mb-12">
               <div className="flex items-center">
                 <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mr-4">
@@ -61,7 +61,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <div className="font-semibold text-black text-lg">Email</div>
-                  <div className="text-gray-600">contact@futuris.com</div>
+                  <div className="text-gray-600">contact@futuris-group.com</div>
                 </div>
               </div>
 
@@ -92,27 +92,11 @@ const Contact: React.FC = () => {
               </div>
             </div>
 
-            {/* Corporate Webmail CTA */}
-            <div className="bg-gray-50 rounded-lg p-8 border border-gray-200">
-              <h4 className="text-xl font-semibold text-black mb-3">Webmail Access</h4>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Login to our webmail portal for secure internal communication.
-              </p>
-              <a
-                href="https://mail.ovh.net"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-300 font-semibold"
-              >
-                <Send className="h-5 w-5 mr-2" />
-                Go to Webmail
-              </a>
-            </div>
           </div>
 
           {/* Corporate Contact Form */}
           <div className="bg-gray-50 rounded-lg p-8 border border-gray-200">
-            <h3 className="text-2xl font-bold text-black mb-8">Send Us a Message</h3>
+            <h3 className="text-2xl font-bold text-blue-600 mb-8">Send Us a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
