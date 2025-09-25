@@ -115,9 +115,8 @@ const Services: React.FC = () => {
               <span className="text-sm font-medium text-blue-600 uppercase tracking-wide">Our Services</span>
             </div>
             <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6 leading-tight">
-              Core Services
               <span className="block text-blue-600">
-                & Data Solutions
+                Will Offer
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
