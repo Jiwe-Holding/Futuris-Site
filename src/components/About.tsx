@@ -157,11 +157,11 @@ const About: React.FC = () => {
 
             {/* Corporate Illustration */}
             <div className="relative">
-              <div className="bg-gray-50 rounded-lg p-2 border border-gray-200">
+              <div className="bg-gray-50 rounded-lg p-2 border border-gray-200 overflow-hidden">
                 <img
-                  src="https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg"
-                  alt="FUTURIS Team"
-                  className="rounded-lg w-full"
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                  alt="Data analysis and market research"
+                  className="rounded-lg w-full h-full object-cover"
                 />
               </div>
             </div>

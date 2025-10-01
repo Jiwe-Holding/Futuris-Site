@@ -8,10 +8,10 @@ import { ArrowRight, Users, Globe, Target, Award, TrendingUp } from 'lucide-reac
 
 const About: React.FC = () => {
   const heroImages = [
-    "https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2487&q=80",
-    "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
-    "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
-    "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
+    "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=2400",
+    "https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=2400",
+    "https://images.pexels.com/photos/3182773/pexels-photo-3182773.jpeg?auto=compress&cs=tinysrgb&w=2400",
+    "https://images.pexels.com/photos/3184357/pexels-photo-3184357.jpeg?auto=compress&cs=tinysrgb&w=2400"
   ];
 
   const values = [
@@ -136,11 +136,11 @@ const About: React.FC = () => {
             </div>
 
             <div className="relative">
-              <div className="bg-white rounded-lg p-2 border border-gray-200 shadow-sm">
+              <div className="bg-white rounded-lg p-2 border border-gray-200 shadow-sm overflow-hidden">
                 <img
-                  src="https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg"
-                  alt="FUTURIS Team"
-                  className="rounded-lg w-full"
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                  alt="Data analysis and market research"
+                  className="rounded-lg w-full h-full object-cover"
                 />
               </div>
               <div className="absolute -top-4 -right-4 bg-white rounded-lg p-4 border border-gray-200 shadow-sm">

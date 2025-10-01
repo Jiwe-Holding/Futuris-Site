@@ -7,38 +7,38 @@ import { ArrowRight, Calendar, User, Search } from 'lucide-react';
 
 const Blog: React.FC = () => {
   const heroImages = [
-    "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
-    "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
-    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2426&q=80",
-    "https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
+    "https://images.pexels.com/photos/669610/pexels-photo-669610.jpeg?auto=compress&cs=tinysrgb&w=2400",
+    "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=2400",
+    "https://images.pexels.com/photos/7688465/pexels-photo-7688465.jpeg?auto=compress&cs=tinysrgb&w=2400",
+    "https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=2400"
   ];
 
   const videoPosts = [
     {
       id: 1,
-      title: "ESOMAR and the Insights Community",
-      excerpt: "Exploring the role of ESOMAR in shaping the global insights community and market research standards.",
-      author: "ESOMAR",
-      date: "2024-01-15",
+      title: "Market Research Excellence in Africa",
+      excerpt: "Discover how FUTURIS delivers best-in-class data quality and actionable insights across 29 African markets.",
+      author: "FUTURIS",
+      date: "2024-09-15",
       category: "Industry Standards",
-      videoId: "cTRp1-505QY",
-      readTime: "15 min watch",
+      videoSrc: "/assets/video/ESOMAR.mp4",
+      readTime: "02 min watch",
       type: "video"
     },
     {
       id: 2,
-      title: "Augmented Intelligence in Market Research",
-      excerpt: "How artificial intelligence is transforming market research methodologies and data analysis.",
+      title: "Data Collection Methods for Market Analysis",
+      excerpt: "Master the latest data collection techniques and methodologies used in modern market research and trading strategies.",
       author: "FUTURIS",
-      date: "2024-01-10",
-      category: "Technology",
-      videoId: "bW0dqRNK2T4",
-      readTime: "12 min watch",
+      date: "2024-09-10",
+      category: "Methodology",
+      videoSrc: "/assets/video/Learn_data_methods.mp4",
+      readTime: "02 min watch",
       type: "video"
-    }
+    },
   ];
 
-  const categories = ["All", "Market Research", "Consumer Insights", "Digital Trends", "Methodology", "Technology", "Industry Standards"];
+  const categories = ["All", "Industry Standards", "Methodology", "Market Research"];
 
   return (
     <div className="min-h-screen bg-white">
@@ -52,31 +52,36 @@ const Blog: React.FC = () => {
         description="Insights, trends, and expert perspectives on market research across African markets."
       />
 
-      {/* Corporate Search and Filter */}
-      <section className="py-8 bg-gray-50 border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
-            <div className="relative flex-1 max-w-md">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+      {/* Optimized Filters */}
+      <section className="py-4 bg-white border-b border-gray-100 sticky top-0 z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col space-y-3 sm:flex-row sm:space-y-0 sm:items-center sm:justify-between">
+            {/* Search */}
+            <div className="relative w-full sm:max-w-xs">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
               <input
                 type="text"
-                placeholder="Search articles..."
-                className="w-full pl-10 pr-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
+                placeholder="Rechercher des vidéos..."
+                className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg bg-white text-sm text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150"
               />
             </div>
-            <div className="flex gap-2 flex-wrap">
-              {categories.map((category, index) => (
-                <button
-                  key={index}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                    category === "All" 
-                      ? "bg-blue-600 text-white" 
-                      : "bg-white text-gray-700 border border-gray-300 hover:border-blue-300 hover:text-blue-600"
-                  }`}
-                >
-                  {category}
-                </button>
-              ))}
+            
+            {/* Category Filters */}
+            <div className="flex-1 overflow-x-auto pb-1">
+              <div className="flex space-x-2">
+                {categories.map((category, index) => (
+                  <button
+                    key={index}
+                    className={`px-3 py-1.5 rounded-full text-sm font-medium whitespace-nowrap transition-colors duration-200 ${
+                      category === "All"
+                        ? "bg-blue-600 text-white shadow-sm"
+                        : "bg-white text-gray-700 border border-gray-200 hover:bg-gray-50"
+                    }`}
+                  >
+                    {category}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -89,16 +94,18 @@ const Blog: React.FC = () => {
             <div className="absolute inset-x-0 -top-px h-1 bg-gradient-to-r from-blue-500 to-blue-600" />
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
               <div className="relative">
-                <iframe
-                  width="100%"
-                  height="315"
-                  src={`https://www.youtube.com/embed/${videoPosts[0].videoId}`}
-                  title={videoPosts[0].title}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-64 lg:h-full"
-                />
+                <video
+                  className="w-full h-64 lg:h-full object-cover"
+                  controls
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  poster="/assets/img/video-poster-1.jpg"
+                >
+                  <source src={videoPosts[0].videoSrc} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
                 <div className="absolute top-4 left-4">
                   <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
                     Featured Video
@@ -153,16 +160,18 @@ const Blog: React.FC = () => {
               <article key={post.id} className="relative bg-white rounded-xl overflow-hidden border border-gray-200 hover:border-blue-200 hover:shadow-md transition-all duration-300 group">
                 <div className="absolute inset-x-0 -top-px h-1 bg-gradient-to-r from-blue-500 to-blue-600" />
                 <div className="relative">
-                  <iframe
-                    width="100%"
-                    height="300"
-                    src={`https://www.youtube.com/embed/${post.videoId}`}
-                    title={post.title}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="w-full h-64"
-                  />
+                  <video
+                    className="w-full h-64 object-cover"
+                    controls
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    poster={`/assets/img/video-poster-${post.id}.jpg`}
+                  >
+                    <source src={post.videoSrc} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                   <div className="absolute top-4 left-4">
                     <span className="bg-blue-50 text-blue-600 px-3 py-1 rounded-full text-sm font-medium">
                       {post.category}

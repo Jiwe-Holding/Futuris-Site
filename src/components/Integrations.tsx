@@ -3,34 +3,16 @@ import React from 'react';
 const BlogSection: React.FC = () => {
   const posts = [
     {
-      title: "ESOMAR and the Insights Community",
-      url: "https://esomar.org/",
-      media: (
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/cTRp1-505QY"
-          title="ESOMAR and the Insights Community"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
-      )
+      title: "Market Research Excellence Across Africa",
+      url: "#",
+      videoSrc: "/assets/video/market-research.mp4",
+      poster: "/assets/img/video-poster-1.jpg"
     },
     {
-      title: "Augmented Intelligence",
+      title: "Data Collection & Quality Control",
       url: "#",
-      media: (
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/bW0dqRNK2T4"
-          title="Augmented Intelligence"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
-      )
+      videoSrc: "/assets/video/data-collection.mp4",
+      poster: "/assets/img/video-poster-2.jpg"
     },
   ];
 
@@ -52,12 +34,17 @@ const BlogSection: React.FC = () => {
           {posts.map((post, idx) => (
             <div key={idx} className="space-y-4">
               <div className="rounded-2xl overflow-hidden shadow-lg">
-                {post.media}
+                <video
+                  className="w-full h-full object-cover"
+                  controls
+                  poster={post.poster}
+                >
+                  <source src={post.videoSrc} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
               <a
                 href={post.url}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="inline-flex items-center text-lg font-medium text-blue-400 hover:underline"
               >
                 {post.title}

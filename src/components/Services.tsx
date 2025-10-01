@@ -296,7 +296,7 @@ const Services: React.FC = () => {
               Research Solutions
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Providing the best- in class research solution.....
+              Comprehensive research methodologies tailored to deliver actionable insights for your business.
             </p>
           </div>
 

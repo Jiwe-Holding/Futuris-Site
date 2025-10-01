@@ -10,10 +10,10 @@ const Services: React.FC = () => {
   const navigate = useNavigate();
 
   const heroImages = [
-    "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2126&q=80",
-    "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
-    "https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=2487&q=80",
-    "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
+    "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=2400",
+    "https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=2400",
+    "https://images.pexels.com/photos/8297031/pexels-photo-8297031.jpeg?auto=compress&cs=tinysrgb&w=2400",
+    "https://images.pexels.com/photos/6476589/pexels-photo-6476589.jpeg?auto=compress&cs=tinysrgb&w=2400"
   ];
   
   const services = [
@@ -219,34 +219,61 @@ const Services: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
             {services.map((service, index) => (
               <div
                 key={index}
                 id={`service-${index + 1}`}
-                className="group relative rounded-xl border border-gray-200 bg-white p-8 transition-all duration-300 hover:shadow-lg scroll-mt-28 lg:scroll-mt-36"
+                className="group relative rounded-2xl bg-gradient-to-br from-white to-gray-50 border border-gray-200 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:scale-[1.02] scroll-mt-28 lg:scroll-mt-36"
               >
-                {/* Gradient Accent */}
-                <div className={`absolute inset-x-0 -top-px h-1 bg-gradient-to-r ${service.color}`} />
+                {/* Animated gradient background */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
+                
+                {/* Top accent bar */}
+                <div className={`absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r ${service.color}`} />
 
-                <div className="flex items-start gap-6">
-                  <div className="w-16 h-16 rounded-lg flex items-center justify-center bg-blue-50 text-blue-600 shrink-0">
-                    {service.icon}
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-black mb-2">{service.title}</h3>
-                    <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      {service.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-start gap-3 text-gray-700">
-                          <CheckCircle className="h-5 w-5 text-blue-600 mt-0.5" />
-                          <span className="leading-relaxed">{feature}</span>
-                        </div>
-                      ))}
+                <div className="relative p-8">
+                  {/* Icon with animated background */}
+                  <div className="mb-6 relative">
+                    <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500`} />
+                    <div className={`relative w-20 h-20 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-500`}>
+                      {service.icon}
                     </div>
                   </div>
+
+                  {/* Content */}
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-600 mb-6 leading-relaxed text-base">
+                      {service.description}
+                    </p>
+
+                    {/* Features list */}
+                    {service.features.length > 0 && (
+                      <div className="space-y-3 mb-6">
+                        {service.features.map((feature, featureIndex) => (
+                          <div key={featureIndex} className="flex items-start gap-3 text-gray-700">
+                            <div className={`w-5 h-5 rounded-full bg-gradient-to-br ${service.color} flex items-center justify-center flex-shrink-0 mt-0.5`}>
+                              <CheckCircle className="h-3 w-3 text-white" />
+                            </div>
+                            <span className="text-sm leading-relaxed">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* Learn more link */}
+                    <button className="inline-flex items-center gap-2 text-blue-600 font-semibold text-sm group-hover:gap-3 transition-all duration-300">
+                      <span>Learn More</span>
+                      <ArrowRight className="h-4 w-4" />
+                    </button>
+                  </div>
                 </div>
+
+                {/* Bottom decorative element */}
+                <div className={`absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-br ${service.color} opacity-5 rounded-tl-full transform translate-x-16 translate-y-16 group-hover:translate-x-12 group-hover:translate-y-12 transition-transform duration-500`} />
               </div>
             ))}
           </div>
@@ -261,33 +288,50 @@ const Services: React.FC = () => {
               <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">Research Solutions</span>
             </div>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Providing the best- in class research solution.....
+              Comprehensive research methodologies tailored to deliver actionable insights for your business.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {methods.map((method, index) => (
               <div
                 key={index}
                 id={`service-${index + 5}`}
-                className="group relative rounded-xl border border-gray-200 bg-white p-6 transition-all duration-300 hover:shadow-md hover:border-gray-300"
+                className="group relative rounded-xl bg-white border border-gray-200 p-6 transition-all duration-300 hover:shadow-xl hover:border-blue-300 hover:-translate-y-1"
               >
-                <div className="absolute inset-x-0 -top-px h-1 bg-gradient-to-r from-gray-200 to-gray-300" />
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 rounded-lg flex items-center justify-center bg-gray-50 text-gray-600">
+                {/* Hover gradient overlay */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${method.color} opacity-0 group-hover:opacity-5 rounded-xl transition-opacity duration-300`} />
+                
+                <div className="relative">
+                  {/* Icon */}
+                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${method.color} flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform duration-300 shadow-md`}>
                     {method.icon}
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-black mb-2">{method.title}</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-4">{method.description}</p>
-                    <ul className="space-y-2">
+                  
+                  {/* Content */}
+                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300">
+                    {method.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                    {method.description}
+                  </p>
+                  
+                  {/* Features */}
+                  {method.features.length > 0 && (
+                    <ul className="space-y-2 mb-4">
                       {method.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-start gap-2 text-gray-600 text-sm">
-                          <CheckCircle className="h-4 w-4 text-gray-600 mt-0.5" />
+                        <li key={featureIndex} className="flex items-start gap-2 text-gray-700 text-sm">
+                          <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-br ${method.color} mt-1.5 flex-shrink-0`} />
                           <span>{feature}</span>
                         </li>
                       ))}
                     </ul>
+                  )}
+                  
+                  {/* Learn more indicator */}
+                  <div className="flex items-center gap-2 text-blue-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span>Explore</span>
+                    <ArrowRight className="h-3 w-3" />
                   </div>
                 </div>
               </div>
