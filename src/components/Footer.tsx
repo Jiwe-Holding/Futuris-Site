@@ -6,7 +6,6 @@ const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   const services = [
-    'Market Research',
     'Data Collection', 
     'Quality Control',
     'Analytics',
@@ -105,8 +104,6 @@ const Footer: React.FC = () => {
                 <div className="flex items-center">
                   <Phone className="h-5 w-5 text-blue-600 mr-3" />
                   <div className="text-gray-400">
-                    +243 814 444 602
-                    <br/>
                     +27 76 152 5291
                   </div>
                 </div>

@@ -51,7 +51,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <div className="font-semibold text-black text-lg">Phone</div>
-                  <div className="text-gray-600">+243 814 444 602<br/> +27 76 152 5291</div>
+                  <div className="text-gray-600">+27 76 152 5291</div>
                 </div>
               </div>
 

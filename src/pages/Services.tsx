@@ -3,10 +3,18 @@ import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ChatWidget from '../components/ChatWidget';
+import HeroCarousel from '../components/HeroCarousel';
 import { ArrowRight, CheckCircle, Users, Clipboard, Lightbulb, Eye, BarChart2, ShoppingBag, Heart, UserCheck, MessageSquare, Star, Package, DollarSign, Search, Users2, TrendingUp, Layers, Crown } from 'lucide-react';
 
 const Services: React.FC = () => {
   const navigate = useNavigate();
+
+  const heroImages = [
+    "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2126&q=80",
+    "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+    "https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=2487&q=80",
+    "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
+  ];
   
   const services = [
     {
@@ -170,33 +178,32 @@ const Services: React.FC = () => {
     <div className="min-h-screen bg-white">
       <Header />
       
-      {/* Corporate Hero with Image */}
-      <section className="relative pt-32 pb-20 bg-black overflow-hidden">
-        {/* Corporate Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2126&q=80')"
-          }}
-        />
-        {/* Corporate Overlay */}
-        <div className="absolute inset-0 bg-black/70"></div>
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-8">
-            <span className="text-sm font-medium text-white uppercase tracking-wide">Our Services</span>
+      <HeroCarousel
+        images={heroImages}
+        badge="Our Services"
+        title="Comprehensive Market Research"
+        titleHighlight="Solutions"
+        description="Comprehensive market research solutions designed to deliver actionable insights across 29 African markets."
+      />
+
+      {/* Quick Nav - Anchor Pills to Core Services (Sticky) */}
+      <section className="bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/70 border-b border-gray-200 sticky top-16 lg:top-20 z-20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-3">
+          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar">
+            {services.map((s, i) => (
+              <a
+                key={i}
+                href={`#service-${i + 1}`}
+                className="whitespace-nowrap px-3 py-1.5 rounded-full text-sm font-medium bg-gray-100 text-gray-700 hover:text-blue-700 hover:bg-blue-50 border border-transparent hover:border-blue-200 transition-colors"
+              >
+                {s.title}
+              </a>
+            ))}
           </div>
-          <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-            Comprehensive Market Research
-            <span className="block text-blue-600">Solutions</span>
-          </h1>
-          <p className="text-xl text-white/90 max-w-4xl mx-auto leading-relaxed">
-            Comprehensive market research solutions designed to deliver actionable insights across 29 African markets.
-          </p>
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Services - Data Collection Focused Layout */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -205,82 +212,98 @@ const Services: React.FC = () => {
             </div>
             <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6 leading-tight">
               Core Services
-              <span className="block text-blue-600">
-                & Data Solutions
-              </span>
+              <span className="block text-blue-600">& Data Solutions</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Comprehensive data collection, quality control, and analytics services
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mb-20">
             {services.map((service, index) => (
-              <div key={index} id={`service-${index + 1}`} className="bg-white rounded-lg border border-gray-200 p-8 hover:shadow-md hover:border-blue-200 transition-all duration-300">
-                <div className="w-16 h-16 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600 mb-6">
-                  {service.icon}
+              <div
+                key={index}
+                id={`service-${index + 1}`}
+                className="group relative rounded-xl border border-gray-200 bg-white p-8 transition-all duration-300 hover:shadow-lg scroll-mt-28 lg:scroll-mt-36"
+              >
+                {/* Gradient Accent */}
+                <div className={`absolute inset-x-0 -top-px h-1 bg-gradient-to-r ${service.color}`} />
+
+                <div className="flex items-start gap-6">
+                  <div className="w-16 h-16 rounded-lg flex items-center justify-center bg-blue-50 text-blue-600 shrink-0">
+                    {service.icon}
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-bold text-black mb-2">{service.title}</h3>
+                    <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      {service.features.map((feature, featureIndex) => (
+                        <div key={featureIndex} className="flex items-start gap-3 text-gray-700">
+                          <CheckCircle className="h-5 w-5 text-blue-600 mt-0.5" />
+                          <span className="leading-relaxed">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold text-black mb-4">{service.title}</h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
-                <ul className="space-y-3">
-                  {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-gray-600">
-                      <CheckCircle className="h-5 w-5 text-blue-600 mr-3 flex-shrink-0" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Research Methods Section */}
+      {/* Research Methods - Grid of Capabilities */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-4 py-2 bg-gray-100 rounded-full mb-6">
               <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">Research Solutions</span>
             </div>
-        
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Providing the best- in class research solution.....
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {methods.map((method, index) => (
-              <div key={index} id={`service-${index + 5}`} className="bg-white rounded-lg border border-gray-200 p-8 hover:shadow-md hover:border-gray-300 transition-all duration-300">
-                <div className="w-16 h-16 bg-gray-50 rounded-lg flex items-center justify-center text-gray-600 mb-6">
-                  {method.icon}
+              <div
+                key={index}
+                id={`service-${index + 5}`}
+                className="group relative rounded-xl border border-gray-200 bg-white p-6 transition-all duration-300 hover:shadow-md hover:border-gray-300"
+              >
+                <div className="absolute inset-x-0 -top-px h-1 bg-gradient-to-r from-gray-200 to-gray-300" />
+                <div className="flex items-start gap-4">
+                  <div className="w-14 h-14 rounded-lg flex items-center justify-center bg-gray-50 text-gray-600">
+                    {method.icon}
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-semibold text-black mb-2">{method.title}</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-4">{method.description}</p>
+                    <ul className="space-y-2">
+                      {method.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-start gap-2 text-gray-600 text-sm">
+                          <CheckCircle className="h-4 w-4 text-gray-600 mt-0.5" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold text-black mb-4">{method.title}</h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">{method.description}</p>
-                <ul className="space-y-3">
-                  {method.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-gray-600">
-                      <CheckCircle className="h-5 w-5 text-gray-600 mr-3 flex-shrink-0" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Corporate CTA Section */}
+      {/* CTA */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-black mb-6">
-            Ready to Transform Your Market Research?
-          </h2>
+          <h2 className="text-3xl lg:text-4xl font-bold text-black mb-6">Ready to Transform Your Market Research?</h2>
           <p className="text-xl text-gray-600 mb-8 leading-relaxed">
             Let's discuss how our comprehensive services can help you achieve your business objectives.
           </p>
-          <button 
+          <button
             onClick={() => navigate('/contact')}
             className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg transition-colors font-semibold inline-flex items-center gap-2"
           >

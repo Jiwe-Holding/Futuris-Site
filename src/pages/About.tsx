@@ -3,9 +3,17 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ChatWidget from '../components/ChatWidget';
 import WorldMap from '../components/WorldMap';
+import HeroCarousel from '../components/HeroCarousel';
 import { ArrowRight, Users, Globe, Target, Award, TrendingUp } from 'lucide-react';
 
 const About: React.FC = () => {
+  const heroImages = [
+    "https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2487&q=80",
+    "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+    "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+    "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
+  ];
+
   const values = [
     {
       icon: <Award className="h-6 w-6" />,
@@ -93,31 +101,13 @@ const About: React.FC = () => {
     <div className="min-h-screen bg-white">
       <Header />
       
-      {/* Corporate Hero with Image */}
-      <section className="relative pt-32 pb-20 bg-black overflow-hidden">
-        {/* Corporate Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2487&q=80')"
-          }}
-        />
-        {/* Corporate Overlay */}
-        <div className="absolute inset-0 bg-black/70"></div>
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-8">
-            <span className="text-sm font-medium text-white uppercase tracking-wide">About FUTURIS</span>
-          </div>
-          <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-            Your Market Research Partner
-            <span className="block text-blue-600">Across 29 African Markets</span>
-          </h1>
-          <p className="text-xl text-white/90 max-w-4xl mx-auto leading-relaxed">
-            Your trusted market research partner across 29 African markets, delivering excellence since 2009.
-          </p>
-        </div>
-      </section>
+      <HeroCarousel
+        images={heroImages}
+        badge="About FUTURIS"
+        title="Your Market Research Partner"
+        titleHighlight="Across 29 African Markets"
+        description="Your trusted market research partner across 29 African markets, delivering excellence since 2009."
+      />
 
       {/* Corporate Mission & Story */}
       <section className="py-20 bg-gray-50">

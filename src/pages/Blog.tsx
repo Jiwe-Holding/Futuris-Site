@@ -2,9 +2,17 @@ import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ChatWidget from '../components/ChatWidget';
+import HeroCarousel from '../components/HeroCarousel';
 import { ArrowRight, Calendar, User, Search } from 'lucide-react';
 
 const Blog: React.FC = () => {
+  const heroImages = [
+    "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+    "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2426&q=80",
+    "https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
+  ];
+
   const videoPosts = [
     {
       id: 1,
@@ -36,31 +44,13 @@ const Blog: React.FC = () => {
     <div className="min-h-screen bg-white">
       <Header />
       
-      {/* Corporate Hero with Image */}
-      <section className="relative pt-32 pb-20 bg-black overflow-hidden">
-        {/* Corporate Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80')"
-          }}
-        />
-        {/* Corporate Overlay */}
-        <div className="absolute inset-0 bg-black/70"></div>
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-8">
-            <span className="text-sm font-medium text-white uppercase tracking-wide">Insights & Resources</span>
-          </div>
-          <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-            Market Research
-            <span className="block text-blue-600">Insights & Trends</span>
-          </h1>
-          <p className="text-xl text-white/90 max-w-4xl mx-auto leading-relaxed">
-            Insights, trends, and expert perspectives on market research across African markets.
-          </p>
-        </div>
-      </section>
+      <HeroCarousel
+        images={heroImages}
+        badge="Insights & Resources"
+        title="Market Research"
+        titleHighlight="Insights & Trends"
+        description="Insights, trends, and expert perspectives on market research across African markets."
+      />
 
       {/* Corporate Search and Filter */}
       <section className="py-8 bg-gray-50 border-b border-gray-200">
@@ -92,10 +82,11 @@ const Blog: React.FC = () => {
         </div>
       </section>
 
-      {/* Corporate Featured Video */}
+      {/* Featured Video - Editorial Card */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="bg-gray-50 rounded-lg overflow-hidden border border-gray-200">
+          <div className="relative bg-gray-50 rounded-xl overflow-hidden border border-gray-200">
+            <div className="absolute inset-x-0 -top-px h-1 bg-gradient-to-r from-blue-500 to-blue-600" />
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
               <div className="relative">
                 <iframe
@@ -148,7 +139,7 @@ const Blog: React.FC = () => {
         </div>
       </section>
 
-      {/* Corporate Video Grid */}
+      {/* Video Grid - Cards */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -159,7 +150,8 @@ const Blog: React.FC = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {videoPosts.slice(1).map((post) => (
-              <article key={post.id} className="bg-white rounded-lg overflow-hidden border border-gray-200 hover:border-blue-200 hover:shadow-md transition-all duration-300 group">
+              <article key={post.id} className="relative bg-white rounded-xl overflow-hidden border border-gray-200 hover:border-blue-200 hover:shadow-md transition-all duration-300 group">
+                <div className="absolute inset-x-0 -top-px h-1 bg-gradient-to-r from-blue-500 to-blue-600" />
                 <div className="relative">
                   <iframe
                     width="100%"

@@ -35,7 +35,7 @@ const Header: React.FC = () => {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled 
         ? 'bg-black shadow-lg border-b border-gray-800' 
-        : 'lg:bg-white/10 lg:backdrop-blur-md md:bg-slate-800 sm:bg-slate-800 bg-slate-800'
+        : 'bg-slate-800 lg:bg-transparent lg:backdrop-blur-none'
     }`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ChatWidget from '../components/ChatWidget';
+import HeroCarousel from '../components/HeroCarousel';
 import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
 
 const Contact: React.FC = () => {
@@ -42,41 +43,30 @@ const Contact: React.FC = () => {
     window.location.href = 'tel:+27761525291';
   };
 
+  const heroImages = [
+    "https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2274&q=80",
+    "https://images.unsplash.com/photo-1423666639041-f56000c27a9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2274&q=80",
+    "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+    "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
       
-      {/* Corporate Hero with Image */}
-      <section className="relative pt-32 pb-20 bg-black overflow-hidden">
-        {/* Corporate Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2274&q=80')"
-          }}
-        />
-        {/* Corporate Overlay */}
-        <div className="absolute inset-0 bg-black/70"></div>
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-8">
-            <span className="text-sm font-medium text-white uppercase tracking-wide">Get in Touch</span>
-          </div>
-          <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-            Ready to Transform
-            <span className="block text-blue-600">Your Business?</span>
-          </h1>
-          <p className="text-xl text-white/90 max-w-4xl mx-auto leading-relaxed">
-            Ready to start your next market research project? Let's discuss how we can help you achieve your objectives.
-          </p>
-        </div>
-      </section>
+      <HeroCarousel
+        images={heroImages}
+        badge="Get in Touch"
+        title="Ready to Transform"
+        titleHighlight="Your Business?"
+        description="Ready to start your next market research project? Let's discuss how we can help you achieve your objectives."
+      />
 
-      {/* Corporate Contact Info & Form */}
+      {/* Contact Info & Form */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Corporate Contact Information */}
+            {/* Contact Information */}
             <div>
               <h2 className="text-3xl font-bold text-black mb-8">Let's Start a Conversation</h2>
               <p className="text-gray-600 mb-8 leading-relaxed">
@@ -91,7 +81,6 @@ const Contact: React.FC = () => {
                   <div>
                     <div className="font-semibold text-black text-lg mb-1">Phone</div>
                     <div className="text-gray-600">+27 76 152 5291</div>
-                    <div className="text-gray-600">+243 814 444 602</div>
                   </div>
                 </div>
 
@@ -137,8 +126,9 @@ const Contact: React.FC = () => {
               </div>
             </div>
 
-            {/* Corporate Contact Form */}
-            <div className="bg-white rounded-lg p-8 border border-gray-200 shadow-sm">
+            {/* Contact Form */}
+            <div className="relative bg-white rounded-xl p-8 border border-gray-200 shadow-sm">
+              <div className="absolute inset-x-0 -top-px h-1 bg-gradient-to-r from-blue-500 to-blue-600" />
               <h3 className="text-2xl font-bold text-black mb-6">Send us a Message</h3>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
