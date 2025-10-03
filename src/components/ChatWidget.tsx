@@ -120,7 +120,7 @@ const ChatWidget: React.FC = () => {
           break;
         case 'projects_quant':
         case 'projects_qual':
-          addAgentMessage("We have conducted projects in 32 African countries with over 13,500 field teams and 46 analysis experts. What would you like to do?");
+          addAgentMessage("We have conducted projects in 29 African countries with over 13,500 field teams and 46 analysis experts. What would you like to do?");
           break;
         case 'team':
           addAgentMessage("Our team is composed of professionals passionate about innovation and excellence. Would you like to contact an agent?");
