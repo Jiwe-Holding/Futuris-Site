@@ -19,7 +19,7 @@ function App() {
 
     return () => clearTimeout(timer);
   }, []);
-
+    // Franchement
   return (
     <Router>
       <div className="min-h-screen bg-slate-900">
