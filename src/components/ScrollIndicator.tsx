@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronUp } from 'lucide-react';
 
 const ScrollIndicator: React.FC = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -17,10 +16,6 @@ const ScrollIndicator: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
     <>
       {/* Progress Bar */}
@@ -30,17 +25,6 @@ const ScrollIndicator: React.FC = () => {
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
-
-      {/* Scroll to Top Button */}
-      <button
-        onClick={scrollToTop}
-        className={`fixed bottom-8 right-8 z-50 w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full shadow-lg hover:shadow-xl hover:shadow-blue-500/25 transition-all duration-300 transform flex items-center justify-center group ${
-          isVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-16 opacity-0 scale-75'
-        }`}
-      >
-        <ChevronUp className="h-5 w-5 group-hover:animate-bounce" />
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-      </button>
 
       {/* Circular Progress Indicator */}
       <div className={`fixed bottom-8 left-8 z-50 transition-all duration-300 ${

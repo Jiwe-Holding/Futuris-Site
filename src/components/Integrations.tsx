@@ -25,7 +25,7 @@ const BlogSection: React.FC = () => {
             READ FROM OUR <span className="text-blue-400">BLOG, RESEARCH BODY & PARTNERS</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            We support international standards bodies & partner with high‑skill providers to become a highly effective, lean and fast‑moving organization—always hungry for new knowledge.
+            We support international standards bodies & partner with high-skill providers to become a highly effective, lean and fast‑moving organization—always hungry for new knowledge.
           </p>
         </div>
 

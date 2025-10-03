@@ -4,6 +4,8 @@ import Footer from '../components/Footer';
 import ChatWidget from '../components/ChatWidget';
 import HeroCarousel from '../components/HeroCarousel';
 import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
+import Swal from 'sweetalert2';
+import { EMAIL_API_CONFIG } from '../config/api';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -18,25 +20,145 @@ const Contact: React.FC = () => {
   });
 
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const validateEmail = (email: string): boolean => {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailRegex.test(email);
+  };
+
+  const sendContactEmail = async () => {
+    const emailMessage = `Nouvelle demande de contact via le formulaire Futuris\n\n` +
+      `📋 Informations du contact :\n` +
+      `- Nom : ${formData.name}\n` +
+      `- Email : ${formData.email}\n` +
+      `- Entreprise : ${formData.company || 'Non renseigné'}\n` +
+      `- Téléphone : ${formData.phone || 'Non renseigné'}\n` +
+      `- Pays : ${formData.country}\n` +
+      `- Type d'entreprise : ${formData.companyType}\n` +
+      `- Sujet : ${formData.subject}\n` +
+      `- Date : ${new Date().toLocaleString('fr-FR')}\n\n` +
+      `📝 Message :\n${formData.message}\n\n` +
+      `---\n` +
+      `Ce message a été envoyé depuis le formulaire de contact de futuris-group.com`;
+
+    try {
+      const response = await fetch(EMAIL_API_CONFIG.url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${EMAIL_API_CONFIG.token}`
+        },
+        body: JSON.stringify({
+          sender_email: formData.email,
+          sender_name: formData.name,
+          organisation: EMAIL_API_CONFIG.organisation,
+          sujet: `Nouvelle demande - ${formData.subject} - ${formData.name}`,
+          message: emailMessage,
+          noms: ['Équipe Futuris', EMAIL_API_CONFIG.senderEmail]
+        })
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        console.error('Erreur API:', errorData);
+        throw new Error('Erreur lors de l\'envoi de l\'email');
+      }
+
+      return true;
+    } catch (error) {
+      console.error('Erreur API:', error);
+      return false;
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // TODO: integrate with your email/API
-    alert('Thank you for your message! We will get back to you soon.');
-    setFormData({
-      name: '',
-      email: '',
-      company: '',
-      phone: '',
-      country: '',
-      companyType: '',
-      subject: '',
-      message: ''
+
+    // Validation de l'email
+    if (!validateEmail(formData.email)) {
+      Swal.fire({
+        title: 'Email invalide !',
+        text: 'Veuillez entrer une adresse email valide (exemple: nom@example.com).',
+        icon: 'error',
+        position: 'top-end',
+        toast: true,
+        timer: 4000,
+        showConfirmButton: false,
+        timerProgressBar: true,
+        customClass: {
+          popup: 'rounded-xl shadow-2xl'
+        }
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    // Afficher un loader pendant l'envoi
+    Swal.fire({
+      title: 'Envoi en cours...',
+      text: 'Veuillez patienter',
+      icon: 'info',
+      allowOutsideClick: false,
+      showConfirmButton: false,
+      willOpen: () => {
+        Swal.showLoading();
+      }
     });
+
+    // Envoyer l'email via API
+    const success = await sendContactEmail();
+    
+    setIsSubmitting(false);
+
+    if (success) {
+      Swal.fire({
+        title: 'Message envoyé !',
+        html: `
+          <div class="text-left">
+            <p class="text-gray-700 mb-3">Merci pour votre message, ${formData.name} !</p>
+            <p class="text-gray-600 text-sm">Notre équipe vous contactera prochainement à l'adresse :</p>
+            <p class="font-semibold text-blue-600 mt-2">${formData.email}</p>
+          </div>
+        `,
+        icon: 'success',
+        confirmButtonText: 'OK',
+        confirmButtonColor: '#2563eb',
+        customClass: {
+          popup: 'rounded-2xl',
+          confirmButton: 'rounded-lg px-6 py-2'
+        }
+      });
+
+      // Réinitialiser le formulaire
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        phone: '',
+        country: '',
+        companyType: '',
+        subject: '',
+        message: ''
+      });
+    } else {
+      Swal.fire({
+        title: 'Erreur d\'envoi',
+        text: 'Impossible d\'envoyer votre message. Veuillez réessayer plus tard ou nous contacter directement par téléphone.',
+        icon: 'error',
+        confirmButtonText: 'OK',
+        confirmButtonColor: '#2563eb',
+        customClass: {
+          popup: 'rounded-2xl',
+          confirmButton: 'rounded-lg px-6 py-2'
+        }
+      });
+    }
   };
 
   const handleCall = () => {
@@ -290,10 +412,27 @@ const Contact: React.FC = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg transition-colors font-semibold flex items-center justify-center gap-2"
+                  disabled={isSubmitting}
+                  className={`w-full px-8 py-4 rounded-lg transition-colors font-semibold flex items-center justify-center gap-2 ${
+                    isSubmitting 
+                      ? 'bg-gray-400 cursor-not-allowed' 
+                      : 'bg-blue-600 hover:bg-blue-700 text-white'
+                  }`}
                 >
-                  <Send className="h-5 w-5" />
-                  Send Message
+                  {isSubmitting ? (
+                    <>
+                      <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Envoi en cours...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="h-5 w-5" />
+                      Send Message
+                    </>
+                  )}
                 </button>
               </form>
             </div>
