@@ -51,7 +51,7 @@ const ChatWidget: React.FC = () => {
   // Initialize welcome message
   useEffect(() => {
     if (isChatOpen && chatMessages.length === 0) {
-      addAgentMessage("Bonjour et bienvenue chez Futuris Group, votre partenaire en recherche marketing et consulting stratégique ! Comment souhaitez-vous commencer ?");
+      addAgentMessage("Hello and welcome to Futuris Group, your partner in market research and strategic consulting! How would you like to begin?");
     }
   }, [isChatOpen, chatMessages.length]);
 
@@ -106,31 +106,31 @@ const ChatWidget: React.FC = () => {
       
       switch (nextState) {
         case 'services_choice':
-          addAgentMessage("Nous proposons plusieurs services pour mieux comprendre le marché et vos clients. Quel type de service vous intéresse ?");
+          addAgentMessage("We offer several services to better understand the market and your customers. What type of service interests you?");
           break;
         case 'quantitative':
-          addAgentMessage("Nous réalisons des enquêtes et sondages pour mesurer l'attitude et le comportement des consommateurs. Que souhaitez-vous explorer ?");
+          addAgentMessage("We conduct surveys and polls to measure consumer attitudes and behavior. What would you like to explore?");
           break;
         case 'qualitative':
-          addAgentMessage("Nous réalisons focus groups, interviews approfondies et offrons du conseil stratégique. Que souhaitez-vous explorer ?");
+          addAgentMessage("We conduct focus groups, in-depth interviews and offer strategic consulting. What would you like to explore?");
           break;
         case 'methodologies_quant':
         case 'methodologies_qual':
-          addAgentMessage("Nos méthodes incluent entretiens face à face, focus groups, interviews approfondies (IDI), et enquêtes téléphoniques (CATI).");
+          addAgentMessage("Our methods include face-to-face interviews, focus groups, in-depth interviews (IDI), and telephone surveys (CATI).");
           break;
         case 'projects_quant':
         case 'projects_qual':
-          addAgentMessage("Nous avons mené des projets dans 32 pays africains avec plus de 13 500 équipes sur le terrain et 46 experts en analyse. Que voulez-vous faire ?");
+          addAgentMessage("We have conducted projects in 32 African countries with over 13,500 field teams and 46 analysis experts. What would you like to do?");
           break;
         case 'team':
-          addAgentMessage("Notre équipe est composée de professionnels passionnés par l'innovation et l'excellence. Voulez-vous contacter un agent ?");
+          addAgentMessage("Our team is composed of professionals passionate about innovation and excellence. Would you like to contact an agent?");
           break;
         case 'contact_request':
-          addAgentMessage("Parfait ! Un agent prendra contact avec vous. Veuillez fournir votre nom et votre adresse email.");
+          addAgentMessage("Perfect! An agent will contact you. Please provide your name and email address.");
           setIsCollectingInfo(true);
           break;
         case 'welcome':
-          addAgentMessage("Bonjour et bienvenue chez Futuris Group, votre partenaire en recherche marketing et consulting stratégique ! Comment souhaitez-vous commencer ?");
+          addAgentMessage("Hello and welcome to Futuris Group, your partner in market research and strategic consulting! How would you like to begin?");
           break;
       }
     }, 500);
@@ -142,11 +142,11 @@ const ChatWidget: React.FC = () => {
   };
 
   const handleContactSubmit = () => {
-    // Validation du nom
+    // Name validation
     if (!userName.trim()) {
       Swal.fire({
-        title: 'Nom requis !',
-        text: 'Veuillez entrer votre nom.',
+        title: 'Name required!',
+        text: 'Please enter your name.',
         icon: 'warning',
         position: 'top-end',
         toast: true,
@@ -160,11 +160,11 @@ const ChatWidget: React.FC = () => {
       return;
     }
 
-    // Validation de l'email
+    // Email validation
     if (!userEmail.trim()) {
       Swal.fire({
-        title: 'Email requis !',
-        text: 'Veuillez entrer votre adresse email.',
+        title: 'Email required!',
+        text: 'Please enter your email address.',
         icon: 'warning',
         position: 'top-end',
         toast: true,
@@ -178,11 +178,11 @@ const ChatWidget: React.FC = () => {
       return;
     }
 
-    // Validation du format email avec regex
+    // Email format validation with regex
     if (!validateEmail(userEmail)) {
       Swal.fire({
-        title: 'Email invalide !',
-        text: 'Veuillez entrer une adresse email valide (exemple: nom@example.com).',
+        title: 'Invalid email!',
+        text: 'Please enter a valid email address (example: name@example.com).',
         icon: 'error',
         position: 'top-end',
         toast: true,
@@ -206,35 +206,35 @@ const ChatWidget: React.FC = () => {
     setIsCollectingInfo(false);
     
     setTimeout(async () => {
-      // Envoyer notification à l'équipe Futuris
+      // Send notification to Futuris team
       await sendContactNotification(name, email);
       
-      // Envoyer directement le résumé par email
+      // Send summary by email
       const summary = generateConversationSummary();
-      addAgentMessage(`Parfait ${name} ! Un agent vous contactera prochainement à l'adresse ${email}.\n\n${summary}\n\nMerci de votre intérêt pour Futuris Group ! 🎉`);
+      addAgentMessage(`Perfect ${name}! An agent will contact you soon at ${email}.\n\n${summary}\n\nThank you for your interest in Futuris Group! 🎉`);
       
       // Afficher notification SweetAlert
       setTimeout(() => {
         Swal.fire({
-          title: 'Merci pour votre intérêt !',
+          title: 'Thank you for your interest!',
           html: `
             <div class="text-left">
-              <p class="text-gray-700 mb-3">Vos coordonnées ont été enregistrées avec succès.</p>
+              <p class="text-gray-700 mb-3">Your details have been successfully registered.</p>
               <div class="bg-blue-50 p-3 rounded-lg mb-2">
-                <p class="text-gray-600 text-sm mb-1">👤 Nom :</p>
+                <p class="text-gray-600 text-sm mb-1">👤 Name:</p>
                 <p class="font-semibold text-gray-800">${name}</p>
               </div>
               <div class="bg-blue-50 p-3 rounded-lg">
-                <p class="text-gray-600 text-sm mb-1">📧 Email :</p>
+                <p class="text-gray-600 text-sm mb-1">📧 Email:</p>
                 <p class="font-semibold text-blue-600">${email}</p>
               </div>
-              <p class="text-gray-600 text-sm mt-3">Un agent vous contactera prochainement.</p>
+              <p class="text-gray-600 text-sm mt-3">An agent will contact you shortly.</p>
             </div>
           `,
           icon: 'success',
-          confirmButtonText: 'Recevoir le résumé par email',
+          confirmButtonText: 'Receive by email',
           showCancelButton: true,
-          cancelButtonText: 'Fermer',
+          cancelButtonText: 'Close',
           confirmButtonColor: '#2563eb',
           cancelButtonColor: '#6b7280',
           width: '32rem',
@@ -245,10 +245,10 @@ const ChatWidget: React.FC = () => {
           }
         }).then(async (result) => {
           if (result.isConfirmed) {
-            // Afficher un loader pendant l'envoi
+            // Show loader during sending
             Swal.fire({
-              title: 'Envoi en cours...',
-              text: 'Veuillez patienter',
+              title: 'Sending...',
+              text: 'Please wait',
               icon: 'info',
               allowOutsideClick: false,
               showConfirmButton: false,
@@ -257,13 +257,13 @@ const ChatWidget: React.FC = () => {
               }
             });
 
-            // Envoyer l'email via API
+            // Send email via API
             const success = await sendEmailSummary(email, name);
             
             if (success) {
               Swal.fire({
-                title: 'Email envoyé !',
-                text: 'Le résumé de votre conversation a été envoyé avec succès.',
+                title: 'Email sent!',
+                text: 'Your conversation summary has been sent successfully.',
                 icon: 'success',
                 position: 'top-end',
                 toast: true,
@@ -284,7 +284,7 @@ const ChatWidget: React.FC = () => {
   };
 
   const generateConversationSummary = () => {
-    let summary = "📋 Récapitulatif de votre parcours :\n";
+    let summary = "📋 Your navigation summary:\n";
     conversation.forEach((step, index) => {
       summary += `${index + 1}. ${step.choice}\n`;
     });
@@ -357,8 +357,8 @@ const ChatWidget: React.FC = () => {
       console.error('Erreur API:', error);
       
       Swal.fire({
-        title: 'Erreur d\'envoi',
-        text: 'Impossible d\'envoyer l\'email. Veuillez réessayer plus tard.',
+        title: 'Sending error',
+        text: 'Unable to send email. Please try again later.',
         icon: 'error',
         position: 'top-end',
         toast: true,
@@ -382,11 +382,11 @@ const ChatWidget: React.FC = () => {
       case 'welcome':
         return (
           <div className="space-y-3">
-            <button onClick={() => handleOptionClick("Découvrir nos services", 'services_choice')} className={primaryBtnClass}>
-              📊 Découvrir nos services
+            <button onClick={() => handleOptionClick("Discover our services", 'services_choice')} className={primaryBtnClass}>
+              📊 Discover our services
             </button>
-            <button onClick={() => handleOptionClick("Parler à un agent", 'contact_request')} className={secondaryBtnClass}>
-              💬 Parler à un agent
+            <button onClick={() => handleOptionClick("Talk to an agent", 'contact_request')} className={secondaryBtnClass}>
+              💬 Talk to an agent
             </button>
           </div>
         );
@@ -394,11 +394,11 @@ const ChatWidget: React.FC = () => {
       case 'services_choice':
         return (
           <div className="space-y-3">
-            <button onClick={() => handleOptionClick("Études et analyses quantitatives", 'quantitative')} className={primaryBtnClass}>
-              📈 Études quantitatives
+            <button onClick={() => handleOptionClick("Quantitative studies and analysis", 'quantitative')} className={primaryBtnClass}>
+              📈 Quantitative studies
             </button>
-            <button onClick={() => handleOptionClick("Études qualitatives et consulting", 'qualitative')} className={primaryBtnClass}>
-              💡 Études qualitatives
+            <button onClick={() => handleOptionClick("Qualitative studies and consulting", 'qualitative')} className={primaryBtnClass}>
+              💡 Qualitative studies
             </button>
           </div>
         );
@@ -406,11 +406,11 @@ const ChatWidget: React.FC = () => {
       case 'quantitative':
         return (
           <div className="space-y-3">
-            <button onClick={() => handleOptionClick("Voir nos méthodologies", 'methodologies_quant')} className={primaryBtnClass}>
-              🔬 Nos méthodologies
+            <button onClick={() => handleOptionClick("View our methodologies", 'methodologies_quant')} className={primaryBtnClass}>
+              🔬 Our methodologies
             </button>
-            <button onClick={() => handleOptionClick("Voir des exemples de projets", 'projects_quant')} className={primaryBtnClass}>
-              📁 Exemples de projets
+            <button onClick={() => handleOptionClick("View project examples", 'projects_quant')} className={primaryBtnClass}>
+              📁 Project examples
             </button>
           </div>
         );
@@ -418,11 +418,11 @@ const ChatWidget: React.FC = () => {
       case 'qualitative':
         return (
           <div className="space-y-3">
-            <button onClick={() => handleOptionClick("Voir nos méthodologies", 'methodologies_qual')} className={primaryBtnClass}>
-              🔬 Nos méthodologies
+            <button onClick={() => handleOptionClick("View our methodologies", 'methodologies_qual')} className={primaryBtnClass}>
+              🔬 Our methodologies
             </button>
-            <button onClick={() => handleOptionClick("Voir des exemples de projets", 'projects_qual')} className={primaryBtnClass}>
-              📁 Exemples de projets
+            <button onClick={() => handleOptionClick("View project examples", 'projects_qual')} className={primaryBtnClass}>
+              📁 Project examples
             </button>
           </div>
         );
@@ -430,11 +430,11 @@ const ChatWidget: React.FC = () => {
       case 'methodologies_quant':
         return (
           <div className="space-y-3">
-            <button onClick={() => handleOptionClick("Retour au menu services", 'services_choice')} className={secondaryBtnClass}>
-              ⬅️ Retour aux services
+            <button onClick={() => handleOptionClick("Back to services menu", 'services_choice')} className={secondaryBtnClass}>
+              ⬅️ Back to services
             </button>
-            <button onClick={() => handleOptionClick("Passer à nos projets", 'projects_quant')} className={primaryBtnClass}>
-              ➡️ Voir nos projets
+            <button onClick={() => handleOptionClick("Go to our projects", 'projects_quant')} className={primaryBtnClass}>
+              ➡️ View our projects
             </button>
           </div>
         );
@@ -442,11 +442,11 @@ const ChatWidget: React.FC = () => {
       case 'methodologies_qual':
         return (
           <div className="space-y-3">
-            <button onClick={() => handleOptionClick("Retour au menu services", 'services_choice')} className={secondaryBtnClass}>
-              ⬅️ Retour aux services
+            <button onClick={() => handleOptionClick("Back to services menu", 'services_choice')} className={secondaryBtnClass}>
+              ⬅️ Back to services
             </button>
-            <button onClick={() => handleOptionClick("Passer à nos projets", 'projects_qual')} className={primaryBtnClass}>
-              ➡️ Voir nos projets
+            <button onClick={() => handleOptionClick("Go to our projects", 'projects_qual')} className={primaryBtnClass}>
+              ➡️ View our projects
             </button>
           </div>
         );
@@ -455,11 +455,11 @@ const ChatWidget: React.FC = () => {
       case 'projects_qual':
         return (
           <div className="space-y-3">
-            <button onClick={() => handleOptionClick("Voir notre équipe", 'team')} className={primaryBtnClass}>
-              👥 Notre équipe
+            <button onClick={() => handleOptionClick("View our team", 'team')} className={primaryBtnClass}>
+              👥 Our team
             </button>
-            <button onClick={() => handleOptionClick("Parler à un agent", 'contact_request')} className={secondaryBtnClass}>
-              💬 Parler à un agent
+            <button onClick={() => handleOptionClick("Talk to an agent", 'contact_request')} className={secondaryBtnClass}>
+              💬 Talk to an agent
             </button>
           </div>
         );
@@ -467,11 +467,11 @@ const ChatWidget: React.FC = () => {
       case 'team':
         return (
           <div className="space-y-3">
-            <button onClick={() => handleOptionClick("Oui, parler à un agent", 'contact_request')} className={primaryBtnClass}>
-              ✅ Oui, contacter un agent
+            <button onClick={() => handleOptionClick("Yes, talk to an agent", 'contact_request')} className={primaryBtnClass}>
+              ✅ Yes, contact an agent
             </button>
-            <button onClick={() => handleOptionClick("Non, revenir au menu principal", 'welcome')} className={secondaryBtnClass}>
-              ⬅️ Revenir au menu
+            <button onClick={() => handleOptionClick("No, return to main menu", 'welcome')} className={secondaryBtnClass}>
+              ⬅️ Return to menu
             </button>
           </div>
         );
@@ -493,10 +493,10 @@ const ChatWidget: React.FC = () => {
                 <User className="h-5 w-5 text-white" />
               </div>
               <div>
-                <div className="font-semibold text-white">Assistant Futuris</div>
+                <div className="font-semibold text-white">Futuris Assistant</div>
                 <div className="text-xs text-blue-100 flex items-center">
                   <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
-                  En ligne maintenant
+                  Online now
                 </div>
               </div>
             </div>
@@ -532,43 +532,43 @@ const ChatWidget: React.FC = () => {
             {isCollectingInfo ? (
               <div className="space-y-3">
                 <div className="space-y-2">
-                  <label className="text-xs font-medium text-gray-700 ml-1">👤 Votre nom</label>
-              <input
-                type="text"
+                  <label className="text-xs font-medium text-gray-700 ml-1">👤 Your name</label>
+                  <input
+                    type="text"
                     value={userName}
                     onChange={(e) => setUserName(e.target.value)}
-                    placeholder="Ex: Jean Dupont"
+                    placeholder="Ex: John Doe"
                     className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-xs font-medium text-gray-700 ml-1">📧 Votre email</label>
+                  <label className="text-xs font-medium text-gray-700 ml-1">📧 Your email</label>
                   <input
                     type="email"
                     value={userEmail}
                     onChange={(e) => setUserEmail(e.target.value)}
                     onKeyPress={(e) => e.key === 'Enter' && handleContactSubmit()}
-                    placeholder="Ex: jean.dupont@example.com"
+                    placeholder="Ex: john.doe@example.com"
                     className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
                   />
                 </div>
-              <button
+                <button
                   onClick={handleContactSubmit}
                   className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 shadow-md flex items-center justify-center gap-2"
-              >
+                >
                   <span>✉️</span>
-                  <span>Envoyer mes coordonnées</span>
-              </button>
-            </div>
+                  <span>Send my details</span>
+                </button>
+              </div>
             ) : (
               <>
                 {renderButtons()}
                 {conversation.length > 0 && (
                   <div className="mt-3 pt-3 border-t border-gray-200">
                     <div className="text-xs text-gray-500 text-center">
-                      📊 {conversation.length} étape{conversation.length > 1 ? 's' : ''} parcourue{conversation.length > 1 ? 's' : ''}
+                      📊 {conversation.length} step{conversation.length > 1 ? 's' : ''} completed
                     </div>
-            </div>
+                  </div>
                 )}
               </>
             )}
@@ -589,7 +589,7 @@ const ChatWidget: React.FC = () => {
           {/* Chat Tooltip */}
           <div className="absolute bottom-20 right-0 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
             <div className="bg-gray-900 text-white px-4 py-2 rounded-lg text-sm whitespace-nowrap shadow-xl">
-              Besoin d'aide ? Discutez avec nous !
+              Need help? Chat with us!
               <div className="absolute top-full right-6 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
             </div>
           </div>
