@@ -51,7 +51,7 @@ const Contact: React.FC = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${EMAIL_API_CONFIG.token}`
+          'Authorization': `Token ${EMAIL_API_CONFIG.token}`
         },
         body: JSON.stringify({
           sender_email: formData.email,
