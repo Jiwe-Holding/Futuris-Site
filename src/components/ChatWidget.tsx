@@ -375,13 +375,13 @@ const ChatWidget: React.FC = () => {
   };
 
   const renderButtons = () => {
-    const primaryBtnClass = "w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-[1.02] shadow-md";
-    const secondaryBtnClass = "w-full bg-white hover:bg-gray-50 text-gray-700 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 border-2 border-gray-300 hover:border-blue-500";
+    const primaryBtnClass = "w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-3 sm:px-4 py-2 sm:py-3 rounded-lg text-xs sm:text-sm font-medium transition-all duration-200 transform hover:scale-[1.02] shadow-md";
+    const secondaryBtnClass = "w-full bg-white hover:bg-gray-50 text-gray-700 px-3 sm:px-4 py-2 sm:py-3 rounded-lg text-xs sm:text-sm font-medium transition-all duration-200 border-2 border-gray-300 hover:border-blue-500";
 
     switch (currentState) {
       case 'welcome':
         return (
-          <div className="space-y-3">
+          <div className="space-y-2 sm:space-y-3">
             <button onClick={() => handleOptionClick("Discover our services", 'services_choice')} className={primaryBtnClass}>
               📊 Discover our services
             </button>
@@ -393,7 +393,7 @@ const ChatWidget: React.FC = () => {
       
       case 'services_choice':
         return (
-          <div className="space-y-3">
+          <div className="space-y-2 sm:space-y-3">
             <button onClick={() => handleOptionClick("Quantitative studies and analysis", 'quantitative')} className={primaryBtnClass}>
               📈 Quantitative studies
             </button>
@@ -405,7 +405,7 @@ const ChatWidget: React.FC = () => {
       
       case 'quantitative':
         return (
-          <div className="space-y-3">
+          <div className="space-y-2 sm:space-y-3">
             <button onClick={() => handleOptionClick("View our methodologies", 'methodologies_quant')} className={primaryBtnClass}>
               🔬 Our methodologies
             </button>
@@ -417,7 +417,7 @@ const ChatWidget: React.FC = () => {
       
       case 'qualitative':
         return (
-          <div className="space-y-3">
+          <div className="space-y-2 sm:space-y-3">
             <button onClick={() => handleOptionClick("View our methodologies", 'methodologies_qual')} className={primaryBtnClass}>
               🔬 Our methodologies
             </button>
@@ -429,7 +429,7 @@ const ChatWidget: React.FC = () => {
       
       case 'methodologies_quant':
         return (
-          <div className="space-y-3">
+          <div className="space-y-2 sm:space-y-3">
             <button onClick={() => handleOptionClick("Back to services menu", 'services_choice')} className={secondaryBtnClass}>
               ⬅️ Back to services
             </button>
@@ -441,7 +441,7 @@ const ChatWidget: React.FC = () => {
       
       case 'methodologies_qual':
         return (
-          <div className="space-y-3">
+          <div className="space-y-2 sm:space-y-3">
             <button onClick={() => handleOptionClick("Back to services menu", 'services_choice')} className={secondaryBtnClass}>
               ⬅️ Back to services
             </button>
@@ -454,7 +454,7 @@ const ChatWidget: React.FC = () => {
       case 'projects_quant':
       case 'projects_qual':
         return (
-          <div className="space-y-3">
+          <div className="space-y-2 sm:space-y-3">
             <button onClick={() => handleOptionClick("View our team", 'team')} className={primaryBtnClass}>
               👥 Our team
             </button>
@@ -466,7 +466,7 @@ const ChatWidget: React.FC = () => {
       
       case 'team':
         return (
-          <div className="space-y-3">
+          <div className="space-y-2 sm:space-y-3">
             <button onClick={() => handleOptionClick("Yes, talk to an agent", 'contact_request')} className={primaryBtnClass}>
               ✅ Yes, contact an agent
             </button>
@@ -485,15 +485,15 @@ const ChatWidget: React.FC = () => {
     <>
       {/* Chat Widget */}
       {isChatOpen && (
-        <div className="fixed bottom-4 right-4 w-96 h-[600px] bg-white rounded-2xl shadow-2xl border border-gray-200 z-50 flex flex-col overflow-hidden">
+        <div className="fixed bottom-3 right-3 sm:bottom-4 sm:right-4 w-[75%] sm:w-[420px] h-[50vh] sm:h-[600px] max-h-screen bg-white rounded-2xl shadow-2xl border border-gray-200 z-50 flex flex-col overflow-hidden">
           {/* Chat Header */}
-          <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-4 flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
-                <User className="h-5 w-5 text-white" />
+          <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-3 sm:p-4 flex items-center justify-between">
+            <div className="flex items-center gap-2 sm:gap-3">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                <User className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
               </div>
               <div>
-                <div className="font-semibold text-white">Futuris Assistant</div>
+                <div className="font-semibold text-white text-sm sm:text-base">Futuris Assistant</div>
                 <div className="text-xs text-blue-100 flex items-center">
                   <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
                   Online now
@@ -509,16 +509,16 @@ const ChatWidget: React.FC = () => {
           </div>
 
           {/* Chat Messages */}
-          <div className="flex-1 p-4 overflow-y-auto space-y-3 bg-gradient-to-b from-gray-50 to-white">
+          <div className="flex-1 p-3 sm:p-4 overflow-y-auto space-y-3 bg-gradient-to-b from-gray-50 to-white">
             {chatMessages.map((msg) => (
               <div key={msg.id} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
-                <div className={`max-w-[80%] px-4 py-3 rounded-2xl text-sm shadow-sm ${
+                <div className={`max-w-[85%] sm:max-w-[80%] px-3 sm:px-4 py-2 sm:py-3 rounded-2xl text-xs sm:text-sm shadow-sm ${
                   msg.sender === 'user' 
                     ? 'bg-blue-600 text-white rounded-br-sm' 
                     : 'bg-white text-gray-800 border border-gray-200 rounded-bl-sm'
                 }`}>
                   <div className="leading-relaxed whitespace-pre-line">{msg.message}</div>
-                  <div className={`text-xs mt-1 ${msg.sender === 'user' ? 'text-blue-100' : 'text-gray-500'}`}>
+                  <div className={`text-[10px] sm:text-xs mt-1 ${msg.sender === 'user' ? 'text-blue-100' : 'text-gray-500'}`}>
                     {msg.time}
                   </div>
                 </div>
@@ -528,20 +528,20 @@ const ChatWidget: React.FC = () => {
           </div>
 
           {/* Action Area */}
-          <div className="p-4 bg-white border-t border-gray-200">
+          <div className="p-3 sm:p-4 bg-white border-t border-gray-200">
             {isCollectingInfo ? (
-              <div className="space-y-3">
-                <div className="space-y-2">
+              <div className="space-y-2 sm:space-y-3">
+                <div className="space-y-1 sm:space-y-2">
                   <label className="text-xs font-medium text-gray-700 ml-1">👤 Your name</label>
                   <input
                     type="text"
                     value={userName}
                     onChange={(e) => setUserName(e.target.value)}
                     placeholder="Ex: John Doe"
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 border-2 border-gray-300 rounded-lg text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
                   />
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-1 sm:space-y-2">
                   <label className="text-xs font-medium text-gray-700 ml-1">📧 Your email</label>
                   <input
                     type="email"
@@ -549,12 +549,12 @@ const ChatWidget: React.FC = () => {
                     onChange={(e) => setUserEmail(e.target.value)}
                     onKeyPress={(e) => e.key === 'Enter' && handleContactSubmit()}
                     placeholder="Ex: john.doe@example.com"
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 border-2 border-gray-300 rounded-lg text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
                   />
                 </div>
                 <button
                   onClick={handleContactSubmit}
-                  className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 shadow-md flex items-center justify-center gap-2"
+                  className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-3 sm:px-4 py-2 sm:py-3 rounded-lg text-xs sm:text-sm font-medium transition-all duration-200 shadow-md flex items-center justify-center gap-2"
                 >
                   <span>✉️</span>
                   <span>Send my details</span>
@@ -564,7 +564,7 @@ const ChatWidget: React.FC = () => {
               <>
                 {renderButtons()}
                 {conversation.length > 0 && (
-                  <div className="mt-3 pt-3 border-t border-gray-200">
+                  <div className="mt-2 sm:mt-3 pt-2 sm:pt-3 border-t border-gray-200">
                     <div className="text-xs text-gray-500 text-center">
                       📊 {conversation.length} step{conversation.length > 1 ? 's' : ''} completed
                     </div>
@@ -578,16 +578,16 @@ const ChatWidget: React.FC = () => {
 
       {/* Floating Chat Button */}
       {!isChatOpen && (
-        <div className="fixed bottom-6 right-6 z-50 group">
+        <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 group">
           <button
             onClick={handleChatToggle}
-            className="w-16 h-16 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center transform hover:scale-110 animate-pulse"
+            className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center transform hover:scale-110 animate-pulse"
           >
-            <MessageCircle className="h-7 w-7" />
+            <MessageCircle className="h-6 w-6 sm:h-7 sm:w-7" />
           </button>
           
           {/* Chat Tooltip */}
-          <div className="absolute bottom-20 right-0 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+          <div className="hidden sm:block absolute bottom-20 right-0 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
             <div className="bg-gray-900 text-white px-4 py-2 rounded-lg text-sm whitespace-nowrap shadow-xl">
               Need help? Chat with us!
               <div className="absolute top-full right-6 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
